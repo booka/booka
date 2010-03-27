@@ -12,6 +12,7 @@ Rails::Initializer.run do |config|
   config.gem 'formtastic'
   config.gem 'searchlogic'
   config.gem 'authlogic'
+  config.gem 'ancestry'
 
   config.time_zone = 'UTC'
 

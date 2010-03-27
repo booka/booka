@@ -1,0 +1,3 @@
+
+class Site < Bok
+end

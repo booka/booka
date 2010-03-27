@@ -9,7 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100327203539) do
+ActiveRecord::Schema.define(:version => 20100327204033) do
+
+  create_table "boks", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.integer  "position"
+    t.string   "type"
+    t.string   "ancestry"
+    t.string   "title"
+    t.string   "description"
+    t.string   "content_type"
+    t.string   "properties"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "boks", ["ancestry"], :name => "index_boks_on_ancestry"
+  add_index "boks", ["title"], :name => "index_boks_on_title"
+  add_index "boks", ["type"], :name => "index_boks_on_type"
 
   create_table "users", :force => true do |t|
     t.string   "name"
