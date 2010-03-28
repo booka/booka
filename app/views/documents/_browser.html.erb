@@ -9,5 +9,12 @@
         <% end %>
       <% end %>
     </div>
+    <div class="actions">
+      <% if can? :manage, @project %>
+        <%= link_to 'new' %>
+      <% else %>
+        te jodes
+      <% end %>
+    </div>
   </div>
 <% end %>
