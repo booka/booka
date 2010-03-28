@@ -3,19 +3,19 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :manage, Project do |project|
+    can(:manage, Project) do |project|
       !user.nil?
     end
 
-    can :manage, Document do |document|
+    can(:manage, Document) do |document|
       !user.nil?
     end
 
-    can :manage, ProjectCall do |call|
+    can(:manage, ProjectCall) do |call|
       !user.nil?
     end
 
-    can :manage, Clip do |clip|
+    can(:manage, Clip) do |clip|
       !user.nil?
     end
   end

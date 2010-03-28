@@ -1,0 +1,18 @@
+
+<% div_for disq do %>
+  <div class="type"><%= disq.content_type %></div>
+  <div class="body">
+    <%= disq.body %>
+    <div class="actions">
+      <%= link_to t('.edit'), edit_disq_path(disq, :top_id => top.id) %>
+    </div>
+  </div>
+  <div class="children">
+    <% subtree.keys.each do |child| %>
+      <%= render_disq child, subtree[child], top %>
+    <% end %>
+    <div class="actions">
+      <%= link_to t('.answer'), new_disq_path(:top_id => top.id, :parent_id => disq.id) %>
+    </div>
+  </div>
+<% end %>

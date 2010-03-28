@@ -160,20 +160,20 @@ div.action:hover { color: #e1ebef; }
   right: 0;
   top: 80px;
   bottom: 0;
-  background-color: #efefef;
+  background-color: #c6c8ca;
 }
-#browser {
+#browser_viewport {
   position: absolute;
   left: 0;
-  top: 0px;
+  top: 1px;
   bottom: 0;
   width: 340px;
   background-color: #00aeef;
 }
-#comm {
+#comm_viewport {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 1px;
   bottom: 0;
   width: 300px;
   background-color: #00aeef;
@@ -265,6 +265,47 @@ a.sprite-nav.selected { border-color: #efefef; }
   display: block;
   overflow: hidden;
   text-indent: -10000px;
+}
+.browser {
+  height: 100%;
+  background-color: #efefef;
+  font-family: "Garamond", serif;
+}
+.browser h1 {
+  padding: 5px;
+  font-size: 120%;
+}
+.browser .list {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  right: 0;
+  bottom: 30px;
+  background-color: white;
+}
+.browser .list .item {
+  padding: 3px;
+  border-bottom: 1px solid #efefef;
+}
+.browser .list div.item:hover { background-color: #efefef; }
+.browser .list .item a { color: black; }
+.browser .actions {
+  position: absolute;
+  left: 3px;
+  height: 27px;
+  right: 0;
+  bottom: 0;
+}
+.browser .actions a {
+  float: left;
+  opacity: 0.5;
+  border: 3px solid transparent;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.browser .actions a:hover {
+  opacity: 1;
+  background-color: #00aeef;
 }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -376,44 +417,69 @@ div#page:hover .slot {
   border-color: #00aeef;
 }
 div.slot:hover a { margin-top: 1px; }
-.document_browser {
-  height: 100%;
-  background-color: #efefef;
-  font-family: "Garamond", serif;
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.debug {
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-size: 65%;
+  color: gray;
 }
-.document_browser h1 {
-  padding: 5px;
-  font-size: 120%;
+.container {
+  width: 100%;
+  overflow: hidden;
 }
-.document_browser .documents {
-  position: absolute;
-  left: 0;
-  top: 40px;
-  right: 0;
-  bottom: 30px;
-  background-color: white;
-}
-.document_browser .documents .document {
-  padding: 3px;
-  border-bottom: 1px solid #efefef;
-}
-.document_browser .documents div.document:hover { background-color: #efefef; }
-.document_browser .documents .document a { color: black; }
-.document_browser .actions {
-  position: absolute;
-  left: 3px;
-  height: 27px;
-  right: 0;
-  bottom: 0;
-}
-.document_browser .actions a {
-  float: left;
-  opacity: 0.5;
-  border: 3px solid transparent;
+.rounded {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.document_browser .actions a:hover {
-  opacity: 1;
+.button {
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+}
+.action {
   background-color: #00aeef;
+  color: white;
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+}
+div.action:hover { color: #e1ebef; }
+#discussion {
+  width: 92%;
+  margin: 0 auto;
+  padding: 10px 2%;
+  -webkit-border-radius: 20px;
+  background-color: #00aeef;
+}
+#discussion > h1 {
+  font-size: 200%;
+  color: white;
+}
+#discussion .disq {
+  padding: 10px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 10px;
+  background-color: #e1ebef;
+}
+#discussion .disq .body {
+  padding: 10px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 10px;
+  background-color: white;
+}
+#discussion .disq .children {
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  background-color: white;
 }

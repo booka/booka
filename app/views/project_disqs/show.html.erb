@@ -1,0 +1,8 @@
+
+<% place_of @disq %>
+<%= render 'disqs/browser'  %>
+
+<div id="discussion">
+  <h1><%= @disq.title %></h1>
+  <%= render_disq @tree.keys.first, @tree.values.first %>
+</div>

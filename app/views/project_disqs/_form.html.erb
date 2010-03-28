@@ -1,9 +1,10 @@
 
 <div class="dialog">
-  <% semantic_form_for([@document.project, @document]) do |form| %>
+  <% semantic_form_for([@disq.project, @disq]) do |form| %>
     <%= form.error_messages %>
     <% form.inputs do %>
       <%= form.input :title %>
+      <%= form.input :content_type, :as => :select, :collection => {'Pregunta' => :question, 'Propuesta' => :proposal, 'Consenso' => :consensus} %>
     <% end %>
     <% form.buttons do %>
       <%= form.commit_button %>

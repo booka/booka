@@ -1,0 +1,16 @@
+
+<div class="dialog">
+  <h1>Respondiendo a '<%= @top.title %>'</h1>
+  <% semantic_form_for([@disq]) do |form| %>
+    <%= hidden_field_tag :top_id, @top.id %>
+    <%= hidden_field_tag :parent_id, @disq.parent_id %>
+    <%= form.error_messages %>
+    <% form.inputs do %>
+      <%= form.input :content_type, :as => :select, :collection => {'Pregunta' => :question, 'Propuesta' => :proposal, 'Consenso' => :consensus} %>
+      <%= form.input :body %>
+    <% end %>
+    <% form.buttons do %>
+      <%= form.commit_button %>
+    <% end %>
+  <% end %>
+</div>

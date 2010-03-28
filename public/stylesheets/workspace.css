@@ -65,20 +65,20 @@ div.action:hover { color: #e1ebef; }
   right: 0;
   top: 80px;
   bottom: 0;
-  background-color: #efefef;
+  background-color: #c6c8ca;
 }
-#browser {
+#browser_viewport {
   position: absolute;
   left: 0;
-  top: 0px;
+  top: 1px;
   bottom: 0;
   width: 340px;
   background-color: #00aeef;
 }
-#comm {
+#comm_viewport {
   position: absolute;
   right: 0;
-  top: 0;
+  top: 1px;
   bottom: 0;
   width: 300px;
   background-color: #00aeef;
@@ -170,4 +170,45 @@ a.sprite-nav.selected { border-color: #efefef; }
   display: block;
   overflow: hidden;
   text-indent: -10000px;
+}
+.browser {
+  height: 100%;
+  background-color: #efefef;
+  font-family: "Garamond", serif;
+}
+.browser h1 {
+  padding: 5px;
+  font-size: 120%;
+}
+.browser .list {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  right: 0;
+  bottom: 30px;
+  background-color: white;
+}
+.browser .list .item {
+  padding: 3px;
+  border-bottom: 1px solid #efefef;
+}
+.browser .list div.item:hover { background-color: #efefef; }
+.browser .list .item a { color: black; }
+.browser .actions {
+  position: absolute;
+  left: 3px;
+  height: 27px;
+  right: 0;
+  bottom: 0;
+}
+.browser .actions a {
+  float: left;
+  opacity: 0.5;
+  border: 3px solid transparent;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.browser .actions a:hover {
+  opacity: 1;
+  background-color: #00aeef;
 }

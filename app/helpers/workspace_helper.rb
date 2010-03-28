@@ -18,6 +18,7 @@ module WorkspaceHelper
 
   def place(place)
     content_for(:place) {place}
+    content_for(:title) {place}
   end
 
   def place_of(bok)

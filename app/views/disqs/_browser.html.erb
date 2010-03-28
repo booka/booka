@@ -1,0 +1,18 @@
+
+<% content_for :browser do %>
+  <div class="browser disq_browser">
+    <h1><%= t('.title') %></h1>
+    <div class="list disqs">
+      <% @disqs.each do |disq| %>
+        <% div_for(disq, :class => 'item') do  %>
+          <%= link_to disq.title, project_disq_path(@project, disq) %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="actions">
+      <% if can? :manage, @project %>
+        <%= ibutton_to t('.new_disq'), 'plus_alt', new_project_disq_path(@project) %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

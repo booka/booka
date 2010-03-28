@@ -23,6 +23,20 @@ es:
     show:
       place: "{{title}}"
       
+  project_disqs:
+    index:
+      place: "Discusiones sobre '{{title}}'"
+    show:
+      place: "{{title}}"
+
+  disqs:
+    browser:
+      title: "Discusiones"
+      new_disq: "Añadir una nueva discusión"
+    disq:
+      edit: "Modificar"
+      answer: "Añadir respuesta"
+      
   documents:
     browser:
       title: "Archivos"

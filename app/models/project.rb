@@ -15,10 +15,20 @@ class Project < Bok
     self.children.scoped(:conditions => {:type => 'Document'})
   end
 
+  def disqs
+    self.children.scoped(:conditions => {:type => 'Disq'})
+  end
+
   def new_document(params = {}, user = nil?)
     extra = {:parent => self, :project => self}
     extra.merge!({:user_id => user.id}) if user
     Document.new(params.merge(extra))
+  end
+
+  def new_disq(params, user)
+    extra = {:parent_id => self.id, :project_id => self.id, :user_id => user.id}
+    extra.merge!(params) if params
+    Disq.new(extra)
   end
 
 end
