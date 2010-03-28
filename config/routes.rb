@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources(:documents, :as => 'archivos') do |document|
-    document.resources(:document_clips, :as => 'clips')
+    document.resources(:clips, :controller => 'document_clips', :as => 'clips')
   end
   
   map.root :controller => 'projects', :action => 'index'

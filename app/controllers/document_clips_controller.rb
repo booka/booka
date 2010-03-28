@@ -5,13 +5,21 @@ class DocumentClipsController < ApplicationController
   belongs_to :document
 
 
+  def new
+    @clip = @document.new_clip(params[:clip], current_user)
+    new!
+  end
 
   def create
-    @clip = @document.clips.build(params[:clip])
-    @clip.user_id = current_user.id
-    @clip.project_id = @document.project_id
-    create! do |success|
-      success.html {redirect_to project_project_document_path(@document.project, @document)}
+    @clip = @document.new_clip(params[:clip], current_user)
+    create! do |success, failure|
+      success.html {redirect_to project_document_path(@document.project, @document)}
+    end
+  end
+
+  def update
+    update! do |success, failure|
+      success.html {redirect_to project_document_path(@document.project, @document)}
     end
   end
 

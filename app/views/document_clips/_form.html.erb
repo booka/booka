@@ -1,6 +1,6 @@
 
 <div class="dialog">
-  <% semantic_form_for(:clip, @clip, :url => document_document_clips_path(@document)) do |form| %>
+  <% semantic_form_for([@clip.parent, @clip]) do |form| %>
     <%= form.error_messages %>
     <% form.inputs do %>
       <%= form.input :content_type, :as => :hidden %>

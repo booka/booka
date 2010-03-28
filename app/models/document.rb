@@ -8,5 +8,10 @@ class Document < Bok
     self.children.scoped(:conditions => {:type => 'Clip'})
   end
 
+  def new_clip(params, user)
+    extra = {:parent_id => self.id, :project_id => self.project.id, :user_id => user.id}
+    Clip.new(params.merge(extra))
+  end
+
 
 end

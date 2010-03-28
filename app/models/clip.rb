@@ -2,11 +2,6 @@
 class Clip < Bok
   validates_presence_of :project_id, :content_type
 
-  auto_html_for(:body) do
-
-  end
-
-
   def body_rendered
     if content_type == 'text/html'
       self.body
