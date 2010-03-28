@@ -11,7 +11,11 @@ class Ability
       !user.nil?
     end
 
-    can :manager, ProjectCall do |call|
+    can :manage, ProjectCall do |call|
+      !user.nil?
+    end
+
+    can :manage, Clip do |clip|
       !user.nil?
     end
   end

@@ -20,8 +20,8 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
 }
 .rounded {
-  -moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 .button {
   cursor: pointer;
@@ -72,7 +72,7 @@ div.action:hover { color: #e1ebef; }
   left: 0;
   top: 0px;
   bottom: 0;
-  width: 250px;
+  width: 340px;
   background-color: #00aeef;
 }
 #comm {
@@ -80,13 +80,13 @@ div.action:hover { color: #e1ebef; }
   right: 0;
   top: 0;
   bottom: 0;
-  width: 250px;
+  width: 300px;
   background-color: #00aeef;
 }
 #content {
   position: absolute;
-  left: 250px;
-  right: 250px;
+  left: 340px;
+  right: 300px;
   top: 0;
   bottom: 0;
   background-color: #c6c8ca;
@@ -101,23 +101,23 @@ div.action:hover { color: #e1ebef; }
 }
 #site_navigation {
   position: absolute;
-  left: 0;
-  width: 250px;
+  left: 10px;
+  width: 340px;
   top: 0;
   bottom: 0;
 }
 #user_navigation {
   position: absolute;
-  width: 250px;
+  width: 300px;
   top: 0;
   right: 0;
   bottom: 0;
 }
 #messages {
   position: absolute;
-  left: 250px;
+  left: 340px;
   top: 0;
-  right: 250px;
+  right: 300px;
   bottom: 0;
 }
 #current_user {
@@ -148,17 +148,26 @@ div.action:hover { color: #e1ebef; }
   font-size: 150%;
   font-family: "Garamond", serif;
 }
-#page {
-  width: 96%;
-  margin-left: 2%;
-  min-height: 800px;
-  border: 1px solid gray;
-  background-color: white;
-  font-family: "Garamon", serif;
-}
-#page h1 {
+#site_navigation li {
   display: block;
-  font-size: 150%;
-  text-align: center;
-  margin: 1em 0;
+  float: left;
+}
+#user_navigation li {
+  display: block;
+  float: right;
+}
+a.sprite-nav {
+  display: block;
+  overflow: hidden;
+  text-indent: -10000px;
+  padding: 1px;
+  margin: 3px 3px 0 3px;
+  border: 3px solid white;
+}
+a.sprite-nav:hover { border-color: #efefef; }
+a.sprite-nav.selected { border-color: #efefef; }
+.iconic {
+  display: block;
+  overflow: hidden;
+  text-indent: -10000px;
 }

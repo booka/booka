@@ -15,13 +15,12 @@ class ProjectDocumentsController < ApplicationController
   end
 
   def new
-    @document = @project.documents.build
+    @document = @project.new_document
     new!
   end
 
   def create
-    @document = @project.documents.build(params[:document])
-    @document.user_id = current_user.id
+    @document = @project.new_document(params[:document], current_user)
     create!
   end
 end

@@ -15,4 +15,10 @@ class Project < Bok
     self.children.scoped(:conditions => {:type => 'Document'})
   end
 
+  def new_document(params = {}, user = nil?)
+    extra = {:parent => self, :project => self}
+    extra.merge!({:user_id => user.id}) if user
+    Document.new(params.merge(extra))
+  end
+
 end

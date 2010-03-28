@@ -1,5 +1,5 @@
 .sprite-nav {
-   background: url(csg-4baeb7d3c721d.png) no-repeat top left;
+   background: url(/images/csg-4baeb7d3c721d.png) no-repeat top left;
 }
 .sprite-nav-accounticon { background-position: 0 0; width: 64px; height: 64px; }
 .sprite-nav-archivesicon { background-position: -69px 0; width: 64px; height: 64px; }
@@ -11,7 +11,7 @@
 .sprite-nav-loginicon { background-position: -516px 0; width: 64px; height: 64px; }
 
 .iconic {
-   background: url(csg-4baeb88c1b8cc.png) no-repeat top left;
+   background: url(/images/csg-4baeb88c1b8cc.png) no-repeat top left;
 }
 
 .iconic-arrow_down_12x12 { background-position: 0 0; width: 12px; height: 12px; }

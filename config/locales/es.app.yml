@@ -30,3 +30,9 @@ es:
     slot:
       new_clip_text: "Añadir texto"
       new_clip_auto: "Añadir un enlace externo"
+    document:
+      edit: "Editar documento"
+
+  clips:
+    clip:
+      edit: "Editar"

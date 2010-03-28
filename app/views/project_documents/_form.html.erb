@@ -1,6 +1,7 @@
 
 <div class="dialog">
-  <% semantic_form_for(:document, @document, :url => project_project_documents_path(@project)) do |form| %>
+  <% #semantic_form_for(:document, @document, :url => project_project_documents_path(@project)) do |form| %>
+  <% semantic_form_for([@document.project, @document]) do |form| %>
     <%= form.error_messages %>
     <% form.inputs do %>
       <%= form.input :title %>

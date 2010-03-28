@@ -1,6 +1,47 @@
 
 @import "variables";
 
+
+#page {
+    width: 96%;
+    margin-left: 2%;
+    min-height: 800px;
+    border: 1px solid gray;
+    background-color: white;
+    font-family: "Garamon", serif;
+}
+
+#page h1 {display: block; font-size: 150%; text-align: center; margin: 5px 0;}
+
+#page .floating_actions {
+    display: none; overflow: hidden;
+    float: right; padding: 3px 3px 5px 5px;
+    background-color: @azulclaro; .rounded; border: 1px solid @azul;
+}
+#page .floating_actions a {display: block; float: right; opacity: 0.5; margin-right: 2px;}
+#page .floating_actions a:hover {opacity: 1;}
+/** DOCUMENT **/
+#page .document {margin: 2px 1em; border: 1px solid white;}
+#page div.document:hover {border-color: white;}
+#page div.document:hover .floating_actions {display: block; }
+
+/** CLIPS **/
+.clip { margin: 2px 1em;}
+#page div.clip:hover .floating_actions {display: block;}
+
+/** SLOTS **/
+.slot {
+    width: 60%; margin: 3px auto; overflow: hidden; padding: 0px 0px 1px 0px; height: 1px;
+    background-color: white; border: 1px solid white;
+}
+div#page:hover .slot {background-color: @azulclaro; border: 1px solid white;}
+.slot a { .action; margin-top: 5px;color: white;font-size: 80%;}
+#page div.slot:hover {height: auto; border-color: @azul;}
+div.slot:hover a {margin-top: 1px;}
+
+
+/** BROWSER **/
+
 .document_browser {
     height: 100%;
     background-color: @grisclaro; font-family: @serif;
@@ -17,6 +58,9 @@
 }
 .document_browser .documents div.document:hover {background-color: @grisclaro;}
 .document_browser .documents .document a {color: black;}
+
 .document_browser .actions {
-    position: absolute; left: 0; height: 30px; right: 0; bottom: 0;
+    position: absolute; left: 3px; height: 27px; right: 0; bottom: 0;
 }
+.document_browser .actions a {float: left; opacity: 0.5; border: 3px solid transparent; .rounded;}
+.document_browser .actions a:hover {opacity: 1; background-color: @azul;}

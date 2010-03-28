@@ -1,15 +1,16 @@
 <div id="page">
-  <%= debug document %>
-  <h1><%= document.title %></h1>
+  <div class="document">
+    <% if can? :manage, document %>
+      <div class="floating_actions">
+        <%= iminbutton_to t('.debug'), "bolt", edit_project_document_path(document.project, document) %>
+        <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_project_document_path(document.project, document) %>
+      </div>
+    <% end %>
+    <h1><%= document.title %></h1>
+  </div>
 
   <div id="clips">
-    <% document.clips.each do |clip| %>
-      <% div_for clip do %>
-        <%= slots_for document, clip %>
-        <%= debug clip %>
-        <%= clip.body_rendered  %>
-      <% end %>
-    <% end %>
+    <%= render document.clips %>
   </div>
 
   <% if can? :manager, document %>
