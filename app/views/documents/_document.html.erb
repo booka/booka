@@ -1,3 +1,20 @@
-  <div id="page">
-    <h1><%= document.title %></h1>
+<div id="page">
+  <h1><%= document.title %></h1>
+
+  <div id="clips">
+    <% document.clips.each do |clip| %>
+      <% div_for clip do %>
+    <%= debug clip %>
+      <% end %>
+    <% end %>
   </div>
+
+  <% if can? :manager, document %>
+    <div class="slot">
+      <%= link_to t(".new_clip_text"), new_document_document_clip_path(document) %>
+    </div>
+  <% else %>
+    tejodes <%= current_user %>
+  <% end %>
+
+</div>

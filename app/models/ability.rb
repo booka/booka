@@ -4,7 +4,15 @@ class Ability
 
   def initialize(user)
     can :manage, Project do |project|
-      true
+      !user.nil?
+    end
+
+    can :manage, Document do |document|
+      !user.nil?
+    end
+
+    can :manager, ProjectCall do |call|
+      !user.nil?
     end
   end
 end

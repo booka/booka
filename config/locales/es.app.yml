@@ -17,10 +17,15 @@ es:
       title: "Convocatoria"
       place: "Convocatoria de '{{title}}'"
 
-  documents:
+  project_documents:
     index:
       place: "Archivos de '{{title}}'"
     show:
       place: "{{title}}"
+      
+  documents:
     browser:
       title: "Archivos"
+      new_document: "Crear un nuevo archivo"
+    document:
+      new_clip_text: "Añadir texto"

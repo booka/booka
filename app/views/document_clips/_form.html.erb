@@ -1,0 +1,12 @@
+
+<div class="dialog">
+  <% semantic_form_for(:clip, @clip, :url => document_document_clips_path(@document)) do |form| %>
+    <%= form.error_messages %>
+    <% form.inputs do %>
+      <%= form.input :body %>
+    <% end %>
+    <% form.buttons do %>
+      <%= form.commit_button %>
+    <% end %>
+  <% end %>
+</div>
