@@ -1,0 +1,33 @@
+
+es:
+  activerecord:
+    models:
+      user: "Cuenta de usuario"
+    attributes:
+      user:
+        username: "El nombre"
+        password: "La contraseña"
+        question: "La pregunta"
+        answer: "La respuesta"
+        password_confirmation: "La confirmación de la contraseña"
+  authlogic:
+    error_messages:
+      login_blank: "no puede estar vacío."
+      login_not_found: "no se corresponde con ninguna cuenta de usuario."
+      login_invalid: "debería tener sólo letras, números y ._@"
+      consecutive_failed_logins_limit_exceeded: "La cuenta ha sido deshabilitada porque intentó entrar demasiadas veces"
+      email_invalid: "debería ser un email."
+      password_blank: "no puede estar vacía."
+      password_invalid: "no es válida."
+      not_active: "Su cuenta de usuario está desactivada"
+      not_confirmed: "Su cuenta necesita una confirmación"
+      not_approved: "Su cuenta no está aprovada"
+      no_authentication_details: "El nombre y la contraseña son obligatorias."
+    models:
+      user_session: "Sesión de usuario"
+    attributes:
+      user_session:
+        username: "El nombre"
+        email: "Email"
+        password: "La contraseña"
+        remember_me: "Recuérdame en este ordenador"

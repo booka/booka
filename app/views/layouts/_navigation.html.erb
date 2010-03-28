@@ -1,0 +1,31 @@
+<ul id="site_navigation">
+  <%= navigate_to :entrance, root_path %>
+  <% if has_project? %>
+    <%= navigate_to :archives, project_documents_path(@project)  %>
+    <%= navigate_to :forum, project_documents_path(@project)  %>
+    <%= navigate_to :explore, project_documents_path(@project)  %>
+  <% end %>
+</ul>
+
+<div id="messages">
+  <div id="current_user">
+    <% if current_user %>
+      <%= link_to current_user.name, root_path %>
+    <% else %>
+      <%= link_to 'login', new_user_session_path %>
+    <% end %>
+  </div>
+
+  <div id="current_project">
+    <% if has_project? %>
+      <%= current_project.title %>
+    <% end %>
+  </div>
+
+  <div id="place">
+    <%= yield :place  %>
+  </div>
+</div>
+
+<ul id="user_navigation">
+</ul>

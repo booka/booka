@@ -1,0 +1,13 @@
+
+<% content_for :browser do %>
+  <div class="document_browser">
+    <h1><%= t('.title') %></h1>
+    <div class="documents">
+      <% @documents.each do |document| %>
+        <% div_for @document do  %>
+          <%= link_to document.title, project_document_path(@project, document) %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

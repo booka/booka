@@ -1,0 +1,26 @@
+
+es:
+  disable_with: "Un momento por favor..."
+  
+    
+  layouts:
+    workspace:
+
+      
+  projects:
+    index:
+      title: "Entrada"
+      place: "Plataforma Booka"
+
+  project_calls:
+    show:
+      title: "Convocatoria"
+      place: "Convocatoria de '{{title}}'"
+
+  documents:
+    index:
+      place: "Archivos de '{{title}}'"
+    show:
+      place: "{{title}}"
+    browser:
+      title: "Archivos"

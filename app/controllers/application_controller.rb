@@ -4,7 +4,35 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  layout 'workspace'
+  helper_method :has_project?, :current_project
+  helper_method :current_user_session, :current_user
 
   # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  filter_parameter_logging :password
+
+  protected
+  def load_project
+    @project = Project.find(params[:project_id])
+  end
+
+  def current_project
+    @project
+  end
+
+  def has_project?
+    !@project.nil?
+  end
+
+  private
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.user
+  end
+
 end

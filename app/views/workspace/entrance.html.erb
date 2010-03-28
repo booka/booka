@@ -1,0 +1,12 @@
+
+<% title t(:title)  %>
+
+<% content_for :browser do %>
+  <ul class="projects">
+    <% @projects.each do |project| %>
+    <li class="project">
+      <%= link_to project.title, project.call %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,13 @@
+
+<div class="dialog">
+  <% semantic_form_for @user_session do |form| %>
+    <% form.inputs do %>
+      <%= form.input :login %>
+      <%= form.input :password %>
+    <% end %>
+
+    <% form.buttons do %>
+      <%= form.commit_button %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,3 +1,5 @@
+# coding: utf-8
+
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 User.destroy_all
@@ -13,8 +15,10 @@ end
 site = Site.new(:title => 'Plataforma booka', :user_id => 1)
 site.save(false)
 
-['Plataforma booka', 'Jardines interfaz', 'Arquitectura y género'].each do |name|
+['Plataforma booka', 'Jardines interfaz', "Arquitectura y género"].each do |name|
   project = Project.create!(:title => name, :parent => site, :user_id => 1)
+
+  ProjectCall.create(:title => name, :parent => project, :project => project, :user_id => 1)
 
   User.all.each do |user|
     project.add_user(user, :admin)

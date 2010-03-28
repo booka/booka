@@ -1,0 +1,47 @@
+
+@azul: #00AEEF;
+@azulclaro: #E1EBEF;
+
+@gris: #C6C8CA;
+@grisclaro: #efefef;
+
+@serif: "Garamond", serif;
+@sans: "Helvetica","arial","freesans","clean",sans-serif;
+@font-small: 80%;
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline;}
+
+.debug {font-family: @sans; font-size: 65%; color: gray;}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.rounded {
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+}
+
+.button {
+    cursor: pointer;
+    display: block;
+    float: left;
+    padding: 0.2em 1em;
+    margin: 1px 0 0 3px;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    font-family: @sans;
+}
+
+.action {
+    background-color: @azul;
+    color: white;
+    .button;
+}
+
+
+div.action:hover {
+    color: @azulclaro;
+}

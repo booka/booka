@@ -1,0 +1,36 @@
+
+@import "variables";
+
+#workspace {
+    width: 100%;
+    height: 100%;
+    background-color: @azul;
+}
+
+#navigation {position: absolute; left: 0; right: 0; top: 0; height: 80px; background-color: white;}
+#main {position: absolute; left: 0; right: 0; top: 80px; bottom: 0; background-color: @grisclaro;}
+#browser {position: absolute; left: 0; top: 0px; bottom: 0; width: 250px; background-color: @azul;}
+#comm {position: absolute; right: 0; top: 0; bottom: 0; width: 250px; background-color: @azul;}
+#content {position: absolute; left: 250px; right: 250px; top: 0; bottom: 0; background-color: @gris; }
+#content_viewport {position: absolute; left: 10px; top: 10px; right: 10px; bottom: 10px; overflow-x: hidden;}
+
+#site_navigation {position: absolute; left: 0; width: 250px; top: 0; bottom: 0;}
+#user_navigation {position: absolute; width: 250px; top: 0; right: 0; bottom: 0;}
+#messages {position: absolute; left: 250px; top: 0; right: 250px; bottom: 0;}
+
+#current_user {position: absolute; top: 0; width: 50%; right: 0; height: 2em;}
+.current_user {padding: 5px 10px; background-color: @azulclaro; color: @azul;}
+#current_user a {display: block; float: right; .current_user;}
+#current_project {margin-top: 0.7em; height: 1.3em; font-family: @serif;}
+#place {font-size: 150%; font-family: @serif;}
+
+#page {
+    width: 96%;
+    margin-left: 2%;
+    min-height: 800px;
+    border: 1px solid gray;
+    background-color: white;
+    font-family: "Garamon", serif;
+}
+
+#page h1 {display: block; font-size: 150%; text-align: center; margin: 1em 0;}

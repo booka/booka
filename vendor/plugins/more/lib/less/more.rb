@@ -50,7 +50,7 @@ class Less::More
       path_to_source = File.join(Rails.root, source_path, source)
 
       # check if the destination file exists, and compare the modified times to see if it needs to be written
-      if mtime(generated) >= mtime_including_imports(path_to_source)
+      if RAILS_ENV != "development" and mtime(generated) >= mtime_including_imports(path_to_source)
         # up to date, nothing to do!
       else
         # css file does not exist or is out of date

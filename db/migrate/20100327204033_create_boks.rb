@@ -3,6 +3,7 @@ class CreateBoks < ActiveRecord::Migration
     create_table :boks do |t|
       t.references :project
       t.references :user
+      #t.references :parent
       t.integer :position
       t.string :type
       t.string :ancestry
