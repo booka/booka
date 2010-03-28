@@ -12,7 +12,7 @@
     <% if current_user %>
       <%= link_to current_user.name, root_path %>
     <% else %>
-      <%= link_to 'login', new_user_session_path %>
+      <%= link_to 'login', new_user_session_path(:url => request.path) %>
     <% end %>
   </div>
 

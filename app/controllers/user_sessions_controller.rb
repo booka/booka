@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
 
   def create
     create! do |success|
-      success.html { redirect_to root_path}
+      success.html { redirect_to params[:url].blank? ? root_path : params[:url] }
     end
   end
 end

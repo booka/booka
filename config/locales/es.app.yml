@@ -27,5 +27,6 @@ es:
     browser:
       title: "Archivos"
       new_document: "Crear un nuevo archivo"
-    document:
+    slot:
       new_clip_text: "Añadir texto"
+      new_clip_auto: "Añadir un enlace externo"

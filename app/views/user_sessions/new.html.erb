@@ -1,6 +1,7 @@
 
 <div class="dialog">
   <% semantic_form_for @user_session do |form| %>
+    <%= hidden_field_tag :url, params[:url] %>
     <% form.inputs do %>
       <%= form.input :login %>
       <%= form.input :password %>

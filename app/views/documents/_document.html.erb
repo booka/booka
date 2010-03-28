@@ -1,20 +1,19 @@
 <div id="page">
+  <%= debug document %>
   <h1><%= document.title %></h1>
 
   <div id="clips">
     <% document.clips.each do |clip| %>
       <% div_for clip do %>
-    <%= debug clip %>
+        <%= slots_for document, clip %>
+        <%= debug clip %>
+        <%= clip.body_rendered  %>
       <% end %>
     <% end %>
   </div>
 
   <% if can? :manager, document %>
-    <div class="slot">
-      <%= link_to t(".new_clip_text"), new_document_document_clip_path(document) %>
-    </div>
-  <% else %>
-    tejodes <%= current_user %>
+    <%= slots_for document, nil %>
   <% end %>
 
 </div>

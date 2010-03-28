@@ -1,2 +1,2 @@
-class ProjectCall < Bok
+class ProjectCall < Document
 end
