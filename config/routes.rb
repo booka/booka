@@ -11,7 +11,6 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources(:disqs, :as => 'discusion') do |disq|
-    
   end
 
   map.resources(:documents, :as => 'archivos') do |document|

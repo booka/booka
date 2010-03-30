@@ -1,12 +1,1 @@
-
-<div class="dialog">
-  <% semantic_form_for(:index, @index, :url => project_index_path(@project), :html => {:method => :put}) do |form| %>
-    <%= form.error_messages %>
-    <% form.inputs do %>
-      <%= form.input :body %>
-    <% end %>
-    <% form.buttons do %>
-      <%= form.commit_button %>
-    <% end %>
-  <% end %>
-</div>
+<%= render 'form' %>

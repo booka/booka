@@ -1,0 +1,18 @@
+
+
+<div class="browser indice_browser">
+  <h1><%= t('.title') %></h1>
+  <div class="list indices">
+    <% @index.each do |pointer| %>
+      <% div_for(pointer, :class => 'item') do  %>
+        <%= pointer.title %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <% if can? :manage, @project %>
+      <%= ibutton_to t(:edit), "pen_alt_stroke", edit_project_index_path(@project) %>
+    <% end %>
+  </div>
+</div>
+

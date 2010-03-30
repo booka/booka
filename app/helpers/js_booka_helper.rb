@@ -8,7 +8,7 @@ module JsBookaHelper
   end
 
   def js_project(project)
-    if (params[:project] != project.id)
+    if (params[:project] != project.id.to_s)
       content = escape_javascript render(:partial => '/layouts/site_navigation')
       "$.booka.project('#{project.id}', '#{project.title}', '#{content}');"
     end
@@ -29,7 +29,17 @@ module JsBookaHelper
     js_content_for(position, content)
   end
 
-  def js_render_page(bok)
+  def js_render_disq(disq)
+    content = render(:partial => 'disqs/disq', :locals => {:disq => disq, :tree => disq.subtree.arrange})
+    js_content_for('content_viewport', content)
+  end
+
+  def js_render_index(index)
+    content = render(:partial => 'indexes/index', :object => index)
+    js_content_for('content_viewport', content)
+  end
+
+  def js_render_document(bok)
     content = render(:partial => 'documents/document', :object => bok)
     js_content_for('content_viewport', content)
   end

@@ -5,7 +5,7 @@
     <div class="list disqs">
       <% @disqs.each do |disq| %>
         <% div_for(disq, :class => 'item') do  %>
-          <%= link_to disq.title, project_disq_path(@project, disq) %>
+          <%= link_to_ajax disq.title, disq_path(disq) %>
         <% end %>
       <% end %>
     </div>

@@ -1,6 +1,6 @@
 module ProjectDisqsHelper
-  def render_disq(disq, subtree, top = nil)
+  def render_answer(disq, subtree, top = nil)
     top ||= disq
-    render :partial => 'disqs/disq', :locals => {:disq => disq, :subtree => subtree, :top => top}
+    render :partial => 'disqs/answer', :locals => {:disq => disq, :subtree => subtree, :top => top}
   end
 end

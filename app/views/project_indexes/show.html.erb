@@ -1,4 +1,7 @@
 
 <% place_of @project  %>
 <% @workspace_settings = {:browser => true, :comm => false} %>
-<%= render 'indices/browser' %>
+
+<% content_for :browser do %>
+  <%= render 'indexes/browser' %>
+<% end %>

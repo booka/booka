@@ -1,0 +1,6 @@
+
+<%= js_project @project %>
+<%= js_place_of @disq %>
+<%= js_browser 'disqs/browser'  %>
+<%= js_render_disq @disq %>
+<%= js_finish t('.loaded', :title => @disq.title) %>

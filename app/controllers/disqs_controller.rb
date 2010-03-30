@@ -1,10 +1,18 @@
 class DisqsController < ApplicationController
   inherit_resources
-  actions :edit, :update, :create
+  actions :edit, :update, :create, :show
+  respond_to :html, :xml, :json, :js
   before_filter :load_top_id
     
   def edit
     @disq = Disq.find(params[:id])
+  end
+
+  def show
+    @disq = Disq.find(params[:id])
+    @project = @disq.project
+    # FIXME: not always necesary
+    @disqs = @project.disqs
   end
 
   def new
@@ -28,6 +36,6 @@ class DisqsController < ApplicationController
 
   private
   def load_top_id
-    @top = Disq.find params[:top_id]
+    @top = Disq.find(params[:top_id].blank? ? params[:id] : params[:top_id])
   end
 end

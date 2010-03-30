@@ -22,13 +22,27 @@ es:
       new: "Añadir al archivo de '{{title}}'"
       update: "Editar '{{title}}'"
 
-
+  disqs:
+    browser:
+      title: "Discusiones"
+      new_disq: "Añadir una nueva discusión"
+    answer:
+      edit: "Modificar"
+      answer: "Añadir respuesta"
+    show:
+      place: "{{title}}"
 
   projects:
     index:
       title: "Entrada"
       place: "Plataforma Booka"
       loaded: "Pulsa sobre las investigaciones para empezar."
+
+  indexes:
+    index:
+      title: "Índice de {{title}}"
+    browser:
+      title: "Índice"
 
   project_calls:
     show:
@@ -39,27 +53,18 @@ es:
   project_documents:
     index:
       place: "Archivos de '{{title}}'"
-      loaded: "Archivos de '{{title}}' listos."
+      loaded: "Haz click sobre cualquier archivo para verlo."
       
   project_disqs:
     index:
       place: "Discusiones sobre '{{title}}'"
       loaded: "Pulsa sobre alguna discusión para leerla."
-    show:
-      place: "{{title}}"
+
 
   project_indices:
     show:
       place: "Explorando {{title}}"
 
-  disqs:
-    browser:
-      title: "Discusiones"
-      new_disq: "Añadir una nueva discusión"
-    disq:
-      edit: "Modificar"
-      answer: "Añadir respuesta"
-      
   clips:
     clip:
       edit: "Editar"
