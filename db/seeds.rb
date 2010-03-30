@@ -29,7 +29,7 @@ class Generator
 
     user = User.first
 
-    ['Plataforma booka', 'Jardines interfaz', "Arquitectura y género"].each do |name|
+    ['Plataforma booka', 'Jardines interfaz', "Arquitectura y genero"].each do |name|
       create_project(user, site, name)
     end
   end
