@@ -1,4 +1,6 @@
 
-<% title t(:title) %>
 <% place_of @project %>
-<%= render 'documents/browser' %>
+
+<% content_for :browser do %>
+  <%= render 'documents/browser'  %>
+<% end %>

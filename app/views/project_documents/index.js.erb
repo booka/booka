@@ -1,0 +1,7 @@
+
+<%= js_project @project %>
+<%= js_place_of @project %>
+<%= js_partial_for :browser_viewport, '/documents/browser' %>
+<%= js_clear_page  %>
+<%= js_finish t('.loaded', :title => @project.title) %>
+

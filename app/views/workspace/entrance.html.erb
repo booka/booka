@@ -1,12 +1,6 @@
 
-<% title t(:title)  %>
+<script type="text/javascript">
+  var root_path = '<%= projects_path %>'
+</script>
 
-<% content_for :browser do %>
-  <ul class="projects">
-    <% @projects.each do |project| %>
-    <li class="project">
-      <%= link_to project.title, project.call %>
-    </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= place t('.welcome') %>

@@ -1,0 +1,3 @@
+class ProjectIndicesController < ApplicationController
+
+end

@@ -6,37 +6,6 @@ es:
   layouts:
     workspace:
 
-      
-  projects:
-    index:
-      title: "Entrada"
-      place: "Plataforma Booka"
-
-  project_calls:
-    show:
-      title: "Convocatoria"
-      place: "Convocatoria de '{{title}}'"
-
-  project_documents:
-    index:
-      place: "Archivos de '{{title}}'"
-    show:
-      place: "{{title}}"
-      
-  project_disqs:
-    index:
-      place: "Discusiones sobre '{{title}}'"
-    show:
-      place: "{{title}}"
-
-  disqs:
-    browser:
-      title: "Discusiones"
-      new_disq: "Añadir una nueva discusión"
-    disq:
-      edit: "Modificar"
-      answer: "Añadir respuesta"
-      
   documents:
     browser:
       title: "Archivos"
@@ -46,7 +15,59 @@ es:
       new_clip_auto: "Añadir un enlace externo"
     document:
       edit: "Editar documento"
+    show:
+      place: "{{title}}"
+      loaded: "Archivo '{{title}}' listo."
+    form:
+      new: "Añadir al archivo de '{{title}}'"
+      update: "Editar '{{title}}'"
 
+
+
+  projects:
+    index:
+      title: "Entrada"
+      place: "Plataforma Booka"
+      loaded: "Pulsa sobre las investigaciones para empezar."
+
+  project_calls:
+    show:
+      title: "Convocatoria"
+      place: "Convocatoria de '{{title}}'"
+      loaded: "Convocatoria cargada."
+
+  project_documents:
+    index:
+      place: "Archivos de '{{title}}'"
+      loaded: "Archivos de '{{title}}' listos."
+      
+  project_disqs:
+    index:
+      place: "Discusiones sobre '{{title}}'"
+      loaded: "Pulsa sobre alguna discusión para leerla."
+    show:
+      place: "{{title}}"
+
+  project_indices:
+    show:
+      place: "Explorando {{title}}"
+
+  disqs:
+    browser:
+      title: "Discusiones"
+      new_disq: "Añadir una nueva discusión"
+    disq:
+      edit: "Modificar"
+      answer: "Añadir respuesta"
+      
   clips:
     clip:
       edit: "Editar"
+
+  indices:
+    browser:
+      title: "Índice general"
+
+  workspace:
+    entrance:
+      welcome: "Bienvenidx"

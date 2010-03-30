@@ -1,9 +1,9 @@
 
-<% title t(:title)  %>
-<% place t('.place', :title => @call.title) %>
+<% place_of @call %>
 
-
-<%= render 'projects/browser' %>
+<% content_for :browser do %>
+  <%= render 'projects/browser' %>
+<% end %>
 
 <%= render_page @call %>
 

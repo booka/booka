@@ -11,6 +11,17 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
 
+  def client
+    JsHelper.instance
+  end
+
+  class JsHelper
+    include Singleton
+    include ActionView::Helpers::JavaScriptHelper
+    include ClientHelper
+    include ActionView::Partials
+  end
+
   protected
   def load_project
     @project = Project.find(params[:project_id])

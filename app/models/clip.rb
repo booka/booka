@@ -1,17 +1,17 @@
 
 class Clip < Bok
   validates_presence_of :project_id, :content_type
+  include AutoHtml
 
   def body_rendered
     if content_type == 'text/html'
       self.body
     else
-      body_html
+      to_html
     end
   end
 
-  private
-  def body_html
+  def to_html
     auto_html(self.body) do
       html_escape
       image

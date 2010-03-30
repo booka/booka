@@ -1,3 +1,6 @@
 
 <% place_of @project %>
-<%= render 'disqs/browser' %>
+
+<% content_for :browser do %>
+  <%= render 'disqs/browser'  %>
+<% end %>

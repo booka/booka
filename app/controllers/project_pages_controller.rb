@@ -1,0 +1,3 @@
+class ProjectPagesController < ApplicationController
+
+end

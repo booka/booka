@@ -1,4 +1,6 @@
 
-<% title t(:title)  %>
 <% place t('.place') %>
-<%= render 'projects/browser' %>
+
+<% content_for :browser do %>
+  <%= render 'projects/browser' %>
+<% end %>

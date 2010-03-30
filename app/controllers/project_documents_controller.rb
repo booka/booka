@@ -1,8 +1,10 @@
 class ProjectDocumentsController < ApplicationController
   inherit_resources
-  defaults :resource_class => Project, :collection_name => 'documents', :instance_name => 'document'
+  respond_to :html, :xml, :json, :js
+  defaults :resource_class => Document, :collection_name => 'documents', :instance_name => 'document'
   before_filter :load_project
   belongs_to :project
+  include JsBookaHelper
 
   def index
     @documents = @project.documents.all
@@ -15,12 +17,19 @@ class ProjectDocumentsController < ApplicationController
   end
 
   def new
-    @document = @project.new_document
-    new!
+    @document = @project.new_document(current_user, params[:document])
+    new! do |action|
+      action.js { render :js => client.show_dialog(render_to_string(:partial => 'form'))}
+    end
   end
 
   def create
-    @document = @project.new_document(params[:document], current_user)
-    create!
+    @document = @project.new_document(current_user, params[:document])
+    create! do |success, failure|
+      success.html { redirect_to @document}
+      failure.html { render :action => 'new'}
+      success.js { render :js => "$.modal.close();$.booka.clear('browser');$.address.value('#{document_path(@document)}');"}
+      failure.js { render :action => 'failure.js'}
+    end
   end
 end

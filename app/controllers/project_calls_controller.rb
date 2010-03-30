@@ -3,6 +3,6 @@ class ProjectCallsController < ApplicationController
   
   def show
     @projects = Project.all
-    @call = @project.call
+    @call = @project.calls.first
   end
 end

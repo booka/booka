@@ -1,0 +1,54 @@
+
+@import "variables";
+
+.overlay {
+    background: black;
+    position:fixed;
+    left:0; top: 0; right: 0; bottom: 0;
+    filter:alpha(opacity=50);
+    opacity: 0.5;
+    z-index:50;
+    display:none;
+}
+
+#simplemodal-overlay {
+    background: black;
+    position:fixed;
+    left:0; top: 0; right: 0; bottom: 0;
+    filter:alpha(opacity=50);
+    opacity: 0.5;
+    z-index:50;
+    display:none;
+}
+
+
+
+#simplemodal-container a.modalCloseImg {
+    background:url(/images/x.png) no-repeat; /* adjust url as required */
+    width:25px;
+    height:29px;
+    display:inline;
+    z-index:3200;
+    position:absolute;
+    top:-5px;
+    right:-8px;
+    cursor:pointer;
+}
+
+.dialog {
+    background-color: @azul;
+    border: 1px solid @azuloscuro;
+    color: white;
+}
+
+.dialog h1 {font-size: 150%; margin: 10px 0 0 10px;}
+.dialog form {margin: 10px;}
+fieldset label {display: block;}
+fieldset li {margin: 10px 0;}
+fieldset li.commit {margin: 0;}
+fieldset.buttons {margin-top: 10px;}
+p.inline-errors {color: @rojo;}
+
+form input[type=text], form input[type=password] {
+    border: 1px solid white; padding: 2px;
+}

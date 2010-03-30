@@ -1,12 +1,12 @@
 <div id="page">
-  <div class="document">
+  <div id="document_<%= document.id %>" class="document">
     <% if can? :manage, document %>
       <div class="floating_actions">
-        <%= iminbutton_to t('.debug'), "bolt", edit_project_document_path(document.project, document) %>
-        <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_project_document_path(document.project, document) %>
+        <%= iminbutton_to t('.debug'), "bolt", edit_document_path(document) %>
+        <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_document_path(document) %>
       </div>
     <% end %>
-    <h1><%= document.title %></h1>
+    <h1 class="title"><%= document.title %></h1>
   </div>
 
   <div id="clips">
@@ -14,7 +14,7 @@
   </div>
 
   <% if can? :manager, document %>
-    <%= slots_for document, nil %>
+    <%= slot_for document %>
   <% end %>
 
 </div>

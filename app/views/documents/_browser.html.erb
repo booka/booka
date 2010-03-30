@@ -1,18 +1,16 @@
-
-<% content_for :browser do %>
-  <div class="browser document_browser">
-    <h1><%= t('.title') %></h1>
-    <div class="list documents">
-      <% @documents.each do |document| %>
-        <% div_for(document, :class => 'item') do  %>
-          <%= link_to document.title, project_document_path(@project, document) %>
-        <% end %>
+<div class="browser document_browser">
+  <h1><%= t('.title') %></h1>
+  <div class="list documents">
+    <% @documents.each do |document| %>
+      <% div_for(document, :class => 'item') do  %>
+        <%= link_to_ajax document.title, document_path(document), :class => 'title' %>
       <% end %>
-    </div>
-    <div class="actions">
-      <% if can? :manage, @project %>
-        <%= ibutton_to t('.new_document'), 'plus_alt', new_project_document_path(@project) %>
-      <% end %>
-    </div>
+    <% end %>
   </div>
-<% end %>
+  <div class="actions">
+    <% if can? :manage, @project %>
+      <%= ibutton_to t('.new_document'), 'plus_alt', new_project_document_path(@project) %>
+    <% end %>
+  </div>
+</div>
+

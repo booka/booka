@@ -1,12 +1,5 @@
 <ul id="site_navigation">
-  <% if has_project? %>
-    <%= navigate_to :entrance, project_project_call_path(@project) %>
-    <%= navigate_to :archives, project_documents_path(@project)  %>
-    <%= navigate_to :edition, project_disqs_path(@project)  %>
-    <%= navigate_to :booka, project_documents_path(@project)  %>
-  <% else %>
-    <%= navigate_to :entrance, root_path %>
-  <% end %>
+  <%= render '/layouts/site_navigation' %>
 </ul>
 
 <div id="messages">
@@ -14,7 +7,7 @@
     <% if current_user %>
       <%= link_to current_user.name, root_path %>
     <% else %>
-      <%= link_to 'login', new_user_session_path(:url => request.path) %>
+      <%= dialog_to 'login', new_user_session_path(:url => request.path) %>
     <% end %>
   </div>
 
@@ -26,6 +19,9 @@
 
   <div id="place">
     <%= yield :place  %>
+  </div>
+
+  <div id="flash">
   </div>
 </div>
 

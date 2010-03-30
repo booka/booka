@@ -1,0 +1,13 @@
+
+<div class="dialog">
+  <h1><%=  t('.update', :title => @document.title) %></h1>
+  <% semantic_form_for(@document) do |form| %>
+    <%= form.error_messages %>
+    <% form.inputs do %>
+      <%= form.input :title %>
+    <% end %>
+    <% form.buttons do %>
+      <%= form.commit_button %>
+    <% end %>
+  <% end %>
+</div>

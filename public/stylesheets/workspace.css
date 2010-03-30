@@ -166,6 +166,13 @@ a.sprite-nav {
 }
 a.sprite-nav:hover { border-color: #efefef; }
 a.sprite-nav.selected { border-color: #efefef; }
+#flash p {
+  padding: 4px 0 0px 10px;
+  color: #00aeef;
+  background-color: #feff8f;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
 .iconic {
   display: block;
   overflow: hidden;

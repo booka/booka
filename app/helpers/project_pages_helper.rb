@@ -1,0 +1,2 @@
+module ProjectPagesHelper
+end

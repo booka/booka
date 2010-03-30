@@ -1,6 +1,6 @@
 class WorkspaceController < ApplicationController
 
   def entrance
-    @projects = Project.all
+    @remote = true
   end
 end

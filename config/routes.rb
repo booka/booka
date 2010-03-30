@@ -4,8 +4,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources(:projects, :as => 'investigaciones') do |project|
     project.resource(:project_call, :as => 'convocatoria')
+    project.resource(:index, :controller => 'project_indexes', :as => 'explorar')
     project.resources(:documents, :controller => 'project_documents', :as => 'archivos')
     project.resources(:disqs, :controller => 'project_disqs', :as => 'discusiones')
+    #project.resources(:pages, :controller => 'project_pages',  :as => 'explorar')
   end
 
   map.resources(:disqs, :as => 'discusion') do |disq|
@@ -18,5 +20,5 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => 'projects', :action => 'index'
 
-  map.entrance '/entrada', :controller => 'workspace', :action => 'entrance'
+  map.ui '/ui', :controller => 'workspace', :action => 'entrance'
 end

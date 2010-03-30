@@ -1,6 +1,9 @@
 
 <% place_of @disq %>
-<%= render 'disqs/browser'  %>
+<% content_for :browser do %>
+  <%= render 'disqs/browser'  %>
+<% end %>
+
 
 <div id="discussion">
   <h1><%= @disq.title %></h1>

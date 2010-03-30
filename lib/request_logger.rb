@@ -9,12 +9,12 @@ class RequestLogger
 
   def _call(env)
     @start = Time.now
-    log = true if env['PATH_INFO'].match /^.*.json$/
+    log = true if env['PATH_INFO'].match /^.*.js$/
     query(env, log) if log
     @status, @headers, @response = @app.call(env)
     @stop = Time.now
     response(@start, @status, @headers, @response) if log
-    sleep(2) if log
+    #sleep(2) if log
     [@status, @headers, @response]
   end
 

@@ -1,0 +1,14 @@
+<div class="dialog">
+  <h1>Identificarse</h1>
+  <% semantic_form_for @user_session do |form| %>
+    <%= hidden_field_tag :url, params[:url] %>
+    <% form.inputs do %>
+      <%= form.input :login %>
+      <%= form.input :password %>
+    <% end %>
+
+    <% form.buttons do %>
+      <%= form.commit_button %>
+    <% end %>
+  <% end %>
+</div>
