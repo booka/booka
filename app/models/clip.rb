@@ -13,7 +13,6 @@ class Clip < Bok
 
   def to_html
     auto_html(self.body) do
-      html_escape
       image
       youtube :width => 400, :height => 250
       link :target => "_blank", :rel => "nofollow"

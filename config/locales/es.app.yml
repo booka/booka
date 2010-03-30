@@ -4,7 +4,9 @@ es:
   
     
   layouts:
-    workspace:
+    navigation:
+      login: "Entrar"
+
 
   documents:
     browser:
@@ -29,8 +31,14 @@ es:
     answer:
       edit: "Modificar"
       answer: "Añadir respuesta"
+      no_answers: "Sin responder."
+      answers: "Respuestas:"
     show:
-      place: "{{title}}"
+      place: "Discusión: {{title}}"
+    types:
+      proposal: Propuesta
+      consensus: Consenso
+      question: Pregunta
 
   projects:
     index:
@@ -61,9 +69,9 @@ es:
       loaded: "Pulsa sobre alguna discusión para leerla."
 
 
-  project_indices:
+  project_indexes:
     show:
-      place: "Explorando {{title}}"
+      place: "Explorando: {{title}}"
 
   clips:
     clip:

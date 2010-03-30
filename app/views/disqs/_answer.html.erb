@@ -1,18 +1,22 @@
 
 <% div_for disq do %>
-  <div class="type"><%= disq.content_type %></div>
+  <div class="type"><%= t("disqs.types.#{disq.content_type}") %></div>
   <div class="body">
     <%= disq.body %>
     <div class="actions">
-      <%= dialog_to t('.edit'), edit_disq_path(disq, :top_id => top.id) %>
+      <%= ibutton_to t('.edit'), 'pen_alt_stroke', edit_disq_path(disq, :top_id => top.id) %>
     </div>
   </div>
   <div class="children">
-    <% subtree.keys.each do |child| %>
-      <%= render_disq child, subtree[child], top %>
-    <% end %>
-    <div class="actions">
-      <%= dialog_to t('.answer'), new_disq_path(:top_id => top.id, :parent_id => disq.id) %>
+    <h2><%= t('.answers') %></h2>
+    <div class="answers">
+      <%= content_tag(:p, t('.no_answers')) if subtree.size == 0 %>
+      <% subtree.keys.each do |child| %>
+        <%= render_answer child, subtree[child], top %>
+      <% end %>
+    </div>
+    <div class="actions answer">
+      <%= ibutton_to t('.answer'), 'plus_alt',new_disq_path(:top_id => top.id, :parent_id => disq.id) %>
     </div>
   </div>
 <% end %>

@@ -100,3 +100,9 @@ div#page:hover .slot {
   border: 1px solid white;
 }
 div#page a.slot:hover { border-color: #00aeef; }
+#page .clip p { margin: 10px 30px; }
+#page .clip img {
+  display: block;
+  margin: 10px auto;
+}
+#page .clip object { margin: 10px auto; }

@@ -1,17 +1,28 @@
 
 @import "variables";
 
+.rall {-webkit-border-radius: 10px; -moz-border-radius: 10px;}
+.rtop {-webkit-border-radius-topleft: 10px; -moz-border-radius-topleft: 10px;
+       -webkit-border-radius-topright: 10px; -moz-border-radius-topright: 10px;}
+
 #discussion {
     width: 92%;
     margin: 0 auto;
     padding: 10px 2%;
     -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
     background-color: @azul;
 }
 
 #discussion > h1 {font-size: 200%; color: white;}
 
-#discussion .disq {padding: 10px; margin-bottom: 10px; -webkit-border-radius: 10px; background-color: @azulclaro;}
-#discussion .disq .body {padding: 10px; margin-bottom: 10px; -webkit-border-radius: 10px; background-color: white; }
+#discussion .disq {padding: 10px; margin-bottom: 10px; .rall; background-color: @azul;}
+#discussion .disq .body {padding: 10px; margin-bottom: 10px; .rall; background-color: white; }
 
-#discussion .disq .children {padding: 10px; -webkit-border-radius: 10px; background-color: white; }
+#discussion .disq .children {background-color: white; .rall;}
+#discussion .disq .answers {padding: 10px 10px 0 10px;}
+
+#discussion .disq h2 {font-size: 120%; padding: 5px 10px; background-color: @azulclaro; .rtop;}
+#discussion .disq p {margin-bottom: 10px;}
+#discussion .disq .actions {width: 100%; overflow: hidden; }
+#discussion .disq .actions.answer {padding: 0 0 10px 10px; }

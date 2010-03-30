@@ -14,7 +14,9 @@
 #main {position: absolute; left: 0; right: 0; top: 80px; bottom: 0; background-color: @gris;}
 #browser_viewport {position: absolute; left: 0; top: 1px; bottom: 0; width: @browser_size; background-color: @azul;}
 #comm_viewport {position: absolute; right: 0; top: 1px; bottom: 0; width: @comm_size; background-color: @azul;}
-#content {position: absolute; left: @browser_size; right: @comm_size; top: 0; bottom: 0; background-color: @gris; }
+#content {position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: @gris; }
+#content.has_browser {left: @browser_size;}
+#content.has_comm {right: @comm_size;}
 #content_viewport {position: absolute; left: 10px; top: 10px; right: 10px; bottom: 10px; overflow-x: hidden;}
 
 #site_navigation {position: absolute; left: 10px; width: @browser_size; top: 0; bottom: 0;}
@@ -70,5 +72,5 @@ a.sprite-nav:hover, a.sprite-nav.selected {
 .browser .actions {
     position: absolute; left: 3px; height: 27px; right: 0; bottom: 0;
 }
-.browser .actions a {float: left; opacity: 0.5; border: 3px solid transparent; .rounded;}
-.browser .actions a:hover {opacity: 1; background-color: @azul;}
+.actions a {float: left; opacity: 0.5; border: 3px solid transparent; .rounded;}
+.actions a:hover {opacity: 1; background-color: @azul;}

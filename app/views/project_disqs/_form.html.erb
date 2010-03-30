@@ -4,7 +4,7 @@
     <%= form.error_messages %>
     <% form.inputs do %>
       <%= form.input :title %>
-      <%= form.input :content_type, :as => :select, :collection => {'Pregunta' => :question, 'Propuesta' => :proposal, 'Consenso' => :consensus} %>
+      <%= form.input :content_type, :as => :select, :collection => disq_types_collection %>
     <% end %>
     <% form.buttons do %>
       <%= form.commit_button %>

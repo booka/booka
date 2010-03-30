@@ -5,9 +5,9 @@
 <div id="messages">
   <div id="current_user">
     <% if current_user %>
-      <%= link_to current_user.name, root_path %>
+      <%= link_to current_user.name, user_sessions_path, :method => :delete %>
     <% else %>
-      <%= dialog_to 'login', new_user_session_path(:url => request.path) %>
+      <%= dialog_to t('.login'), new_user_sessions_path(:url => request.path) %>
     <% end %>
   </div>
 
@@ -26,9 +26,5 @@
 </div>
 
 <ul id="user_navigation">
-  <% if current_user %>
-    <%= navigate_to :login, project_documents_path(@project)  %>
-    <%= navigate_to :contact, project_documents_path(@project)  %>
-    <%= navigate_to :calendar, project_documents_path(@project)  %>
-  <% end %>
+  <%= render '/layouts/user_navigation' %>
 </ul>

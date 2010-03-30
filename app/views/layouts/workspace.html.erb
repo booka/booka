@@ -29,7 +29,7 @@
             <%= yield :browser %>
           </div>
         <% end %>
-        <div id="content">
+        <div id="content" class="<%= 'has_browser' if @workspace_settings[:browser] %> <%= 'has_comm' if @workspace_settings[:comm] %>">
           <div id="content_viewport">
             <%= yield  %>
           </div>

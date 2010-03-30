@@ -1,0 +1,7 @@
+<% if current_user %>
+  <%= navigate_to :login, user_profile_path  %>
+  <%= navigate_to :contact, user_activity_path  %>
+  <%= navigate_to :calendar, user_calendar_path  %>
+<% else %>
+  <%= navigate_to :login, new_user_sessions_path(:url => request.path)  %>
+<% end %>

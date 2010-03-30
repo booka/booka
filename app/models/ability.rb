@@ -12,7 +12,7 @@ class Ability
     end
 
     can(:manage, ProjectCall) do |call|
-      !user.nil?
+      false
     end
 
     can(:manage, Clip) do |clip|

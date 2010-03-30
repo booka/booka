@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources(:user_sessions, :as => 'sesion')
+  map.resource(:user_sessions, :as => 'sesion')
 
   map.resources(:projects, :as => 'investigaciones') do |project|
     project.resource(:project_call, :as => 'convocatoria')
@@ -8,6 +8,12 @@ ActionController::Routing::Routes.draw do |map|
     project.resources(:documents, :controller => 'project_documents', :as => 'archivos')
     project.resources(:disqs, :controller => 'project_disqs', :as => 'discusiones')
     #project.resources(:pages, :controller => 'project_pages',  :as => 'explorar')
+  end
+
+  map.resource(:user, :as => 'mi') do |user|
+    user.resource(:calendar, :controller => 'user_calendars', :as => 'calendario')
+    user.resource(:activity, :controller => 'user_activities', :as => 'actividad')
+    user.resource(:profile, :controller => 'user_profiles', :as => 'perfil')
   end
 
   map.resources(:disqs, :as => 'discusion') do |disq|

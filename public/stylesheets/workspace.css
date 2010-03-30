@@ -85,12 +85,14 @@ div.action:hover { color: #e1ebef; }
 }
 #content {
   position: absolute;
-  left: 340px;
-  right: 300px;
+  left: 0;
   top: 0;
+  right: 0;
   bottom: 0;
   background-color: #c6c8ca;
 }
+#content.has_browser { left: 340px; }
+#content.has_comm { right: 300px; }
 #content_viewport {
   position: absolute;
   left: 10px;
@@ -208,14 +210,14 @@ a.sprite-nav.selected { border-color: #efefef; }
   right: 0;
   bottom: 0;
 }
-.browser .actions a {
+.actions a {
   float: left;
   opacity: 0.5;
   border: 3px solid transparent;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.browser .actions a:hover {
+.actions a:hover {
   opacity: 1;
   background-color: #00aeef;
 }

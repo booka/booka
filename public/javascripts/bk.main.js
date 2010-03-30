@@ -1,5 +1,12 @@
 (function($) {
 
+    if (typeof console == "undefined" || typeof console.log == "undefined") {
+        console = {
+            log : function() {
+            }
+        };
+    }
+
     var tokens = {
         project : "none",
         user : "none",
@@ -56,10 +63,9 @@
     };
 
     var load_dialog = function(url) {
-        $.modal('<div class="loading">loading...</div>', {
+        $.modal('<div class="loading">loading... (' + url+ ')</div>', {
             close : false
         });
-        console.log("load dialog", url);
         url = /\?/.test(url) ? url.replace(/\?/, '.js?') : url + ".js";
         $.getScript(url);
     }
@@ -80,14 +86,14 @@
         //$('a[rel*=dialog:]').dialogs();
         
         $.address.change(function(event) {
-            $("#flash").html("<p>Cargando...<p>");
-            $.getScript(_getPath());
+            var path = _getPath();
+            $("#flash").html("<p>Cargando... (debug: " + path.substring(0, 30) + "...)<p>");
+            $.getScript(path);
         });
 
 
         var _getPath = function() {
             var path = $.address.value();
-            console.log("Path: '" + path + "'")
             if (path == "/") {
                 path = root_path;
             }

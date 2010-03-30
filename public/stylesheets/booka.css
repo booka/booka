@@ -103,6 +103,17 @@ pre.debug_dump:hover {
   height: auto;
   border: 1px solid #efefef;
 }
+.under_construction {
+  padding: 10px;
+  color: white;
+  border: 1px solid #005677;
+  background-color: #00aeef;
+}
+.under_construction h1 {
+  font-size: 200%;
+  margin-bottom: 10px;
+}
+.under_construction p { margin: 10px 0; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
@@ -264,12 +275,14 @@ div.action:hover { color: #e1ebef; }
 }
 #content {
   position: absolute;
-  left: 340px;
-  right: 300px;
+  left: 0;
   top: 0;
+  right: 0;
   bottom: 0;
   background-color: #c6c8ca;
 }
+#content.has_browser { left: 340px; }
+#content.has_comm { right: 300px; }
 #content_viewport {
   position: absolute;
   left: 10px;
@@ -387,14 +400,14 @@ a.sprite-nav.selected { border-color: #efefef; }
   right: 0;
   bottom: 0;
 }
-.browser .actions a {
+.actions a {
   float: left;
   opacity: 0.5;
   border: 3px solid transparent;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.browser .actions a:hover {
+.actions a:hover {
   opacity: 1;
   background-color: #00aeef;
 }
@@ -490,6 +503,12 @@ div#page:hover .slot {
   border: 1px solid white;
 }
 div#page a.slot:hover { border-color: #00aeef; }
+#page .clip p { margin: 10px 30px; }
+#page .clip img {
+  display: block;
+  margin: 10px auto;
+}
+#page .clip object { margin: 10px auto; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
@@ -528,11 +547,22 @@ a:hover { text-decoration: underline; }
   font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
 }
 div.action:hover { color: #e1ebef; }
+.rall {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+.rtop {
+  -webkit-border-radius-topleft: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-radius-topright: 10px;
+  -moz-border-radius-topright: 10px;
+}
 #discussion {
   width: 92%;
   margin: 0 auto;
   padding: 10px 2%;
   -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
   background-color: #00aeef;
 }
 #discussion > h1 {
@@ -543,19 +573,37 @@ div.action:hover { color: #e1ebef; }
   padding: 10px;
   margin-bottom: 10px;
   -webkit-border-radius: 10px;
-  background-color: #e1ebef;
+  -moz-border-radius: 10px;
+  background-color: #00aeef;
 }
 #discussion .disq .body {
   padding: 10px;
   margin-bottom: 10px;
   -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
   background-color: white;
 }
 #discussion .disq .children {
-  padding: 10px;
-  -webkit-border-radius: 10px;
   background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
 }
+#discussion .disq .answers { padding: 10px 10px 0 10px; }
+#discussion .disq h2 {
+  font-size: 120%;
+  padding: 5px 10px;
+  background-color: #e1ebef;
+  -webkit-border-radius-topleft: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-radius-topright: 10px;
+  -moz-border-radius-topright: 10px;
+}
+#discussion .disq p { margin-bottom: 10px; }
+#discussion .disq .actions {
+  width: 100%;
+  overflow: hidden;
+}
+#discussion .disq .actions.answer { padding: 0 0 10px 10px; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
@@ -610,3 +658,60 @@ div.action:hover { color: #e1ebef; }
   color: black;
   font-size: 120%;
 }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.debug {
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-size: 65%;
+  color: gray;
+}
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+.rounded {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.button {
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+}
+.action {
+  background-color: #00aeef;
+  color: white;
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+}
+div.action:hover { color: #e1ebef; }
+.calendar {
+  color: white;
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  background-color: #08362b;
+  padding: 10px;
+  width: 960px;
+  margin: 10px auto;
+}
+.calendar h1 {
+  font-size: 400%;
+  margin: 0 0 40px 100px;
+}
+.calendar table {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.calendar td.name { width: 100px; }
+.calendar td { padding: 3px 5px; }
