@@ -72,7 +72,7 @@ div.action:hover { color: #e1ebef; }
   left: 0;
   top: 1px;
   bottom: 0;
-  width: 340px;
+  width: 300px;
   background-color: #00aeef;
 }
 #comm_viewport {
@@ -83,7 +83,7 @@ div.action:hover { color: #e1ebef; }
   width: 300px;
   background-color: #00aeef;
 }
-#content {
+#content_viewport {
   position: absolute;
   left: 0;
   top: 0;
@@ -91,9 +91,9 @@ div.action:hover { color: #e1ebef; }
   bottom: 0;
   background-color: #c6c8ca;
 }
-#content.has_browser { left: 340px; }
-#content.has_comm { right: 300px; }
-#content_viewport {
+#content_viewport.has_browser { left: 300px; }
+#content_viewport.has_comm { right: 300px; }
+#content {
   position: absolute;
   left: 10px;
   top: 10px;
@@ -117,9 +117,9 @@ div.action:hover { color: #e1ebef; }
 }
 #messages {
   position: absolute;
-  left: 340px;
+  left: 320px;
   top: 0;
-  right: 300px;
+  right: 320px;
   bottom: 0;
 }
 #current_user {
@@ -163,7 +163,7 @@ a.sprite-nav {
   overflow: hidden;
   text-indent: -10000px;
   padding: 1px;
-  margin: 3px 3px 0 3px;
+  margin: 3px 0px 0 3px;
   border: 3px solid white;
 }
 a.sprite-nav:hover { border-color: #efefef; }

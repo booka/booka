@@ -17,7 +17,7 @@ Rails::Initializer.run do |config|
   #config.gem 'translator', :source => 'http://gems.github.com'
   config.time_zone = 'UTC'
 
-  if RAILS_ENV == "development"
+  if RAILS_ENV == "development" && false
     puts "Setup request logger."
     config.middleware.use "RequestLogger"
   end

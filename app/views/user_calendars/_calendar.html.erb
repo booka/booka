@@ -1,0 +1,18 @@
+<div class="calendar">
+  <h1>2010</h1>
+
+  <table>
+    <% %w(Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre).each do |month| %>
+      <tr>
+        <td class="month_name"><%= month %></td>
+        <% 1.upto(31) do |number| %>
+          <td><%= number %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="under_construction">
+  <p>(en construcción)</div>
+</div>

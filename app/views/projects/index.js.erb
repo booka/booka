@@ -1,4 +1,7 @@
 
+$.booka.layout(true, true);
+$("#content").html('');
 <%= js_place t('.place') %>
 <%= js_partial_for :browser_viewport, 'projects/browser' %>
+
 <%= js_finish t('.loaded') %>

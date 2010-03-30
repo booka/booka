@@ -31,21 +31,21 @@ module JsBookaHelper
 
   def js_render_disq(disq)
     content = render(:partial => 'disqs/disq', :locals => {:disq => disq, :tree => disq.subtree.arrange})
-    js_content_for('content_viewport', content)
+    js_content_for('content', content)
   end
 
   def js_render_index(index)
     content = render(:partial => 'indexes/index', :object => index)
-    js_content_for('content_viewport', content)
+    js_content_for('content', content)
   end
 
   def js_render_document(bok)
     content = render(:partial => 'documents/document', :object => bok)
-    js_content_for('content_viewport', content)
+    js_content_for('content', content)
   end
 
   def js_clear_page
-    js_content_for('content_viewport', '')
+    js_content_for('content', '')
   end
 
   def js_finish(message)

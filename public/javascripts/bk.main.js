@@ -7,6 +7,10 @@
         };
     }
 
+    var layout = {
+        left: 0,
+        right: 0
+    }
     var tokens = {
         project : "none",
         user : "none",
@@ -48,8 +52,35 @@
         },
         clear : function(param) {
             tokens[param] = "none";
+        },
+        layout: function(browser, comm) {
+            if (browser) {
+                setLayoutLeft(layout.left, layout.left);
+            } else {
+                setLayoutLeft(10, 0);
+            }
+            if (comm) {
+                setLayoutRight(layout.right, layout.right);
+            } else {
+                setLayoutRight(10, 0);
+            }
         }
     }
+
+    var setLayoutLeft = function(content, browser) {
+        $("#content_viewport").css('left', content);
+        $("#browser_viewport").animate({
+            width: browser
+        }, 500);
+    }
+
+    var setLayoutRight = function(content, browser) {
+        $("#content_viewport").css('right', content);
+        $("#comm_viewport").animate({
+            width: browser
+        }, 500);
+    }
+
 
     $.fn.dialogs = function (fn) {
         $(this).click(function() {
@@ -84,6 +115,8 @@
     $(function() {
         ajaxize();
         //$('a[rel*=dialog:]').dialogs();
+        layout.left = $("#content_viewport").css('left')
+        layout.right = $("#content_viewport").css('right')
         
         $.address.change(function(event) {
             var path = _getPath();
