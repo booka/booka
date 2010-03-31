@@ -94,7 +94,7 @@
     };
 
     var load_dialog = function(url) {
-        $.modal('<div class="loading">loading... (' + url+ ')</div>', {
+        $.modal('<div class="loading">loading... </div>', {
             close : false
         });
         url = /\?/.test(url) ? url.replace(/\?/, '.js?') : url + ".js";
@@ -120,7 +120,7 @@
         
         $.address.change(function(event) {
             var path = _getPath();
-            $("#flash").html("<p>Cargando... (debug: " + path.substring(0, 30) + "...)<p>");
+            $("#flash").html("<p>Cargando... <p>");
             $.getScript(path);
         });
 
