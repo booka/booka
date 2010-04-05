@@ -1,0 +1,8 @@
+<div class="dialog">
+  <h1>Cerrar sesión</h1>
+  <% form_for(:user_session, @user_session, :url => user_sessions_path, :html => {:method => :delete}) do |form| %>
+    <p>¿Estás segurx de que quieres cerrar tu sesión de usuarix?<br/><br/></p>
+    <%= hidden_field_tag :url, params[:url] %>
+    <%= form.submit 'Cerrar sesión' %>
+  <% end %>
+</div>

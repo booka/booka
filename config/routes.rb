@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resource(:user_sessions, :as => 'sesion')
+  map.resource(:user_sessions, :as => 'sesion', :member => {:close => :get})
 
   map.resources(:projects, :as => 'investigaciones') do |project|
     project.resource(:project_call, :as => 'convocatoria')

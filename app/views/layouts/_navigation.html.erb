@@ -5,7 +5,7 @@
 <div id="messages">
   <div id="current_user">
     <% if current_user %>
-      <%= link_to current_user.name, user_sessions_path, :method => :delete %>
+      <%= link_to current_user.name, close_user_sessions_path(:url => request.path) %>
     <% else %>
       <%= dialog_to t('.login'), new_user_sessions_path(:url => request.path) %>
     <% end %>

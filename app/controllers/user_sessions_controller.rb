@@ -10,4 +10,14 @@ class UserSessionsController < ApplicationController
       failure.js { render :action => 'failure.js'}
     end
   end
+
+  def destroy
+    destroy! do |success|
+      success.html { redirect_to params[:url].blank? ? root_path : params[:url] }
+    end
+  end
+
+  def close
+    @user_session = current_user_session
+  end
 end

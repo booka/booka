@@ -1,4 +1,6 @@
-<%= slot_for clip.parent, clip %>
+<% if can? :manager, clip %>
+  <%= slot_for clip.parent, clip %>
+<% end %>
 <% div_for clip do %>
   <% if can? :manager, clip %>
     <div class="floating_actions">
