@@ -64,7 +64,24 @@
             } else {
                 setLayoutRight(10, 0);
             }
+        },
+        load: function(token) {
+            var path = _getPath(token);
+            $("#flash").html("<p>Cargando... <p>");
+            $.getScript(path);
         }
+    }
+
+    var _getPath = function(path) {
+        if (path == "/") {
+            path = root_path;
+        }
+        var params = "";
+        $.each(tokens, function(token, value) {
+            params += (params == "") ? "?" : "&";
+            params += token + "=" + value;
+        });
+        return path + ".js" + params;
     }
 
     var setLayoutLeft = function(content, browser) {
@@ -119,24 +136,11 @@
         layout.right = $("#content_viewport").css('right')
         
         $.address.change(function(event) {
-            var path = _getPath();
-            $("#flash").html("<p>Cargando... <p>");
-            $.getScript(path);
+            $.booka.load($.address.value());
         });
 
 
-        var _getPath = function() {
-            var path = $.address.value();
-            if (path == "/") {
-                path = root_path;
-            }
-            var params = "";
-            $.each(tokens, function(token, value) {
-                params += (params == "") ? "?" : "&";
-                params += token + "=" + value;
-            });
-            return path + ".js" + params;
-        }
+
     });
 
 })(jQuery);

@@ -7,7 +7,6 @@ class UserSessionsController < ApplicationController
     create! do |success, failure|
       success.html { redirect_to params[:url].blank? ? root_path : params[:url] }
       failure.html { render :action => 'new'}
-      success.js { render :action => 'success.js'}
       failure.js { render :action => 'failure.js'}
     end
   end
