@@ -1,6 +1,7 @@
 class Bok < ActiveRecord::Base
   has_ancestry
   acts_as_list :scope => "ancestry"
+  serialize :properties
 
   belongs_to :user
   belongs_to :project, :class_name => 'Project'

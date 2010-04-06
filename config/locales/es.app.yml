@@ -55,7 +55,7 @@ es:
   project_calls:
     show:
       title: "Convocatoria"
-      place: "Convocatoria de '{{title}}'"
+      place: "{{title}}"
       loaded: "Convocatoria cargada."
 
   project_documents:

@@ -1,0 +1,5 @@
+
+<% document = @clip.parent %>
+<%= js_render_document document %>
+<%= js_finish t('.loaded', :title => document.title) %>
+$.booka.dialog();

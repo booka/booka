@@ -2,4 +2,4 @@
 $.booka.clear('browser');
 $("#current_user").html('<a href="#" rel="dialog:<%=  close_user_sessions_path(:url => request.path)  %>"><%=  current_user.name %></a>');
 $.booka.load($.address.value());
-$.modal.close();
+$.booka.dialog();

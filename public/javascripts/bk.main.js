@@ -17,7 +17,11 @@
         browser : "none"
     }
 
-    $.booka = {
+    var current_editor = null;
+
+    $.booka = $.booka || {}
+
+    $.extend($.booka, {
         flash : function(message) {
             $("#flash").html("<p>" + message + "<p>");
             window.setTimeout(function() {
@@ -33,17 +37,34 @@
             $("#current_project").html(title);
             $("#site_navigation").html(navigation);
         },
+        rte : function(id) {
+            if (current_editor != null) {
+                CKEDITOR.remove(current_editor);
+            }
+            current_editor = CKEDITOR.replace( id , {toolbar : 'BookaToolbar'});
+        },
+        /**
+         * Show or hide dialog. If content != null it shows the dialog
+         */
         dialog : function(content) {
             $.modal.close();
-            $.modal(content, {
-                close : true
-            });
-            $.booka.dialogSetup();
+            $(".dialog").html('');
+            if (content != null) {
+                $.modal(content, {
+                    close : true
+                });
+                $.booka.dialogSetup();
+            }
         },
         dialogSetup : function() {
             var form = $(".dialog form");
             form.attr('action', form.attr('action') + '.js');
             form.ajaxForm({
+                beforeSerialize: function() {
+                  if (current_editor != null) {
+                      current_editor.updateElement();
+                  }
+                },
                 success : function(responseText, statusText) {
                 },
                 error : function(error) {
@@ -70,7 +91,7 @@
             $("#flash").html("<p>Cargando... <p>");
             $.getScript(path);
         }
-    }
+    });
 
     var _getPath = function(path) {
         if (path == "/") {

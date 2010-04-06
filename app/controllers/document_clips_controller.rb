@@ -23,7 +23,7 @@ class DocumentClipsController < ApplicationController
 
   def update
     update! do |success, failure|
-      success.html {redirect_to project_document_path(@document.project, @document)}
+      success.html {redirect_to document_path(@document)}
     end
   end
 

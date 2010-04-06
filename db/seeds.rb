@@ -38,8 +38,10 @@ class Generator
     project = site.new_project(user, :title => project_name)
     project.save!
 
-    call = project.new_call(user, :title => "Convocatoria de '#{project_name}'")
+    call = project.new_document(user, :title => "Convocatoria de '#{project_name}'")
     call.save!
+    project.properties = {:call => call.to_param }
+    project.save!
     1.upto(3) { call.new_clip(user, :body => paragraphs(5), :content_type => 'text/auto_html').save! }
     index = project.new_index(user, :title => project_name)
     index.body = generate_index_body
