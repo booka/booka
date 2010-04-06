@@ -37,13 +37,11 @@ class Generator
   def create_project(user, site, project_name)
     project = site.new_project(user, :title => project_name)
     project.save!
-
-    call = project.new_document(user, :title => "Convocatoria de '#{project_name}'")
-    call.save!
-    project.properties = {:call => call.to_param }
-    project.save!
+    
+    call = project.call
     1.upto(3) { call.new_clip(user, :body => paragraphs(5), :content_type => 'text/auto_html').save! }
-    index = project.new_index(user, :title => project_name)
+    
+    index = project.index
     index.body = generate_index_body
     index.save!
 
@@ -80,11 +78,11 @@ class Generator
   end
 
   def rand_image
-    " #{IMAGES[rand(IMAGES.size)]}\n "
+    "</p><p>#{IMAGES[rand(IMAGES.size)]}</p><p>"
   end
 
   def rand_video
-    " #{VIDEOS[rand(VIDEOS.size)]}\n "
+    "</p><p>#{VIDEOS[rand(VIDEOS.size)]}</p><p>"
   end
 
   def add_responses(user, disq, number)

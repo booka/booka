@@ -2,18 +2,20 @@
 class Project < Bok
 
   has_many :documents
+  after_create :create_default_call_and_index
 
   def add_user(user, level)
     Permission.create!(:bok_id => self.id, :user_id => user.id, :level => level.to_s)
   end
 
-  def calls
-    children_of_type(ProjectCall)
+  def call
+    Document.find self.properties[:call] if properties[:call]
   end
 
-  def new_call(user, params)
-    new_children_of_type(ProjectCall, user, params)
+  def index
+    Index.find self.properties[:index] if properties[:index]
   end
+
 
   def documents
     children_of_type(Document)
@@ -39,5 +41,15 @@ class Project < Bok
     new_children_of_type(Index, user, params)
   end
 
+  private
+  def create_default_call_and_index
+    call = self.new_document(self.user, :title => "Convocatoria de '#{self.title}'")
+    call.save!
+    index = self.new_index(self.user, :title => "Índice de '#{self.title}'")
+    index.save!
+    self.properties[:call] = call.to_param
+    self.properties[:index] = index.to_param
+    self.save!
+  end
 
 end

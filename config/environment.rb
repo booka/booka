@@ -14,8 +14,9 @@ Rails::Initializer.run do |config|
   config.gem 'authlogic'
   config.gem 'ancestry'
   config.gem 'cancan'
-  #config.gem 'translator', :source => 'http://gems.github.com'
+  
   config.time_zone = 'UTC'
+  config.load_paths << "#{RAILS_ROOT}/lib"
 
   if RAILS_ENV == "development" && false
     puts "Setup request logger."

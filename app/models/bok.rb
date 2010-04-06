@@ -12,6 +12,10 @@ class Bok < ActiveRecord::Base
   validates_presence_of :user_id
 
 
+  def after_initialize
+    self.properties ||= {}
+  end
+
   def children_of_type(children_class)
     self.children.scoped(:conditions => {:type => children_class.to_s})
   end

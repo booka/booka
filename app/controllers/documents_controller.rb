@@ -12,7 +12,7 @@ class DocumentsController < ApplicationController
 
   def edit
     edit! do |action|
-      action.js {render :js => client.show_dialog(render_to_string :partial => 'form')}
+      action.js {render :js => client.show_dialog(render_to_string( :partial => 'form' ))}
     end
   end
 

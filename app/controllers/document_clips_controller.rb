@@ -9,7 +9,7 @@ class DocumentClipsController < ApplicationController
   def new
     @clip = @document.new_clip(params[:clip], current_user)
     new! do |action|
-      action.js {render :js => client.show_dialog(render_to_string :partial =>'form')}
+      action.js {render :js => client.show_dialog(render_to_string(:partial =>'form'))}
     end
   end
 
