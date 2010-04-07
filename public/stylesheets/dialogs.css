@@ -92,3 +92,12 @@ form input[type=password] {
   border: 1px solid white;
   padding: 2px;
 }
+.tooltip {
+  display: none;
+  background: url(http://static.flowplayer.org/tools/img/tooltip/black_arrow_bottom.png);
+  padding: 40px 30px 10px 30px;
+  height: 72px;
+  width: 149px;
+  font-size: 11px;
+  color: #ffffff;
+}

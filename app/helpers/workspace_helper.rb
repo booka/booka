@@ -9,7 +9,7 @@ module WorkspaceHelper
   end
 
   def navigate_to(name, url)
-    content_tag(:li, link_to_ajax(t(name), url, :class => "sprite-nav sprite-nav-#{name}icon"))
+    content_tag(:li, link_to_ajax(t(name), url, :class => "sprite-nav sprite-nav-#{name}icon", :id => "navigate-to-#{name}"))
   end
 
   def render_page(bok)

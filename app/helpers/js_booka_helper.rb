@@ -66,4 +66,10 @@ module JsBookaHelper
     escape_javascript(render(:partial => partial))
   end
 
+  def js_tooltip_for(anchor_id, &block)
+    content = "<div class='tooltip'>" + capture(&block) + "</div>"
+    actions = "$.booka.tooltip('#{anchor_id}', '#{escape_javascript content}');"
+    concat(actions);
+  end
+
 end
