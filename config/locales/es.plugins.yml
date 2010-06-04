@@ -1,15 +1,10 @@
 
 es:
-  activerecord:
-    models:
-      user: "Cuenta de usuario"
-    attributes:
-      user:
-        username: "El nombre"
-        password: "La contraseña"
-        question: "La pregunta"
-        answer: "La respuesta"
-        password_confirmation: "La confirmación de la contraseña"
+  formtastic:
+    actions:
+      create: "Crear {{model}}"
+      update: "Guardar {{model}}"
+      
   authlogic:
     error_messages:
       login_blank: "no puede estar vacío."
@@ -24,7 +19,7 @@ es:
       not_approved: "Su cuenta no está aprovada"
       no_authentication_details: "El nombre y la contraseña son obligatorias."
     models:
-      user_session: "Sesión de usuario"
+      user_session: "sesión de usuario"
     attributes:
       user_session:
         username: "El nombre"

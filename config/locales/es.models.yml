@@ -1,0 +1,15 @@
+
+es:
+  activerecord:
+    models:
+      user: "cuenta de usuario"
+      project: "investigación"
+    attributes:
+      user:
+        username: "El nombre"
+        password: "La contraseña"
+        question: "La pregunta"
+        answer: "La respuesta"
+        password_confirmation: "La confirmación de la contraseña"
+      project:
+        title: "Nombre"

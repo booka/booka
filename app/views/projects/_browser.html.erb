@@ -3,6 +3,11 @@
 <ul class="browser projects">
   <% @projects.each do |project| %>
     <li class="project">
+      <% if can? :manage, project %>
+        <div class="floating_actions">
+          <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_project_path(project) %>
+        </div>
+      <% end %>
       <%= link_to_ajax h(project.title), project_project_call_path(project) %>
       <p><%= project.permissions.size %> personas colaborando.</p>
     </li>

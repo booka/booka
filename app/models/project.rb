@@ -3,6 +3,7 @@ class Project < Bok
 
   has_many :documents
   after_create :create_default_call_and_index
+  after_update :update_call_and_index
 
   def add_user(user, level)
     Permission.create!(:bok_id => self.id, :user_id => user.id, :level => level.to_s)
@@ -50,6 +51,11 @@ class Project < Bok
     self.properties[:call] = call.to_param
     self.properties[:index] = index.to_param
     self.save!
+  end
+
+  def update_call_and_index
+    self.call.update_attribute(:title,  "Convocatoria de '#{self.title}'")
+    self.index.update_attribute(:title, "Índice de '#{self.title}'")
   end
 
 end

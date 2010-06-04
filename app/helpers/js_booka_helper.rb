@@ -1,6 +1,6 @@
 module JsBookaHelper
   def js_place_of(bok)
-    js_place t('.place', :title => bok.title)
+    js_place t('.place', :title => h(bok.title))
   end
 
   def js_place(text)
@@ -10,7 +10,7 @@ module JsBookaHelper
   def js_project(project)
     if (params[:project] != project.id.to_s)
       content = escape_javascript render(:partial => '/layouts/site_navigation')
-      "$.booka.project('#{project.id}', '#{project.title}', '#{content}');"
+      "$.booka.project('#{project.id}', '#{h project.title}', '#{content}');"
     end
   end
 

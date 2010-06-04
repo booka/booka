@@ -1,0 +1,12 @@
+<div class="dialog">
+  <% semantic_form_for @project do |form| %>
+    <h1>Modificar la investigación '<%= h @project.title %>'</h1>
+    <%= form.error_messages %>
+    <% form.inputs do %>
+      <%= form.input :title %>
+    <% end %>
+    <% form.buttons do %>
+      <%= form.commit_button %>
+    <% end %>
+  <% end %>
+</div>
