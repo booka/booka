@@ -31,7 +31,7 @@ common: &default_settings
   # "All UI" then specify a semicolon separated list of up to three
   # distinct names.  This setting does not prevent you from manually
   # defining applications.
-  app_name: e3e
+  app_name: booka
 
   # When 'enabled' is turned on, the agent collects performance data
   # by inserting lightweight tracers on key methods inside the rails
@@ -186,4 +186,4 @@ production:
 staging:
   <<: *default_settings
   enabled: true
-  app_name: crestasylechugas.org (Staging)
+  app_name: booka (Staging)
