@@ -9,6 +9,16 @@ config.action_controller.consider_all_requests_local = false
 config.action_controller.perform_caching             = true
 config.action_view.cache_template_loading            = true
 
+ActionMailer::Base.smtp_settings = {
+  :enable_starttls_auto => true,
+  :address        => 'smtp.gmail.com',
+  :port           => 587,
+  :domain         => 'your.domain.com',
+  :authentication => :plain,
+  :user_name      => 'bookacode@gmail.com',
+  :password       => 'editorialabierta'
+}
+
 # See everything in the log (default is :info)
 # config.log_level = :debug
 

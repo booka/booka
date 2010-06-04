@@ -25,4 +25,6 @@ ActionController::Routing::Routes.draw do |map|
 
   map.ui '/ui', :controller => 'workspace', :action => 'entrance'
   map.root :controller => 'workspace', :action => 'about'
+  map.connect 'test_exception', :controller => 'workspace', :action => 'test_exception_notifier'
+
 end

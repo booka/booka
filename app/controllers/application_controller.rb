@@ -2,6 +2,7 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  include ExceptionNotification::Notifiable
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   layout 'workspace'
@@ -46,4 +47,8 @@ class ApplicationController < ActionController::Base
     @current_user = current_user_session && current_user_session.user
   end
 
+  protected
+  def render_optional_error_file(status_code)
+    render :template => "errors/500", :status => status_code, :layout => 'public'
+  end
 end

@@ -3,7 +3,7 @@
 <ul class="browser projects">
   <% @projects.each do |project| %>
     <li class="project">
-      <%= link_to_ajax project.title, project_project_call_path(project) %>
+      <%= link_to_ajax h(project.title), project_project_call_path(project) %>
       <p><%= project.permissions.size %> personas colaborando.</p>
     </li>
   <% end %>
