@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Plataforma booka</title>
+    <link rel="shortcut icon" href="/booka.ico" type="image/x-icon" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      function preload() {
+        $.get("<%= ui_path %>");
+      }
+<% if RAILS_ENV == 'production'  %>
+    $(function() {
+      setTimeout('preload();', 200);
+    });
+<% end %>
+    </script>
+    <%=  stylesheet_link_tag('about', 'icons') %>
+  </head>
+  <body>
+    <div id="page">
+      <h1>Plataforma booka</h1>
+      <%= link_to 'Entrar', ui_path, :class => 'enter' %>
+      <p>VIB[]K / B()()KA explora un modelo de edición en relación con la transformación que ha sufrido la industria editorial en las dos últimas décadas. Nuestro punto de partida es que el libro sea no sólo un soporte para transmitir conocimiento, sino una herramienta para producir conocimiento y generar riqueza colectiva. ¿Cómo podría un libro convertirse en una plataforma de investigación, conexión y cooperación? ¿Cómo podría la edición de libros orientar un proceso de construcción colectiva del conocimiento? Desde este enfoque, pensamos que se hace necesario repensar además de los formatos de distribución (licencias creative commomns, otras formas de gestión de los derechos de autor), los formatos de creación y presentación de sus contenidos</p>
+      <br/>
+      <%= image_tag 'ministerio_color.gif' %>
+    </div>
+  </body>
+</html>

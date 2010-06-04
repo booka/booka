@@ -22,8 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources(:documents, :as => 'archivos') do |document|
     document.resources(:clips, :controller => 'document_clips', :as => 'clips')
   end
-  
-  map.root :controller => 'workspace', :action => 'entrance'
 
   map.ui '/ui', :controller => 'workspace', :action => 'entrance'
+  map.root :controller => 'workspace', :action => 'about'
 end

@@ -23,6 +23,9 @@ Rails::Initializer.run do |config|
     config.middleware.use "RequestLogger"
   end
 
+  config.action_controller.resources_path_names = { :new => 'nuevo', :edit => 'cambiar' }
+  config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
+
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   config.i18n.default_locale = :es
