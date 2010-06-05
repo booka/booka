@@ -1,6 +1,6 @@
 
 <div class="dialog">
-  <h1><%= t('.new', :title => @project.title) %></h1>
+  <h1>Añadir un archivo a '<%= h @project.title %>'</h1>
   <% semantic_form_for([@document.project, @document]) do |form| %>
     <%= form.error_messages %>
     <% form.inputs do %>

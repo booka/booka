@@ -1,10 +1,10 @@
-$.booka.layout(true, true);
+$.booka.layout.set(true, true);
 <%= js_project @project %>
 <%= js_place_of @call %>
 <%= js_browser 'projects/browser' %>
 <%= js_render_document @call %>
 <%= js_finish t('.loaded') %>
 <% js_tooltip_for 'navigate-to-archives' do %>
-  La investigación '<%= @project.title %>' está en fase de presentación de propuestas. Pulsa aquí para verlas.
+  La investigación '<%= h @project.title %>' está en fase de presentación de propuestas. Pulsa aquí para verlas.
 <% end %>
 

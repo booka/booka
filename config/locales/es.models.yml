@@ -1,10 +1,20 @@
 
 es:
+  data:
+    project:
+      stage:
+        calls: "Presentación de propuestas"
+        edition: "Edición colectiva"
+        closed: "Investigación cerrada"
   activerecord:
     models:
       user: "cuenta de usuario"
       project: "investigación"
+      clip: "sección"
+      document: "archivo"
     attributes:
+      document:
+        title: "Título"
       user:
         username: "El nombre"
         password: "La contraseña"
@@ -13,3 +23,5 @@ es:
         password_confirmation: "La confirmación de la contraseña"
       project:
         title: "Nombre"
+        description: "Descripción"
+        stage: "Fase actual de la investigación"

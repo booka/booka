@@ -207,6 +207,15 @@ form input[type=password] {
   font-size: 11px;
   color: #ffffff;
 }
+.loading {
+  background-color: black;
+  color: white;
+}
+.loading p {
+  margin: 3px;
+  border: 1px solid white;
+  padding: 5px 10px;
+}
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
@@ -672,6 +681,22 @@ div.action:hover { color: #e1ebef; }
   padding: 5px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+}
+.project_properties {
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-size: 80%;
+  color: #c6c8ca;
+}
+.browser.projects .stage {
+  margin-top: 5px;
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-size: 80%;
+  color: #c6c8ca;
+}
+.browser.projects .collaborators {
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-size: 80%;
+  color: #c6c8ca;
 }
 .browser.projects .floating_actions a {
   opacity: 0.5;

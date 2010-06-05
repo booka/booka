@@ -10,13 +10,13 @@ module JsBookaHelper
   def js_project(project)
     if (params[:project] != project.id.to_s)
       content = escape_javascript render(:partial => '/layouts/site_navigation')
-      "$.booka.project('#{project.id}', '#{h project.title}', '#{content}');"
+      "$.booka.layout.project('#{project.id}', '#{h project.title}', '#{content}');"
     end
   end
 
   def js_browser(partial)
     if (params[:browser] != partial)
-      "$.booka.browser('#{partial}', '#{js_partial partial}');"
+      "$.booka.layout.browser('#{partial}', '#{js_partial partial}');"
     end
   end
 
@@ -49,17 +49,17 @@ module JsBookaHelper
   end
 
   def js_finish(message)
-    "$.booka.flash('#{escape_javascript message}');" +
+    "$.booka.layout.flash('#{escape_javascript message}');" +
       "$('a[rel*=address:]').address();"
   end
 
   def js_show_dialog(partial)
-    "$.booka.dialog('#{js_partial partial}');"
+    "$.booka.dialogs.show('#{js_partial partial}');"
   end
 
   def js_update_dialog(partial)
     "$('#simplemodal-container').html('#{js_partial partial}');" +
-      "$.booka.dialogSetup();"
+      "$.booka.dialogs.setup();"
   end
 
   def js_partial(partial)

@@ -5,4 +5,6 @@
   - vendor/plugins/*/javascripts
   - vendor/plugins/*/app/javascripts
 :source_files:
-  - app/javascripts/*.js
+  - app/javascripts/jquery.*.js
+  - app/javascripts/bk.core.js
+  - app/javascripts/bk.*.js

@@ -5,6 +5,14 @@ class Project < Bok
   after_create :create_default_call_and_index
   after_update :update_call_and_index
 
+  def stage
+    properties[:stage]
+  end
+
+  def stage=(stage)
+    properties[:stage] = stage
+  end
+
   def add_user(user, level)
     Permission.create!(:bok_id => self.id, :user_id => user.id, :level => level.to_s)
   end

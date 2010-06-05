@@ -58,6 +58,22 @@ div.action:hover { color: #e1ebef; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+.project_properties {
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-size: 80%;
+  color: #c6c8ca;
+}
+.browser.projects .stage {
+  margin-top: 5px;
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-size: 80%;
+  color: #c6c8ca;
+}
+.browser.projects .collaborators {
+  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-size: 80%;
+  color: #c6c8ca;
+}
 .browser.projects .floating_actions a {
   opacity: 0.5;
   float: right;

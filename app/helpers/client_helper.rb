@@ -1,5 +1,5 @@
 module ClientHelper
   def show_dialog(rendered)
-     "$.booka.dialog('#{escape_javascript rendered}');"
+     "$.booka.dialogs.show('#{escape_javascript rendered}');"
   end
 end

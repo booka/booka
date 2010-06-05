@@ -1,3 +1,4 @@
 
-
-$.booka.dialog();
+<%= js_partial_for :browser_viewport, 'projects/browser' %>
+<%= js_finish "La investigación '#{h @project.title}' ha sido actualizada." %>
+$.booka.dialogs.show();
