@@ -3,6 +3,12 @@
   <div class="list documents">
     <% @documents.each do |document| %>
       <% div_for(document, :class => 'item') do  %>
+        <% if can? :manage, document %>
+          <div class="floating_actions">
+            <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_document_path(document) %>
+          </div>
+        <% end %>
+
         <%= link_to_ajax document.title, document_path(document), :class => 'title' %>
       <% end %>
     <% end %>

@@ -12,9 +12,13 @@ es:
       project: "investigación"
       clip: "sección"
       document: "archivo"
+      disq: "discusión"
     attributes:
       document:
         title: "Título"
+      disq:
+        body: "Texto"
+        content_type: "¿Qué es?"
       user:
         username: "El nombre"
         password: "La contraseña"

@@ -78,7 +78,7 @@
     }
     
     var load_dialog = function(url) {
-        $.modal('<div class="loading"><p>loading... </p></div>', {
+        $.modal('<div class="loading"><p>Cargando, espera un momento... </p></div>', {
             close : false
         });
         url = /\?/.test(url) ? url.replace(/\?/, '.js?') : url + ".js";
