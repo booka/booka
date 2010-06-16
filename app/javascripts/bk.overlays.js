@@ -1,7 +1,5 @@
 (function($) {
 
-    $.booka = $.booka || {}
-
     $.extend($.booka, {
         tooltip : function(anchor_id, content) {
             var tooltip_id = anchor_id + '-tooltip';

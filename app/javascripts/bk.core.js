@@ -35,4 +35,14 @@
             }
         }
     });
+
+
+    $(document).ready(function() {
+        $.address.change(function() {
+            console.log("Loading...", $.address.value());
+            $.booka.core.load($.address.value());
+        });
+        console.log("Core loaded.");
+    });
+
 })(jQuery);
