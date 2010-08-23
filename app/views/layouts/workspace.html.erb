@@ -8,10 +8,11 @@
     <%=  stylesheet_link_tag('booka', 'icons') %>
     <% if RAILS_ENV == 'production' %>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+      <script src="http://js.pusherapp.com/1.6/pusher.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js"></script>
     <% else %>
-      <%= javascript_include_tag 'jquery.min.js' %>
+      <%= javascript_include_tag 'jquery.min.js', 'pusher.min.js', 'jquery.tools.min.js' %>
     <% end %>
-    <script type="text/javascript" src="http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js"></script>
     <%= sprockets_include_tag if @remote %>
     <%= javascript_include_tag 'ckeditor/ckeditor.js' , 'ckeditor/adapters/jquery.js' %>
   </head>
@@ -36,7 +37,18 @@
         </div>
         <% if @workspace_settings[:comm] %>
           <div id="comm_viewport">
-            <%= yield :comm %>
+            <div id="communicator">
+              <div class="output">...</div>
+              <div class="input">
+                <% form_tag(pusher_trigger_path) do  %>
+                  <%= hidden_field_tag 'channel_name' %>
+                  <%= hidden_field_tag 'event_name' %>
+                  <%= hidden_field_tag 'event[session_id]', session.id %>
+                  <%= text_field_tag 'event[body]', '' %>
+                  <input type="submit" value="Enviar" />
+                <% end %>
+              </div>
+            </div>
           </div>
         <% end %>
       </div>

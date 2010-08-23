@@ -5,7 +5,9 @@ class UserSessionsController < ApplicationController
 
   def create
     create! do |success, failure|
-      success.html { redirect_to params[:url].blank? ? root_path : params[:url] }
+      success.html do
+        redirect_to params[:url].blank? ? root_path : params[:url] 
+      end
       failure.html { render :action => 'new'}
       failure.js { render :action => 'failure.js'}
     end
