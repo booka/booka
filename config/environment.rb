@@ -14,6 +14,7 @@ Rails::Initializer.run do |config|
   config.gem 'authlogic'
   config.gem 'ancestry'
   config.gem 'cancan'
+  config.gem "pusher"
   
   config.time_zone = 'UTC'
   config.load_paths << "#{RAILS_ROOT}/lib"
@@ -30,6 +31,8 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   config.i18n.default_locale = :es
 end
+
+
 
 ExceptionNotification::Notifier.exception_recipients = %w(danigb@gmail.com)
 ExceptionNotification::Notifier.sender_address = %("Booka Application Error" <errors@plataformabooka.net>)

@@ -10,6 +10,10 @@ class WorkspaceController < ApplicationController
     render :action => 'about', :layout => 'public'
   end
 
+  def chat
+    render :action => 'chat', :layout => 'public'
+  end
+
   def test_exception_notifier
     raise 'Test exception notifier (booka).'
   end
