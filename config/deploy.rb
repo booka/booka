@@ -29,7 +29,7 @@ after "deploy", "deploy:cleanup"
 namespace :config do
   desc "copy shared configurations to current"
   task :copy_shared_configurations, :roles => [:app] do
-    %w[database.yml].each do |f|
+    %w[database.yml pusher.yml].each do |f|
       run "ln -nsf #{shared_path}/config/#{f} #{release_path}/config/#{f}"
     end
   end
@@ -48,9 +48,9 @@ namespace :deploy do
   end
 end
 
-namespace :backup do
+namespace :mysql do
   desc "Backup the remote production database"
-  task :mysql, :roles => :db, :only => { :primary => true } do
+  task :backup, :roles => :db, :only => { :primary => true } do
     filename = "#{application}.dump.#{Time.now.to_i}.sql.bz2"
     file = "/tmp/#{filename}"
     on_rollback { delete file }

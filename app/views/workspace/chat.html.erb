@@ -1,0 +1,37 @@
+<% content_for :head do %>
+  <script src="http://js.pusherapp.com/1.6/pusher.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    (function($) {
+      Pusher.log = function() {
+        if (window.console) window.console.log.apply(window.console, arguments);
+      };
+      // Create a Pusher server object with your app's key
+      var server = new Pusher('10b14a3b8e2d5abdb762', 'test_channel');
+      // Bind to server events
+      server.bind('message', function(data) {
+        $("#simple .output").append("<div>" + data.body + "</div>");
+      })
+
+      $().ready(function() {
+        $("#message").submit(function() {
+          $.post(this.action, $(this).serialize())
+          this.reset()
+          return false
+        })
+      });
+    })(jQuery);
+
+
+  </script>
+<% end %>
+
+<div id="simple" class="chat">
+  <div class="output"><div>no output</div></div>
+  <form action="/pusher/trigger" id="message" method="POST">
+    <input type="hidden" name="channel_name" value="test_channel" />
+    <input type="hidden" name="event_name" value="message" />
+    <input type="text" name="event[body]"  />
+    <input type="submit" value="Send" />
+  </form>
+</div>

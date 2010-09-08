@@ -25,7 +25,10 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.ui '/ui', :controller => 'workspace', :action => 'entrance'
+  map.chat '/chat', :controller => 'workspace', :action => 'chat'
   map.root :controller => 'workspace', :action => 'about'
   map.connect 'test_exception', :controller => 'workspace', :action => 'test_exception_notifier'
+  map.pusher_trigger '/pusher/trigger', :controller => 'pusher', :action => 'trigger'
+  map.connect '/pusher/:action', :controller => 'pusher'
 
 end
