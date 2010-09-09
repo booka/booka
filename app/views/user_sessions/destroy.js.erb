@@ -2,6 +2,7 @@ console.log("UserSession - destroy");
 $("#current_user").html('<a href="#" rel="dialog:<%=  new_user_sessions_path(:url => request.path)  %>">Entrar</a>');
 with($.booka) {
   layout.userNavigation(<%= js_partial '/layouts/user_navigation' %>);
+  layout.browser('none', '');
   core.load($.address.value());
   dialogs.show();
   layout.flash("Tu sesión ha sido cerrada.");

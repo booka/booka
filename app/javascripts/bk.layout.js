@@ -33,7 +33,9 @@
             },
             browser : function(token, content) {
                 tokens.browser = token;
-                $("#browser_viewport").html(content);
+                if (content != null) {
+                    $("#browser_viewport").html(content);
+                }
             },
             requestBrowser : function(token, path) {
                 console.log("Current browser : " + tokens.browser + " requested: " + token);

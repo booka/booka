@@ -2,8 +2,9 @@ console.log("UserSession - create");
 
 $("#current_user").html('<a href="#" rel="dialog:<%=  close_user_sessions_path(:url => request.path)  %>"><%=  current_user.name %></a>');
 with($.booka) {
-  core.load($.address.value());
   layout.userNavigation(<%= js_partial '/layouts/user_navigation' %>);
   layout.flash(<%= js_str "Hola #{current_user.name}" %>);
+  layout.browser('none');
+  core.load($.address.value());
   dialogs.close();
 }

@@ -1,7 +1,8 @@
-$.modal.close();
-$.booka.layout.set(true, true);
-<%= js_project @project %>
-<%= js_place_of @document %>
-<%= js_browser 'documents/browser'  %>
-<%= js_render_document @document %>
-<%= js_finish t('.created', :title => @document.title) %>
+console.log("ProjectDocuments - create");
+
+with($.booka) {
+  // reload the browser to reflect the changes
+  layout.browser('documents', <%= js_partial '/documents/browser' %>);
+  dialogs.close();
+  layout.flash(<%= js_str "Documento '#{@document.title}' añadido al archivo." %>);
+}
