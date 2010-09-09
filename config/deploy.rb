@@ -75,7 +75,7 @@ namespace :mysql do
       puts data
     end
     get file, "tmp/#{filename}"
-    # `mysql -u root -p booka < tmp/#{filename}`
+    #`mysql -u root -p booka < tmp/#{filename}`
     # delete file
   end
 end

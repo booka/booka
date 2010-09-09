@@ -17,13 +17,12 @@
 #  created_at   :datetime
 #  updated_at   :datetime
 #
-
 class Index < Bok
 
   def each(&block)
     if body
       body.each do |line|
-        yield Pointer.new(line)
+        yield Pointer.new(line) unless line.blank?
       end
     end
   end

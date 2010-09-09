@@ -1,5 +1,5 @@
 <div id="page">
-  <div id="index_<%= index.id %>" class="index">
+  <div id="index_<%= index.id %>" class="head index">
     <h1><%= t('.title', :title => @project.title) %></h1>
     <% index.each do |pointer| %>
       <% div_for(pointer, :class => 'item') do  %>

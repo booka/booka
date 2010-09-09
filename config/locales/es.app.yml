@@ -24,6 +24,10 @@ es:
       new: "Añadir al archivo de '{{title}}'"
       update: "Editar '{{title}}'"
 
+  document_clips:
+    create:
+      created: "Se ha añadido una nueva sección"
+
   disqs:
     browser:
       title: "Discusiones"
@@ -48,7 +52,7 @@ es:
 
   indexes:
     index:
-      title: "Índice de {{title}}"
+      title: "Índice de '{{title}}'"
     browser:
       title: "Índice"
 
@@ -72,6 +76,7 @@ es:
   project_indexes:
     show:
       place: "Explorando: {{title}}"
+      loaded: "Índice cargado"
 
   clips:
     clip:

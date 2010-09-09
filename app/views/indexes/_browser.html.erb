@@ -1,11 +1,10 @@
-
-
 <div class="browser indice_browser">
   <h1><%= t('.title') %></h1>
   <div class="list indices">
     <% @index.each do |pointer| %>
-      <% div_for(pointer, :class => 'item') do  %>
-        <%= pointer.title %>
+      <% div_for(pointer, :class => "item #{'not-selectable' unless pointer.document?}") do  %>
+        <%= pointer.document? ? link_to_ajax(pointer.title, document_path(pointer.id)) : pointer.title %>
+        <%= content_tag(:span, "Por: #{pointer.author}", :class => 'property author') unless pointer.author.blank? %>
       <% end %>
     <% end %>
   </div>
