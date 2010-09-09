@@ -1,5 +1,5 @@
 <div id="page">
-  <div id="document_<%= document.id %>" class="document">
+  <div id="document_<%= document.id %>" class="head document">
     <% if can? :manage, document %>
       <div class="floating_actions">
         <%= iminbutton_to t('.debug'), "bolt", edit_document_path(document) %>
@@ -11,6 +11,7 @@
     <%= content_tag(:p, h(document.author), :class => 'author') unless document.author.blank? %>
   </div>
 
+  <!-- clips -->
   <div id="clips">
     <%= render document.clips %>
   </div>

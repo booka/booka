@@ -28,7 +28,10 @@ class ProjectDocumentsController < ApplicationController
     create! do |success, failure|
       success.html { redirect_to @document}
       failure.html { render :action => 'new'}
-      success.js { render :js => "$.modal.close();$.booka.clear('browser');$.address.value('#{document_path(@document)}');"}
+      success.js do
+        @documents = @project.documents
+        render :action => 'create.js'
+      end
       failure.js { render :action => 'failure.js'}
     end
   end

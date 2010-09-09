@@ -12,10 +12,10 @@
 }
 
 
-#page .document {width: 90%; margin: 1em 0 1em 10%; }
-#page .document h1 {display: block; font-size: 150%; margin: 5px 0 0 0;}
-#page .document .description {font-style: italic;}
-#page .document .author {margin-top: 1em;}
+#page .head {width: 90%; margin: 1em 0 1em 10%; }
+#page .head h1 {display: block; font-size: 150%; margin: 5px 0 0 0;}
+#page .head .description {font-style: italic;}
+#page .head .author {margin-top: 1em;}
 
 #page .floating_actions {
     display: none; overflow: hidden;
@@ -41,7 +41,8 @@
 div#page:hover .slot {background-color: @azulclaro; border: 1px solid white;}
 div#page a.slot:hover {border-color: @azul;}
 
-#page .clip p, #page .clip ol {width: 80%; margin: 10px 10%; overflow: hidden;}
+#page .clip p, #page .clip ol, #page .clip h2 {width: 80%; margin: 10px 10%; overflow: hidden;}
+#page .clip h2 {font-size: 130%;}
 #page .clip img {display: block; margin: 10px auto;  }
 #page .clip object {margin: 10px auto;}
 #page .clip ol li {list-style: decimal; list-style-position: outside;}
