@@ -6,7 +6,7 @@ class Ccc
     puts "DATA: #{@data}"
     #site = Site.get
     #user = User.find(:first)
-    #project = site.new_project(user, "De categrales a contenedores")
+    #project = site.new_project(user, "De catedrales a contenedores")
     #project.save
     add_document(nil, nil, 'De catedrales a contenedores', 'intro.txt')
   end

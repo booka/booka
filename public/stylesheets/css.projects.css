@@ -11,7 +11,7 @@
 */a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 65%;
   color: gray;
 }
@@ -31,7 +31,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .action {
   background-color: #00aeef;
@@ -43,7 +43,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
 .browser.projects {
@@ -59,25 +59,25 @@ div.action:hover { color: #e1ebef; }
   -webkit-border-radius: 3px;
 }
 .project_properties {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 80%;
   color: #3f3f3f;
 }
 .browser.projects .stage {
   margin-top: 5px;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 80%;
   color: #3f3f3f;
 }
 .browser.projects .collaborators {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 80%;
   color: #3f3f3f;
 }
 .browser.projects h1 {
   margin-left: 10px;
   color: white;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .browser.projects a {
   color: black;

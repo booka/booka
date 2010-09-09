@@ -10,6 +10,7 @@
         <% end %>
 
         <%= link_to_ajax document.title, document_path(document), :class => 'title' %>
+        <%= content_tag(:span, "Por: #{document.author}", :class => 'property author') unless document.author.blank? %>
       <% end %>
     <% end %>
   </div>

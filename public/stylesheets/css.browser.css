@@ -13,3 +13,10 @@
   float: right;
 }
 .browser .floating_actions a:hover { opacity: 1; }
+.browser .document { font-size: 80%; }
+.browser .document .title { font-size: 110%; }
+.browser .document .property {
+  display: block;
+  margin-left: 1em;
+  color: gray;
+}

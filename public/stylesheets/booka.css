@@ -49,7 +49,7 @@ legend { color: #000000; }
 del, ins, a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 65%;
   color: gray;
 }
@@ -69,7 +69,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .action {
   background-color: #00aeef;
@@ -81,12 +81,12 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
 html {
   font-size: 90%;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 html, body {
   height: 100%;
@@ -117,7 +117,7 @@ pre.debug_dump:hover {
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 65%;
   color: gray;
 }
@@ -137,7 +137,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .action {
   background-color: #00aeef;
@@ -149,7 +149,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
 .overlay, #simplemodal-overlay {
@@ -226,10 +226,17 @@ form input[type=password] {
   float: right;
 }
 .browser .floating_actions a:hover { opacity: 1; }
+.browser .document { font-size: 80%; }
+.browser .document .title { font-size: 110%; }
+.browser .document .property {
+  display: block;
+  margin-left: 1em;
+  color: gray;
+}
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 65%;
   color: gray;
 }
@@ -249,7 +256,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .action {
   background-color: #00aeef;
@@ -261,12 +268,13 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
 #workspace {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background-color: #00aeef;
 }
 #navigation {
@@ -283,6 +291,7 @@ div.action:hover { color: #e1ebef; }
   right: 0;
   top: 80px;
   bottom: 0;
+  overflow: hidden;
   background-color: #c6c8ca;
 }
 #browser_viewport {
@@ -362,11 +371,12 @@ div.action:hover { color: #e1ebef; }
 #current_project {
   margin-top: 0.7em;
   height: 1.3em;
-  font-family: "Garamond", serif;
+  font-family: 'Nobile', serif;
+  font-size: 80%;
 }
 #place {
   font-size: 150%;
-  font-family: "Garamond", serif;
+  font-family: 'Nobile', serif;
 }
 #site_navigation li {
   display: block;
@@ -401,7 +411,7 @@ a.sprite-nav.selected { border-color: #efefef; }
 .browser {
   height: 100%;
   background-color: #efefef;
-  font-family: "Garamond", serif;
+  font-family: 'Nobile', serif;
 }
 .browser h1 {
   padding: 5px;
@@ -442,7 +452,7 @@ a.sprite-nav.selected { border-color: #efefef; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 65%;
   color: gray;
 }
@@ -462,7 +472,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .action {
   background-color: #00aeef;
@@ -474,7 +484,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
 #page {
@@ -483,19 +493,26 @@ div.action:hover { color: #e1ebef; }
   min-height: 800px;
   border: 1px solid gray;
   background-color: white;
-  font-family: "Garamon", serif;
+  font-family: 'Nobile', serif;
 }
-#page h1 {
+#page .document {
+  width: 80%;
+  margin: 1em 10%;
+  border: 1px solid white;
+}
+#page .document h1 {
   display: block;
   font-size: 150%;
-  text-align: center;
-  margin: 5px 0;
+  margin: 5px 0 0 0;
 }
+#page .document .description { font-style: italic; }
+#page .document .author { margin-top: 1em; }
 #page .floating_actions {
   display: none;
   overflow: hidden;
   float: right;
   padding: 3px 3px 5px 5px;
+  margin-right: -50px;
   background-color: #e1ebef;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -508,13 +525,12 @@ div.action:hover { color: #e1ebef; }
   margin-right: 2px;
 }
 #page .floating_actions a:hover { opacity: 1; }
-#page .document {
-  margin: 2px 1em;
-  border: 1px solid white;
-}
 #page div.document:hover { border-color: white; }
 #page div.document:hover .floating_actions { display: block; }
-.clip { margin: 2px 1em; }
+.clip {
+  margin: 2px 10%;
+  width: 80%;
+}
 #page div.clip:hover .floating_actions { display: block; }
 .slot {
   display: block;
@@ -532,7 +548,7 @@ div#page:hover .slot {
 }
 div#page a.slot:hover { border-color: #00aeef; }
 #page .clip p {
-  margin: 10px 30px;
+  margin: 10px 0px;
   overflow: hidden;
 }
 #page .clip img {
@@ -550,7 +566,7 @@ div#page a.slot:hover { border-color: #00aeef; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 65%;
   color: gray;
 }
@@ -570,7 +586,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .action {
   background-color: #00aeef;
@@ -582,7 +598,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
 .rall {
@@ -645,7 +661,7 @@ div.action:hover { color: #e1ebef; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 65%;
   color: gray;
 }
@@ -665,7 +681,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .action {
   background-color: #00aeef;
@@ -677,7 +693,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
 .browser.projects {
@@ -693,25 +709,25 @@ div.action:hover { color: #e1ebef; }
   -webkit-border-radius: 3px;
 }
 .project_properties {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 80%;
   color: #3f3f3f;
 }
 .browser.projects .stage {
   margin-top: 5px;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 80%;
   color: #3f3f3f;
 }
 .browser.projects .collaborators {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 80%;
   color: #3f3f3f;
 }
 .browser.projects h1 {
   margin-left: 10px;
   color: white;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .browser.projects a {
   color: black;
@@ -720,7 +736,7 @@ div.action:hover { color: #e1ebef; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 65%;
   color: gray;
 }
@@ -740,7 +756,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .action {
   background-color: #00aeef;
@@ -752,12 +768,12 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
 .calendar {
   color: white;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   background-color: #08362b;
   padding: 10px;
   width: 960px;
@@ -777,7 +793,7 @@ div.action:hover { color: #e1ebef; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
   font-size: 65%;
   color: gray;
 }
@@ -797,7 +813,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 .action {
   background-color: #00aeef;
@@ -809,7 +825,7 @@ a:hover { text-decoration: underline; }
   margin: 1px 0 0 3px;
   -moz-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
-  font-family: "Helvetica", "arial", "freesans", "clean", sans-serif;
+  font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
 #communicator {

@@ -34,6 +34,13 @@ class Bok < ActiveRecord::Base
   
   validates_presence_of :user_id
 
+  def author=(author)
+    properties[:author] = author
+  end
+
+  def author
+    properties[:author]
+  end
 
   def after_initialize
     self.properties ||= {}

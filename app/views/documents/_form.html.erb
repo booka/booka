@@ -6,9 +6,11 @@
     <%= form.error_messages %>
     <% form.inputs do %>
       <%= form.input :title %>
+      <%= form.input :description %>
+      <%= form.input :author %>
     <% end %>
     <% form.buttons do %>
-      <%= form.commit_button %>
+      <%= form.commit_button %> <%= link_to 'Cancelar', '#', :class => 'cancel' %>
     <% end %>
   <% end %>
 </div>

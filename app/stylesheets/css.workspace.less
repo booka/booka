@@ -7,11 +7,12 @@
 #workspace {
     width: 100%;
     height: 100%;
+    overflow: hidden;
     background-color: @azul;
 }
 
 #navigation {position: absolute; left: 0; right: 0; top: 0; height: 80px; background-color: white;}
-#main {position: absolute; left: 0; right: 0; top: 80px; bottom: 0; background-color: @gris;}
+#main {position: absolute; left: 0; right: 0; top: 80px; bottom: 0; overflow: hidden; background-color: @gris;}
 #browser_viewport {position: absolute; left: 0; top: 1px; bottom: 0; width: @browser_size - 40; background-color: @azul;}
 #comm_viewport {position: absolute; right: 0; top: 1px; bottom: 0; width: @comm_size; background-color: @azul;}
 #content_viewport {position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: @gris; }
@@ -26,7 +27,7 @@
 #current_user {position: absolute; top: 0; width: 50%; right: 0; height: 2em;}
 .current_user {padding: 5px 10px; background-color: @azulclaro; color: @azul;}
 #current_user a {display: block; float: right; .current_user;}
-#current_project {margin-top: 0.7em; height: 1.3em; font-family: @serif;}
+#current_project {margin-top: 0.7em; height: 1.3em; font-family: @serif; font-size: @font-small;}
 #place {font-size: 150%; font-family: @serif;}
 
 #site_navigation li {display: block; float: left;}
