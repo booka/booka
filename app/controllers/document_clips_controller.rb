@@ -7,14 +7,14 @@ class DocumentClipsController < ApplicationController
 
 
   def new
-    @clip = @document.new_clip(params[:clip], current_user)
+    @clip = @document.new_clip(current_user, params[:clip])
     new! do |action|
       action.js {render :js => client.show_dialog(render_to_string(:partial =>'form'))}
     end
   end
 
   def create
-    @clip = @document.new_clip(params[:clip], current_user)
+    @clip = @document.new_clip(current_user, params[:clip])
     create! do |success, failure|
       success.html {redirect_to project_document_path(@document.project, @document)}
       success.js {render :action => 'create.js'}
