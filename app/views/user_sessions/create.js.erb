@@ -4,7 +4,7 @@ $("#current_user").html('<a href="#" rel="dialog:<%=  close_user_sessions_path(:
 with($.booka) {
   layout.userNavigation(<%= js_partial '/layouts/user_navigation' %>);
   layout.flash(<%= js_str "Hola #{current_user.name}" %>);
-  layout.browser('none');
+  layout.browser(null);
   core.load($.address.value());
   dialogs.close();
 }

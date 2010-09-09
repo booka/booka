@@ -9,7 +9,7 @@
     <%= yield :head %>
     <script type="text/javascript">
       function preload() {
-        $.get("<%= ui_path %>");
+        $.get("<%= site_path %>");
       }
 <% if RAILS_ENV == 'production'  %>
     $(function() {

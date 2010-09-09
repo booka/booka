@@ -3,7 +3,7 @@ console.log("project_calls - Show");
 <%= js_project @project %>
 with($.booka) {
   layout.place(<%= js_str "Convocatoria de '#{@project.title}'" %>);
-  layout.requestBrowser('project', <%= js_str project_browser_path %>);
+  layout.requestBrowser('project', <%= js_str projects_path %>);
   layout.document(<%= js_partial @call %>);
   layout.flash("Convocatoria cargada.");
 }

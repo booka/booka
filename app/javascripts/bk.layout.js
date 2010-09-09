@@ -8,6 +8,9 @@
         left: 0,
         right: 0
     }
+
+    var current_browser = null;
+
     var tokens = $.booka.core.state;
     var place = null;
     
@@ -32,14 +35,14 @@
                 $("#content").html(content);
             },
             browser : function(token, content) {
-                tokens.browser = token;
+                current_browser = token;
                 if (content != null) {
                     $("#browser_viewport").html(content);
                 }
             },
             requestBrowser : function(token, path) {
-                console.log("Current browser : " + tokens.browser + " requested: " + token);
-                if (tokens.browser != token) {
+                console.log("Requested browser : " + token + " current: " + current_browser);
+                if (current_browser == null) {
                     console.log("Request browser: " + token + " - " + path);
                     $.getScript(path + ".js");
                 }

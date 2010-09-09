@@ -1,11 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   SprocketsApplication.routes(map)
 
-  map.resource(:site, :as => 'ui')
+  map.resource(:site, :as => 'ui', :controller => :site)
   
   map.resource(:user_sessions, :as => 'sesion', :member => {:close => :get})
-
-  map.resource(:project_browser, :as => 'investigaciones', :controller => :project_browser)
 
   map.resources(:projects, :as => 'booka') do |project|
     project.resource(:project_call, :as => 'convocatoria')
@@ -27,6 +25,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources(:documents, :as => 'archivos') do |document|
     document.resources(:clips, :controller => 'document_clips', :as => 'clips')
   end
+
+  map.resources(:chapters, :as => 'ver')
 
   map.chat '/chat', :controller => 'site', :action => 'chat'
   map.root :controller => 'site', :action => 'about'

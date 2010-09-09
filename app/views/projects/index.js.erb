@@ -1,4 +1,6 @@
+console.log("Project - Index (project browser)");
 
-<%= js_place t('.place') %>
-<%= js_partial_for :browser_viewport, 'projects/browser' %>
-<%= js_finish t('.loaded') %>
+with($.booka) {
+  layout.browser('project', <%= js_partial 'browser' %>);
+  layout.flash("Lista de investigaciones cargadas.");
+}

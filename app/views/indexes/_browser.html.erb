@@ -3,7 +3,7 @@
   <div class="list indices">
     <% @index.each do |pointer| %>
       <% div_for(pointer, :class => "item #{'not-selectable' unless pointer.document?}") do  %>
-        <%= pointer.document? ? link_to_ajax(pointer.title, document_path(pointer.id)) : pointer.title %>
+        <%= pointer.document? ? link_to_ajax(pointer.title, chapter_path(:id => "#{pointer.id}-#{pointer.title.parameterize}")) : pointer.title %>
         <%= content_tag(:span, "Por: #{pointer.author}", :class => 'property author') unless pointer.author.blank? %>
       <% end %>
     <% end %>

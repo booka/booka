@@ -1,4 +1,4 @@
-class SitesController < ApplicationController
+class SiteController < ApplicationController
   caches_page :show
 
   def show
