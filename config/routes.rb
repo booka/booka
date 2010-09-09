@@ -1,9 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
   SprocketsApplication.routes(map)
+
+  map.resource(:site, :as => 'ui')
   
   map.resource(:user_sessions, :as => 'sesion', :member => {:close => :get})
 
-  map.resources(:projects, :as => 'investigaciones') do |project|
+  map.resource(:project_browser, :as => 'investigaciones', :controller => :project_browser)
+
+  map.resources(:projects, :as => 'booka') do |project|
     project.resource(:project_call, :as => 'convocatoria')
     project.resource(:index, :controller => 'project_indexes', :as => 'explorar')
     project.resources(:documents, :controller => 'project_documents', :as => 'archivos')
@@ -24,10 +28,9 @@ ActionController::Routing::Routes.draw do |map|
     document.resources(:clips, :controller => 'document_clips', :as => 'clips')
   end
 
-  map.ui '/ui', :controller => 'workspace', :action => 'entrance'
-  map.chat '/chat', :controller => 'workspace', :action => 'chat'
-  map.root :controller => 'workspace', :action => 'about'
-  map.connect 'test_exception', :controller => 'workspace', :action => 'test_exception_notifier'
+  map.chat '/chat', :controller => 'site', :action => 'chat'
+  map.root :controller => 'site', :action => 'about'
+  map.connect 'test_exception', :controller => 'site', :action => 'test_exception_notifier'
   map.pusher_trigger '/pusher/trigger', :controller => 'pusher', :action => 'trigger'
   map.connect '/pusher/:action', :controller => 'pusher'
 

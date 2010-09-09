@@ -15,6 +15,9 @@
                     $.booka.dialogs.setup();
                 }
             },
+            close : function() {
+                $.booka.dialogs.show();
+            },
             setup : function() {
                 var form = $(".dialog form");
                 form.attr('action', form.attr('action') + '.js');
@@ -49,9 +52,6 @@
 
     $(document).ready(function() {
         ajaxize_dialog_links();
-        $.address.change(function() {
-            $.booka.core.load($.address.value());
-        });
     });
 
 

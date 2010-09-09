@@ -1,11 +1,10 @@
+console.log("project_documents - Index (browser)");
 
-$.booka.layout.set(true, true);
-$("#content").html('');
 <%= js_project @project %>
-<%= js_place_of @project %>
-<%= js_browser '/documents/browser' %>
-<%= js_clear_page  %>
-<%= js_finish t('.loaded', :title => @project.title) %>
+with($.booka) {
+  layout.browser('documents', <%= js_partial '/documents/browser' %>);
+  layout.flash(<%= js_str "Archivos de '#{@project.title}' cargados" %>);
+}
 
 
 

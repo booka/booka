@@ -9,6 +9,7 @@
         right: 0
     }
     var tokens = $.booka.core.state;
+    var place = null;
     
     $.extend(tokens, {
         browser : 'none',
@@ -17,20 +18,37 @@
 
     $.extend($.booka, {
         layout : {
+            place : function(new_place) {
+                place = new_place;
+                $('#place').html(place);
+            },
             flash : function(message) {
                 $("#flash").html("<p>" + message + "<p>");
                 window.setTimeout(function() {
                     $('#flash p').fadeOut('slow');
                 }, 3000);
             },
+            document : function(content) {
+                $("#content").html(content);
+            },
             browser : function(token, content) {
                 tokens.browser = token;
                 $("#browser_viewport").html(content);
+            },
+            requestBrowser : function(token, path) {
+                console.log("Current browser : " + tokens.browser + " requested: " + token);
+                if (tokens.browser != token) {
+                    console.log("Request browser: " + token + " - " + path);
+                    $.getScript(path + ".js");
+                }
             },
             project : function(token, title, navigation) {
                 tokens.project = token;
                 $("#current_project").html(title);
                 $("#site_navigation").html(navigation);
+            },
+            userNavigation : function(navigation) {
+                $("#user_navigation").html(navigation);
             },
             clear : function(param) {
                 tokens[param] = "none";

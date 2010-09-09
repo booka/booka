@@ -1,5 +1,10 @@
-
-$.booka.layout.clear('browser');
+console.log("UserSession - destroy");
 $("#current_user").html('<a href="#" rel="dialog:<%=  new_user_sessions_path(:url => request.path)  %>">Entrar</a>');
-$.booka.core.load($.address.value());
-$.booka.dialogs.show();
+with($.booka) {
+  layout.userNavigation(<%= js_partial '/layouts/user_navigation' %>);
+  core.load($.address.value());
+  dialogs.show();
+  layout.flash("Tu sesión ha sido cerrada.");
+}
+
+

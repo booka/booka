@@ -13,7 +13,7 @@
         $("#communicator .output").append('<div class ="message">' + user + body + "</div>");
     }
 
-    $().ready(function() {
+    var init = function() {
         $("#communicator .output").empty();//.append("<div>Conectando...</div>")
         $("#channel_name").val(channel_name);
         $("#event_name").val(event_name);
@@ -24,9 +24,6 @@
         Pusher.log = function() {
             if (window.console) window.console.log.apply(window.console, arguments);
         };
-
-        
-
 
         // Create a Pusher server object with your app's key
         var socket = new Pusher('10b14a3b8e2d5abdb762', channel_name);
@@ -53,7 +50,9 @@
                 $("#event_body").val('').focus();
             }
         });
-    });
+    };
+
+    //$(init);
 
 
 })(jQuery);

@@ -1,4 +1,28 @@
 module JsBookaHelper
+
+  def js(text)
+    escape_javascript(text)
+  end
+
+  def js_str(text)
+    "'#{escape_javascript(h text)}'"
+  end
+
+
+  def js_partial(partial)
+    "\"#{escape_javascript(render :partial => partial)}\""
+  end
+
+    def js_project(project)
+    if (params[:project] != project.id.to_s)
+      content = escape_javascript render(:partial => '/layouts/site_navigation')
+      "$.booka.layout.project('#{project.id}', '#{h project.title}', '#{content}');"
+    end
+  end
+
+
+  # NO DEBERÍAMOS USARLOS
+
   def js_place_of(bok)
     js_place t('.place', :title => h(bok.title))
   end
@@ -7,12 +31,7 @@ module JsBookaHelper
     "$('#place').html('#{escape_javascript text}');"
   end
 
-  def js_project(project)
-    if (params[:project] != project.id.to_s)
-      content = escape_javascript render(:partial => '/layouts/site_navigation')
-      "$.booka.layout.project('#{project.id}', '#{h project.title}', '#{content}');"
-    end
-  end
+
 
   def js_browser(partial)
     if (params[:browser] != partial)
@@ -60,10 +79,6 @@ module JsBookaHelper
   def js_update_dialog(partial)
     "$('#simplemodal-container').html('#{js_partial partial}');" +
       "$.booka.dialogs.setup();"
-  end
-
-  def js_partial(partial)
-    escape_javascript(render(:partial => partial))
   end
 
   def js_tooltip_for(anchor_id, &block)

@@ -444,7 +444,10 @@ div.action:hover { color: #e1ebef; }
 }
 #place {
   font-size: 150%;
+  height: 1.5em;
+  overflow: hidden;
   font-family: 'Nobile', serif;
+  width: 95%;
 }
 #site_navigation li {
   display: block;

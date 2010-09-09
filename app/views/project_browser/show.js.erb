@@ -1,0 +1,6 @@
+console.log("project_browser - Show");
+
+with($.booka) {
+  layout.browser('project', <%= js_partial 'browser' %>);
+  layout.flash("Lista de investigaciones cargadas.");
+}

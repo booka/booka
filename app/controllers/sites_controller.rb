@@ -1,8 +1,8 @@
-class WorkspaceController < ApplicationController
+class SitesController < ApplicationController
+  caches_page :show
 
-  caches_page :entrance, :about
-
-  def entrance
+  def show
+    @site = Site.get
     @remote = true
   end
 
