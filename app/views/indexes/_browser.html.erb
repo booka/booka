@@ -11,6 +11,8 @@
   <div class="actions">
     <% if can? :manage, @project %>
       <%= ibutton_to t(:edit), "pen_alt_stroke", edit_project_index_path(@project) %>
+    <% else %>
+    sin permisos
     <% end %>
   </div>
 </div>

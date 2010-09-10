@@ -1,6 +1,7 @@
 
 <%= js_project @project %>
-<%= js_browser 'indexes/browser' %>
-<%= js_render_index @index %>
-<%= js_finish t('.updated') %>
-$.booka.dialogs.show();
+with($.booka) {
+  layout.browser('index', <%= js_partial '/indexes/browser' %>);
+  layout.flash("Índice actualizado.");
+  dialogs.close();
+}

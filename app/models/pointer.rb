@@ -3,7 +3,7 @@ class Pointer
   def initialize(raw)
     line = raw.split('|')
     @id = line[0].to_i
-    @title = line[1]
+    @title = line[1] || ''
     @author = line[2]
   end
 
