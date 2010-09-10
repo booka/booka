@@ -1,0 +1,14 @@
+<div id="page">
+  <% div_for(activity_report, :class => 'head') do  %>
+    <h1 class="title"><%= h activity_report.title %></h1>
+  <% end %>
+
+  <div class="activities">
+    <% activity_report.activities.each do |activity| %>
+      <% div_for(activity, :class => activity.action) do %>
+        <%= activity.description %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

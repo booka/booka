@@ -1,12 +1,12 @@
 # == Schema Information
-# Schema version: 20100327212638
+# Schema version: 20100910132042
 #
 # Table name: boks
 #
-#  id           :integer         not null, primary key
-#  project_id   :integer
-#  user_id      :integer
-#  position     :integer
+#  id           :integer(4)      not null, primary key
+#  project_id   :integer(4)
+#  user_id      :integer(4)
+#  position     :integer(4)
 #  type         :string(255)
 #  ancestry     :string(255)
 #  title        :string(255)

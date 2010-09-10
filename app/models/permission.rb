@@ -1,11 +1,11 @@
 # == Schema Information
-# Schema version: 20100327212638
+# Schema version: 20100910132042
 #
 # Table name: permissions
 #
-#  id         :integer         not null, primary key
-#  bok_id     :integer
-#  user_id    :integer
+#  id         :integer(4)      not null, primary key
+#  bok_id     :integer(4)
+#  user_id    :integer(4)
 #  level      :string(255)
 #  created_at :datetime
 #  updated_at :datetime

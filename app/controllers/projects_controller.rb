@@ -5,7 +5,8 @@ class ProjectsController < ApplicationController
   def update
     update! do
       @projects = Project.all
-      Pusher['booka'].trigger('activity', {:body => "#{current_user.name} ha actualizado el projecto <a href='#'>#{@project.title}</a>"})
+      activity = Activity.project("#{current_user.name} ha actualizado el projecto #{@project.title}", :update, current_user, @project)
+      Pusher['booka'].trigger('activity', {:body => activity.description})
     end
   end
 end

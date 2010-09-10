@@ -1,7 +1,7 @@
 
 <%= navigate_to :login, "Colaboradorxs", users_path  %>
 <% if current_user %>
-  <%= navigate_to :contact, "Actividad", current_user_activity_path  %>
+  <%= navigate_to :contact, "Actividad", activity_reports_path  %>
   <%= navigate_to :calendar, "Calendario", current_user_calendar_path  %>
 <% else %>
 <% end %>

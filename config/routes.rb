@@ -20,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources(:users)
-
+  map.resources(:activity_reports, :as => 'actividades')
   map.resources(:disqs, :as => 'discusion') do |disq|
   end
 

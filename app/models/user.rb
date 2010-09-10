@@ -1,16 +1,16 @@
 # == Schema Information
-# Schema version: 20100327212638
+# Schema version: 20100910132042
 #
 # Table name: users
 #
-#  id                :integer         not null, primary key
+#  id                :integer(4)      not null, primary key
 #  name              :string(255)
 #  login             :string(255)
 #  rol               :string(255)     default("user")
 #  crypted_password  :string(255)
 #  password_salt     :string(255)
 #  persistence_token :string(255)
-#  login_count       :integer
+#  login_count       :integer(4)
 #  last_login_at     :datetime
 #  current_login_at  :datetime
 #  last_login_ip     :string(255)
