@@ -1,0 +1,7 @@
+console.log("Users - Index (users browser)");
+
+with($.booka) {
+  layout.browser('users', <%= js_partial 'browser' %>);
+  layout.flash("Lista de colaboradorxs cargada.");
+  comm.add('help', "Puedes pulsar sobre alguna persona para charlar con ella", 5000);
+}

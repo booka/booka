@@ -2,5 +2,5 @@
 with($.booka) {
    layout.browser('projects', <%= js_partial 'projects/browser' %>);
    dialogs.close();
-   comm.print('flash', <%= js_str "La investigación '#{h @project.title}' ha sido actualizada." %>);
+   layout.flash(<%= js_str "La investigación '#{h @project.title}' ha sido actualizada." %>);
 }

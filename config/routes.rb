@@ -13,11 +13,13 @@ ActionController::Routing::Routes.draw do |map|
     #project.resources(:pages, :controller => 'project_pages',  :as => 'explorar')
   end
 
-  map.resource(:user, :as => 'mi') do |user|
+  map.resource(:current_user, :as => 'mi', :controller => 'current_user') do |user|
     user.resource(:calendar, :controller => 'user_calendars', :as => 'calendario')
     user.resource(:activity, :controller => 'user_activities', :as => 'actividad')
     user.resource(:profile, :controller => 'user_profiles', :as => 'perfil')
   end
+
+  map.resources(:users)
 
   map.resources(:disqs, :as => 'discusion') do |disq|
   end

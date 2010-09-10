@@ -1,8 +1,7 @@
-<% if has_project? %>
-  <%= navigate_to :entrance, projects_path %>
-  <%= navigate_to :archives, project_documents_path(@project)  %>
-  <%= navigate_to :edition, project_disqs_path(@project)  %>
-  <%= navigate_to :booka, project_index_path(@project)  %>
+<%= navigate_to :entrance, 'Investigaciones', projects_path %>
+  <% if has_project? %>
+  <%= navigate_to :archives, 'Archivos', project_documents_path(@project)  %>
+  <%= navigate_to :edition, 'Discusiones', project_disqs_path(@project)  %>
+  <%= navigate_to :booka, 'Índice', project_index_path(@project)  %>
 <% else %>
-  <%= navigate_to :entrance, projects_path %>
 <% end %>

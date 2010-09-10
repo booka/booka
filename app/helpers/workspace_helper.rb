@@ -8,8 +8,8 @@ module WorkspaceHelper
     dialog_to(label, url, :title => label, :class => "iconic iconic-#{icon}_12x12")
   end
 
-  def navigate_to(name, url)
-    content_tag(:li, link_to_ajax(t(name), url, :class => "sprite-nav sprite-nav-#{name}icon", :id => "navigate-to-#{name}"))
+  def navigate_to(name, title, url)
+    content_tag(:li, link_to_ajax(title, url, :class => "sprite-nav sprite-nav-#{name}icon", :id => "navigate-to-#{name}"))
   end
 
   def render_page(bok)

@@ -80,12 +80,20 @@ div.action:hover { color: #e1ebef; }
   font-size: 80%;
   margin: 0.5em 0;
 }
+#communicator .item a {
+  font-weight: bold;
+  color: #3f3f3f;
+}
 #communicator .help {
   background-color: #ff99ff;
   border: 1px solid #ff5cff;
 }
 #communicator .flash {
   background-color: #feff8f;
-  border: 1px solid #fcff38;
+  border: 1px solid #ffcc00;
+}
+#communicator .activity {
+  background-color: #feff8f;
+  border: 1px solid #ffcc00;
 }
 #communicator .message label { color: #c6c8ca; }

@@ -21,7 +21,15 @@
 
 class User < ActiveRecord::Base
   acts_as_authentic
+  has_many :permissions
+  has_many :boks, :through => :permissions
 
-  has_many :projects, :through => :permissions
+  def projects
+    self.boks.scoped(:conditions => {:type => 'Project'})
+  end
+
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
 
 end

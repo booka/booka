@@ -1,0 +1,22 @@
+<div id="page">
+  <% div_for(user, :class => 'head') do  %>
+    <% if can? :manage, user %>
+      <div class="floating_actions">
+        <%= iminbutton_to t('.debug'), "bolt", edit_user_path(user) %>
+        <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_user_path(user) %>
+      </div>
+    <% end %>
+    <h1 class="title"><%= h user.name %></h1>
+  <% end %>
+
+
+  <div class="projects">
+    <h2>Colaborando en las investigaciones:</h2>
+    <% user.projects.each do |project| %>
+      <% div_for(project, :class => 'clip') do %>
+        <%= link_to_ajax(h(project.title), project_project_call_path(project)) %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

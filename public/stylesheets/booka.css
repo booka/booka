@@ -655,6 +655,51 @@ a:hover { text-decoration: underline; }
   font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
+#page .projects {
+  width: 80%;
+  font-size: 80%;
+  margin: 1em 10%;
+}
+#page .projects a { color: gray; }
+#page .projects h2 { font-size: 110%; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.debug {
+  font-family: 'Nobile', serif;
+  font-size: 65%;
+  color: gray;
+}
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+.rounded {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.button {
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: 'Nobile', serif;
+}
+.action {
+  background-color: #00aeef;
+  color: white;
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: 'Nobile', serif;
+}
+div.action:hover { color: #e1ebef; }
 .rall {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -907,12 +952,20 @@ div.action:hover { color: #e1ebef; }
   font-size: 80%;
   margin: 0.5em 0;
 }
+#communicator .item a {
+  font-weight: bold;
+  color: #3f3f3f;
+}
 #communicator .help {
   background-color: #ff99ff;
   border: 1px solid #ff5cff;
 }
 #communicator .flash {
   background-color: #feff8f;
-  border: 1px solid #fcff38;
+  border: 1px solid #ffcc00;
+}
+#communicator .activity {
+  background-color: #feff8f;
+  border: 1px solid #ffcc00;
 }
 #communicator .message label { color: #c6c8ca; }

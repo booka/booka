@@ -1,0 +1,16 @@
+
+<div class="browser document_browser">
+  <h1>Colaboradorxs</h1>
+  <div class="list documents">
+    <% @users.each do |user| %>
+      <% div_for(user, :class => 'item') do  %>
+        <% if can? :manage, user %>
+          <div class="floating_actions">
+            <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_user_path(user) %>
+          </div>
+        <% end %>
+        <%= link_to_ajax h(user.name), user_path(user) %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

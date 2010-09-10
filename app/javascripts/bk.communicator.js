@@ -5,16 +5,18 @@
 (function($) {
     console.log("Booka COMM");
 
-    var channel_name = "booka";
-    var event_name = "message";
-
     var api = {
         print : function(elementClass, html) {
+            add(elementClass,html,5000);
+        },
+        add : function(elementClass, html, time) {
             var element = $('<div class="item ' + elementClass + '">' + html + '</div>');
             $("#communicator .output").prepend(element);
-            window.setTimeout(function() {
-                element.fadeOut('slow');
-            }, 5000);
+            if (false && time > 0) {
+                window.setTimeout(function() {
+                    element.fadeOut('slow');
+                }, time);
+            }
         }
     };
 
@@ -23,17 +25,9 @@
     });
 
 
-    function print(username, body) {
-        var user = username != null ? "<label>" + username + ":&nbsp;</label>" : '';
-        $("#communicator .output").append('<div class ="message">' + user + body + "</div>");
-    }
-
     var init = function() {
-        $("#communicator .output").empty();//.append("<div>Conectando...</div>")
-        $("#channel_name").val(channel_name);
-        $("#event_name").val(event_name);
-        print(null, "Conectando...");
-
+        $("#channel_name").val("booka");
+        $("#event_name").val("message");
         var session_id = $("#event_session_id").val();
 
         Pusher.log = function() {
@@ -41,16 +35,23 @@
         };
 
         // Create a Pusher server object with your app's key
-        var socket = new Pusher('10b14a3b8e2d5abdb762', channel_name);
+        console.log("Init pusher: " + pusher_key);
+        var socket = new Pusher(pusher_key, "booka");
         // Bind to server events
-        socket.bind(event_name, function(data) {
-            console.log("JODER: ", data.body);
+        socket.bind("message", function(data) {
             if (data.session_id != session_id) {
+                api.add("message", data.body, 0);
                 print('anónimo', data.body);
             }
         });
+
+        socket.bind("activity", function(data) {
+            console.log("Pusher activity")
+           api.add("activity", data.body, 0);
+        });
+
         socket.bind('connection_established', function(evt){
-            print(null, 'Chat listo.')
+            api.add("flash", "Conectado a plataformabooka.net", 5000);
             $.ajaxSetup({
                 data: {
                     socket_id: evt.socket_id
@@ -67,7 +68,7 @@
         });
     };
 
-//$(init);
+    $(init);
 
 
 })(jQuery);

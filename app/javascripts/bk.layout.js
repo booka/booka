@@ -48,9 +48,12 @@
                 }
             },
             project : function(token, title, navigation) {
-                tokens.project = token;
-                $("#current_project").html(title);
-                $("#site_navigation").html(navigation);
+                if (tokens.project != token) {
+                    $.booka.comm.add('help', "Estás en la investigación '" + title + "'.", 5000);
+                    tokens.project = token;
+                    $("#current_project").html(title);
+                    $("#site_navigation").html(navigation);
+                }
             },
             userNavigation : function(navigation) {
                 $("#user_navigation").html(navigation);
