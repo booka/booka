@@ -7,6 +7,8 @@
       <%= form.input :description %>
       <%= form.input :stage, :as => :select, :include_blank => false,
         :collection => { 'Presentación de propuestas'=> 'calls', 'Edición colectiva' => 'edition'} %>
+      <%= form.input :visibility, :as => :select, :include_blank => false,
+        :collection => { 'Visible a cualquiera'=> 'public', 'Visible sólo a colaboradores' => 'private'} %>
     <% end %>
     <% form.buttons do %>
       <%= form.commit_button %>

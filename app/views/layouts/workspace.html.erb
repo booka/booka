@@ -39,15 +39,7 @@
         <% if @workspace_settings[:comm] %>
           <div id="comm_viewport">
             <div id="communicator">
-              <div class="output">...</div>
-              <div class="input">
-                <% form_tag(pusher_trigger_path) do  %>
-                  <%= hidden_field_tag 'channel_name' %>
-                  <%= hidden_field_tag 'event_name' %>
-                  <%= hidden_field_tag 'event[session_id]', session.id %>
-                  <%= text_field_tag 'event[body]', '' %>
-                  <input type="submit" value="Enviar" />
-                <% end %>
+              <div class="output"></div>
               </div>
             </div>
           </div>

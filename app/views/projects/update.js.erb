@@ -1,4 +1,6 @@
 
-<%= js_partial_for :browser_viewport, 'projects/browser' %>
-<%= js_finish "La investigación '#{h @project.title}' ha sido actualizada." %>
-$.booka.dialogs.show();
+with($.booka) {
+   layout.browser('projects', <%= js_partial 'projects/browser' %>);
+   dialogs.close();
+   comm.print('flash', <%= js_str "La investigación '#{h @project.title}' ha sido actualizada." %>);
+}

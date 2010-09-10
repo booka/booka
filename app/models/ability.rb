@@ -3,11 +3,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can(:manage, Project) do |action, project|
+    can(:manage, Project) do |project|
       !user.nil?
     end
 
-    can(:manage, Document) do |action, document|
+    can(:read, Project) do |project|
+      !user.nil? || project.visibility == 'public'
+    end
+
+    can(:manage, Document) do |document|
       !user.nil?
     end
 

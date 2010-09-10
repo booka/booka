@@ -8,6 +8,21 @@
     var channel_name = "booka";
     var event_name = "message";
 
+    var api = {
+        print : function(elementClass, html) {
+            var element = $('<div class="item ' + elementClass + '">' + html + '</div>');
+            $("#communicator .output").prepend(element);
+            window.setTimeout(function() {
+                element.fadeOut('slow');
+            }, 5000);
+        }
+    };
+
+    $.extend($.booka, {
+        comm : api
+    });
+
+
     function print(username, body) {
         var user = username != null ? "<label>" + username + ":&nbsp;</label>" : '';
         $("#communicator .output").append('<div class ="message">' + user + body + "</div>");
@@ -52,7 +67,8 @@
         });
     };
 
-    //$(init);
+//$(init);
 
 
 })(jQuery);
+

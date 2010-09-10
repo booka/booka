@@ -58,22 +58,13 @@ div.action:hover { color: #e1ebef; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.project_properties {
+.browser .project .property {
   font-family: 'Nobile', serif;
   font-size: 80%;
   color: #3f3f3f;
 }
-.browser.projects .stage {
-  margin-top: 5px;
-  font-family: 'Nobile', serif;
-  font-size: 80%;
-  color: #3f3f3f;
-}
-.browser.projects .collaborators {
-  font-family: 'Nobile', serif;
-  font-size: 80%;
-  color: #3f3f3f;
-}
+.browser .project .stage { margin-top: 5px; }
+.browser .project .visibility { font-weight: bold; }
 .browser.projects h1 {
   margin-left: 10px;
   color: white;

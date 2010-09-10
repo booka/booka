@@ -762,22 +762,13 @@ div.action:hover { color: #e1ebef; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.project_properties {
+.browser .project .property {
   font-family: 'Nobile', serif;
   font-size: 80%;
   color: #3f3f3f;
 }
-.browser.projects .stage {
-  margin-top: 5px;
-  font-family: 'Nobile', serif;
-  font-size: 80%;
-  color: #3f3f3f;
-}
-.browser.projects .collaborators {
-  font-family: 'Nobile', serif;
-  font-size: 80%;
-  color: #3f3f3f;
-}
+.browser .project .stage { margin-top: 5px; }
+.browser .project .visibility { font-weight: bold; }
 .browser.projects h1 {
   margin-left: 10px;
   color: white;
@@ -889,12 +880,11 @@ div.action:hover { color: #e1ebef; }
   overflow: hidden;
 }
 #communicator .output {
-  background-color: white;
   position: absolute;
   left: 2%;
   right: 2%;
   top: 3px;
-  bottom: 30px;
+  bottom: 3px;
   padding: 3px 1%;
   width: 94%;
   overflow: auto;
@@ -908,5 +898,21 @@ div.action:hover { color: #e1ebef; }
   height: 24px;
   padding: 2px 2%;
   background-color: #00aeef;
+}
+#communicator .item {
+  padding: 0.5em 1em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  font-size: 80%;
+  margin: 0.5em 0;
+}
+#communicator .help {
+  background-color: #ff99ff;
+  border: 1px solid #ff5cff;
+}
+#communicator .flash {
+  background-color: #feff8f;
+  border: 1px solid #fcff38;
 }
 #communicator .message label { color: #c6c8ca; }

@@ -53,12 +53,11 @@ div.action:hover { color: #e1ebef; }
   overflow: hidden;
 }
 #communicator .output {
-  background-color: white;
   position: absolute;
   left: 2%;
   right: 2%;
   top: 3px;
-  bottom: 30px;
+  bottom: 3px;
   padding: 3px 1%;
   width: 94%;
   overflow: auto;
@@ -72,5 +71,21 @@ div.action:hover { color: #e1ebef; }
   height: 24px;
   padding: 2px 2%;
   background-color: #00aeef;
+}
+#communicator .item {
+  padding: 0.5em 1em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  font-size: 80%;
+  margin: 0.5em 0;
+}
+#communicator .help {
+  background-color: #ff99ff;
+  border: 1px solid #ff5cff;
+}
+#communicator .flash {
+  background-color: #feff8f;
+  border: 1px solid #fcff38;
 }
 #communicator .message label { color: #c6c8ca; }
