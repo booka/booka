@@ -5,5 +5,5 @@ with($.booka) {
   layout.place(<%= js_str @user.name %>);
   layout.requestBrowser('users', '<%= users_path %>');
   layout.document(<%= js_partial @user %>);
-  layout.flash(<%= js_str "'#{@user.name}' cargado." %>);
+  layout.flash(<%= js_str "Estás viendo la página de '#{@user.name}'." %>);
 }
