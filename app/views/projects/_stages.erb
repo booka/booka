@@ -1,20 +1,21 @@
 <div id="project_stages">
-  <% if @project.stage?(:one) %>
-    <div id="stage-one">Esta investigación está en fase de
-      <%= link_to_ajax 'Presentación de propuestas', project_documents_path(@project) %>
-    </div>
-  <%  end %>
-  <% if @project.stage?(:two) %>
-    <div id="stage-two">
-      Esta investigación está en fase de
-      <%= link_to_ajax 'Edición colaborativa', project_disqs_path(@project) %>
-    </div>
-  <%  end %>
-  <% if @project.stage?(:three) %>
-    <div id="stage-three">
-      <img class="sprite-nav sprite-nav-bookaicon" />
-      Esta investigación está en fase de
-      <%= link_to_ajax 'Publicación y discusión', project_index_path(@project) %>
-    </div>
-  <%  end %>
+  <div class="icons">
+    <% content_tag(:div, 'publish', :class => 'sprite-nav sprite-nav-bookaicon') if @project.stage?(:one) %>
+    <% content_tag(:div, 'publish', :class => 'sprite-nav sprite-nav-bookaicon') if @project.stage?(:two) %>
+    <% content_tag(:div, 'publish', :class => 'sprite-nav sprite-nav-bookaicon') if @project.stage?(:three) %>
+  </div>
+  <div class="description">
+    <% if @project.stage?(:one) %>
+      <p id="stage-one">Esta investigación está en fase de <%= link_to_ajax 'Presentación de propuestas', project_documents_path(@project) %>
+      </p>
+    <%  end %>
+    <% if @project.stage?(:two) %>
+      <p id="stage-two">Esta investigación está en fase de <%= link_to_ajax 'Edición colaborativa', project_disqs_path(@project) %>
+      </p>
+    <%  end %>
+    <% if @project.stage?(:three) %>
+      <p id="stage-three">Esta investigación está en fase de <%= link_to_ajax 'Publicación y discusión', project_index_path(@project) %>
+      </p>
+    <%  end %>
+  </div>
 </div>

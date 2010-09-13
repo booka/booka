@@ -21,11 +21,12 @@
 #content_viewport.has_comm {right: @comm_size + 10;}
 #content {position: absolute; left: 10px; top: 0px; right: 10px; bottom: 10px; overflow-x: hidden;}
 
-#project_stages {width: 100%; overflow: hidden; margin: 5px 0 10px 0;}
-#project_stages div {width: 96%; padding: 5px 0px; margin-left: 15px; text-align: center;
+#project_stages {width: 70%; overflow: hidden; margin: 5px 10% 10px 10%; padding: 5px 5%;
     background-color: @grisclaro; color: @azul; border: 1px solid @grisoscuro; .rounded; }
-#project_stages a {font-weight: bold; color: @azul; }
-#project_stages img.sprite-nav {overflow: hidden; border: 0; background-color: @grisclaro;}
+#project_stages .icons {height: 10px; float: left;}
+#project_stages a {font-weight: bold; color: @azul;}
+
+#project_stages icons div {text-indent: -1000px; overflow: hidden; border: 0; background-color: @grisclaro; }
 
 #site_navigation {position: absolute; padding-left: 10px; left: 0px; width: @browser_size; top: 0; bottom: 0;}
 #user_navigation {position: absolute; width: @comm_size; top: 0; right: 0; bottom: 0;}

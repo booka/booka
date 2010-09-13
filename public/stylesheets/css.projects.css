@@ -115,7 +115,3 @@ div.action:hover { color: #e1ebef; }
   color: #00aeef;
   font-weight: bold;
 }
-#page .properties table {
-  with: 80%;
-  margin: 1em 10%;
-}

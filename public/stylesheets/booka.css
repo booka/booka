@@ -410,26 +410,26 @@ div.action:hover { color: #e1ebef; }
   overflow-x: hidden;
 }
 #project_stages {
-  width: 100%;
+  width: 70%;
   overflow: hidden;
-  margin: 5px 0 10px 0;
-}
-#project_stages div {
-  width: 96%;
-  padding: 5px 0px;
-  margin-left: 15px;
-  text-align: center;
+  margin: 5px 10% 10px 10%;
+  padding: 5px 5%;
   background-color: #efefef;
   color: #00aeef;
   border: 1px solid #3f3f3f;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+#project_stages .icons {
+  height: 10px;
+  float: left;
+}
 #project_stages a {
   font-weight: bold;
   color: #00aeef;
 }
-#project_stages img.sprite-nav {
+#project_stages icons div {
+  text-indent: -1000px;
   overflow: hidden;
   border: 0;
   background-color: #efefef;
@@ -713,6 +713,19 @@ div#page a.slot:hover { border-color: #00aeef; }
   font-size: 150%;
   margin-bottom: 1em;
 }
+#page .bloq {
+  width: 80%;
+  margin: 10px 10%;
+  overflow: hidden;
+}
+#page .bloq h2 { font-size: 130%; }
+#page .bloq a { color: #00aeef; }
+#page table {
+  width: 100%;
+  margin: 0.5em 0;
+}
+#page table .even { background-color: #efefef; }
+#page table td { padding: 3px 5px; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
@@ -1008,10 +1021,6 @@ div.action:hover { color: #e1ebef; }
 #page .project .stages a {
   color: #00aeef;
   font-weight: bold;
-}
-#page .properties table {
-  with: 80%;
-  margin: 1em 10%;
 }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }

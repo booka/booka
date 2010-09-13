@@ -6,10 +6,24 @@
     <%= content_tag(:p, h(project.description), :class => 'description') unless project.description.blank? %>
   </div>
 
-  <div class="properties">
+
+  <div class="bloq collaborators">
+    <h2>Colaboradorxs en esta investigación (<%= project.permissions.size %>)</h2>
+    <table>
+      <% project.permissions.each do |permission| %>
+        <tr class="<%= cycle('even', 'odd') %>">
+          <td><%= link_to_ajax permission.user.name, user_path(permission.user) %></td>
+          <td><%= permission.level %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div class="bloq properties">
+    <h2>Configuración de la investigación</h2>
     <table>
       <% project.properties.keys.each do |key| %>
-        <tr><td><%= key %></td><td><%= project.properties[key] %></td></tr>
+        <tr class="<%= cycle('even', 'odd') %>"><td><%= key %></td><td><%= project.properties[key] %></td></tr>
       <% end %>
     </table>
   </div>

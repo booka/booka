@@ -5,14 +5,9 @@
   <% @projects.each do |project| %>
     <% if can? :read, project %>
       <li class="project">
-        <% if can? :manage, project %>
-          <div class="floating_actions">
-            <%= link_to_ajax "pen_alt_stroke", project_path(project) %>
-          </div>
-        <% end %>
         <%= link_to_ajax h(project.title), project_project_call_path(project) %>
         <p class="description"><%= h project.description %></p>
-        <p class="property collaborators"><%= project.permissions.size %> personas colaborando.</p>
+        <p class="property collaborators"><%= link_to_ajax("#{project.permissions.size} personas colaborando.", project_path(project)) %></p>
         <%= content_tag(:p, 'Visible sólo por colaboradores', :class => 'property visibility') if project.visibility == 'private' %>
       </li>
     <% end %>
