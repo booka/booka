@@ -1,7 +1,8 @@
-console.log("Projects - Index (project browser)");
+console.log("Projects - Index (projects document)");
 
 with($.booka) {
-  layout.browser('project', <%= js_partial 'browser' %>);
-  layout.flash("Lista de investigaciones cargadas.");
-  comm.add('help', "Investigaciones cargadas. Pulsa en alguna de ellas para empezar a trabajar", 5000);
+layout.project(null);
+layout.browser(null);
+layout.document(<%= js_partial 'projects_document' %>);
+comm.add('help', "Investigaciones cargadas. Pulsa en alguna de ellas para empezar a trabajar", 5000);
 }

@@ -2,6 +2,10 @@ class ProjectsController < ApplicationController
   inherit_resources
   respond_to :html, :xml, :json, :js
 
+  def browser
+    @projects = Project.all
+  end
+
   def update
     update! do
       @projects = Project.all

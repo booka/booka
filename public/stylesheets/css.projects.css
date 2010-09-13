@@ -58,13 +58,13 @@ div.action:hover { color: #e1ebef; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-.browser .project .property {
+.project .property {
   font-family: 'Nobile', serif;
   font-size: 80%;
   color: #3f3f3f;
 }
-.browser .project .stage { margin-top: 5px; }
-.browser .project .visibility { font-weight: bold; }
+.project .stage { margin-top: 5px; }
+.project .visibility { font-weight: bold; }
 .browser.projects h1 {
   margin-left: 10px;
   color: white;
@@ -74,3 +74,28 @@ div.action:hover { color: #e1ebef; }
   color: black;
   font-size: 120%;
 }
+#page .projects {
+  width: 100%;
+  overflow: hidden;
+}
+#page .projects a { color: black; }
+#page .projects h2 {
+  width: 100%;
+  padding: 10px;
+  display: block;
+  font-size: 150%;
+  margin: 0 0 10px 0;
+  background-color: #e1ebef;
+}
+#page .project {
+  overflow: hidden;
+  width: 70%;
+  margin: 1em;
+  padding: 0 0 1em 0;
+  float: left;
+  font-size: 120%;
+  border: 2px solid #00aeef;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+#page .project p { margin: 0 0 0 10px; }

@@ -22,16 +22,17 @@
                     path = root_path;
                 }
                 var params = "";
-                //                $.each($B.core.state, function(token, value) {
-                //                    params += (params == "") ? "?" : "&";
-                //                    params += token + "=" + value;
-                //                });
-                return path + ".js"; // + params;
+                $.each($B.core.state, function(token, value) {
+                    params += (params == "") ? "?" : "&";
+                    params += token + "=" + value;
+                });
+                return path +  ".js"  + params;
             },
             load: function(token) {
                 var path = $.booka.core.buildPath(token);
                 console.log("Loading path: " + path);
-                $("#flash").html("<p>Cargando, espera un momento... <p>");
+                $.booka.comm.clear('flash');
+                $.booka.layout.flash("Cargando, espera un momento...");
                 $.getScript(path);
             }
         }
@@ -50,7 +51,7 @@
         });
 
         $("form").live('submit', function() {
-           $('input[type=submit]', this).attr('disabled', 'disabled');
+            $('input[type=submit]', this).attr('disabled', 'disabled');
         });
 
         console.log("Core loaded.");

@@ -9,14 +9,13 @@
         right: 0
     }
 
-    var current_browser = null;
 
     var tokens = $.booka.core.state;
     var place = null;
     
     $.extend(tokens, {
-        browser : 'none',
-        project : 'none'
+        browser : null,
+        project : null
     });
 
     $.extend($.booka, {
@@ -27,6 +26,7 @@
             },
             flash : function(message) {
                 $("#flash").html("<p>" + message + "<p>");
+                $.booka.comm.add('flash', message, 0);
                 window.setTimeout(function() {
                     $('#flash p').fadeOut('slow');
                 }, 3000);
@@ -35,21 +35,29 @@
                 $("#content").html(content);
             },
             browser : function(token, content) {
-                current_browser = token;
+                console.log("Set browser " + token);
+                tokens.browser = token;
                 if (content != null) {
                     $("#browser_viewport").html(content);
+                } else {
+                    $("#browser_viewport").html('');
                 }
             },
             requestBrowser : function(token, path) {
-                console.log("Requested browser : " + token + " current: " + current_browser);
-                if (current_browser == null) {
+                console.log("Requested browser : " + token + " current: " + tokens.browser);
+                if (tokens.browser == null) {
                     console.log("Request browser: " + token + " - " + path);
                     $.getScript(path + ".js");
                 }
             },
             project : function(token, title, navigation) {
-                if (tokens.project != token) {
-                    $.booka.comm.add('help', "Estás en la investigación '" + title + "'.", 5000);
+                $.booka.comm.clear('project');
+                if (token == null) {
+                    tokens.project = null;
+                    $("#current_project").html('');
+                    $("#site_navigation").html('');
+                } else if (tokens.project != token) {
+                    $.booka.comm.add('project', "Estás en la investigación '" + title + "'.", 5000);
                     tokens.project = token;
                     $("#current_project").html(title);
                     $("#site_navigation").html(navigation);

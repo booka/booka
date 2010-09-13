@@ -50,7 +50,7 @@ div.action:hover { color: #e1ebef; }
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #00aeef;
+  background-color: #c6c8ca;
 }
 #navigation {
   position: absolute;
@@ -75,7 +75,6 @@ div.action:hover { color: #e1ebef; }
   top: 1px;
   bottom: 0;
   width: 300px;
-  background-color: #00aeef;
 }
 #comm_viewport {
   position: absolute;
@@ -83,7 +82,6 @@ div.action:hover { color: #e1ebef; }
   top: 1px;
   bottom: 0;
   width: 300px;
-  background-color: #00aeef;
 }
 #content_viewport {
   position: absolute;

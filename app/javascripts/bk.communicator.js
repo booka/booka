@@ -17,6 +17,9 @@
                     element.fadeOut('slow');
                 }, time);
             }
+        },
+        clear : function (elementClass) {
+            $("#communicator ." + elementClass).remove();
         }
     };
 
@@ -47,7 +50,7 @@
 
         socket.bind("activity", function(data) {
             console.log("Pusher activity")
-           api.add("activity", data.body, 0);
+            api.add("activity", data.body, 0);
         });
 
         socket.bind('connection_established', function(evt){

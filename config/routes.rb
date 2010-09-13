@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resource(:user_sessions, :as => 'sesion', :member => {:close => :get})
 
-  map.resources(:projects, :as => 'booka') do |project|
+  map.resources(:projects, :as => 'booka', :collection  => {:browser => :get}) do |project|
     project.resource(:project_call, :as => 'convocatoria')
     project.resource(:index, :controller => 'project_indexes', :as => 'explorar')
     project.resources(:documents, :controller => 'project_documents', :as => 'archivos')

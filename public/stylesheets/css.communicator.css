@@ -97,3 +97,7 @@ div.action:hover { color: #e1ebef; }
   border: 1px solid #ffcc00;
 }
 #communicator .message label { color: #c6c8ca; }
+#communicator .project {
+  background-color: #4dff79;
+  border: 1px solid #1aff53;
+}

@@ -14,11 +14,17 @@
     .rounded;
 }
 
-.browser .project .property {font-family: @sans; font-size: @font-small; color: @grisoscuro;}
-.browser .project .stage {margin-top: 5px;}
-.browser .project .collaborators {}
-.browser .project .visibility {font-weight: bold;}
+.project .property {font-family: @sans; font-size: @font-small; color: @grisoscuro;}
+.project .stage {margin-top: 5px;}
+.project .collaborators {}
+.project .visibility {font-weight: bold;}
 
 .browser.projects h1 {margin-left: 10px; color: white; font-family: @sans;}
 
 .browser.projects a {color: black; font-size: 120%;}
+
+#page .projects {width: 100%; overflow: hidden;}
+#page .projects a {color: black;}
+#page .projects h2 {width: 100%; padding: 10px; display: block; font-size: 150%; margin: 0 0 10px 0; background-color: @azulclaro;}
+#page .project {overflow: hidden; width: 70%; margin: 1em; padding: 0 0 1em 0; float: left; font-size: 120%; border: 2px solid @azul; .rounded; }
+#page .project p {margin: 0 0 0 10px;}

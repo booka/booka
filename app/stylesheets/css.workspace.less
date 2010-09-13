@@ -8,13 +8,13 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: @azul;
+    background-color: @gris;
 }
 
 #navigation {position: absolute; left: 0; right: 0; top: 0; height: 80px; background-color: white;}
 #main {position: absolute; left: 0; right: 0; top: 80px; bottom: 0; overflow: hidden; background-color: @gris;}
-#browser_viewport {position: absolute; left: 0; top: 1px; bottom: 0; width: @browser_size - 40; background-color: @azul;}
-#comm_viewport {position: absolute; right: 0; top: 1px; bottom: 0; width: @comm_size; background-color: @azul;}
+#browser_viewport {position: absolute; left: 0; top: 1px; bottom: 0; width: @browser_size - 40; }
+#comm_viewport {position: absolute; right: 0; top: 1px; bottom: 0; width: @comm_size; }
 #content_viewport {position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: @gris; }
 #content_viewport.has_browser {left: @browser_size - 40;}
 #content_viewport.has_comm {right: @comm_size;}
