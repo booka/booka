@@ -15,7 +15,7 @@ class Ability
       !user.nil?
     end
 
-    can(:manage, Clip) do |action, clip|
+    can(:manage, Clip) do |clip|
       !user.nil?
     end
   end

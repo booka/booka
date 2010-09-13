@@ -16,7 +16,9 @@ module JsBookaHelper
     def js_project(project)
     if (params[:project] != project.id.to_s)
       content = escape_javascript render(:partial => '/layouts/site_navigation')
-      "$.booka.layout.project('#{project.id}', '#{h project.title}', '#{content}');"
+      state = js_partial '/projects/stages'
+      "$.booka.layout.project('#{project.id}', '#{h project.title}', '#{content}');" +
+      "$.booka.layout.projectStages(" + state + ");";
     end
   end
 

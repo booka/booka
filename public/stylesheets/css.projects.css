@@ -49,6 +49,8 @@ div.action:hover { color: #e1ebef; }
 .browser.projects {
   overflow: hidden;
   background-color: #00aeef;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 .browser.projects .project {
   margin: 10px;
@@ -80,6 +82,12 @@ div.action:hover { color: #e1ebef; }
 }
 #page .projects a { color: black; }
 #page .projects h2 {
+  font-size: 150%;
+  margin: 1em 0 0 0;
+  display: block;
+  clear: both;
+}
+#page .project h2 {
   width: 100%;
   padding: 10px;
   display: block;

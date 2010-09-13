@@ -275,7 +275,10 @@ div.action:hover { color: #e1ebef; }
   background-color: #efefef;
   font-family: 'Nobile', serif;
 }
-.browser h1 { padding: 5px; }
+.browser h1 {
+  padding: 7px 0 0 7px;
+  font-size: 120%;
+}
 .browser .list {
   font-size: 80%;
   position: absolute;
@@ -345,81 +348,108 @@ div.action:hover { color: #e1ebef; }
   overflow: hidden;
   background-color: #c6c8ca;
 }
+#bgnavigation {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 80px;
+  background-color: #c6c8ca;
+}
 #navigation {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   height: 80px;
-  background-color: white;
+  background-color: transparent;
+  z-index: 1000;
 }
 #main {
   position: absolute;
   left: 0;
   right: 0;
-  top: 80px;
+  top: 10px;
   bottom: 0;
   overflow: hidden;
-  background-color: #c6c8ca;
 }
 #browser_viewport {
   position: absolute;
-  left: 0;
-  top: 1px;
-  bottom: 0;
+  left: 10px;
+  top: 70px;
+  bottom: 10px;
   width: 300px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 #comm_viewport {
   position: absolute;
-  right: 0;
-  top: 1px;
-  bottom: 0;
-  width: 300px;
+  right: 10px;
+  top: 70px;
+  bottom: 10px;
+  width: 290px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 #content_viewport {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 0px;
   right: 0;
   bottom: 0;
   background-color: #c6c8ca;
 }
-#content_viewport.has_browser { left: 300px; }
+#content_viewport.has_browser { left: 320px; }
 #content_viewport.has_comm { right: 300px; }
 #content {
   position: absolute;
   left: 10px;
-  top: 10px;
+  top: 0px;
   right: 10px;
   bottom: 10px;
   overflow-x: hidden;
 }
+#project_stages {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+#project_stages div {
+  float: left;
+  background-color: #efefef;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 5px 10px;
+  margin-left: 15px;
+}
 #site_navigation {
   position: absolute;
-  left: 10px;
+  padding-left: 10px;
+  left: 0px;
   width: 340px;
   top: 0;
   bottom: 0;
 }
 #user_navigation {
   position: absolute;
-  width: 300px;
+  width: 290px;
   top: 0;
   right: 0;
   bottom: 0;
 }
 #messages {
+  padding: 0 15px 0 15px;
   position: absolute;
   left: 320px;
   top: 0;
-  right: 320px;
+  right: 290px;
   bottom: 0;
 }
 #current_user {
   position: absolute;
   top: 0;
   width: 50%;
-  right: 0;
+  right: 67px;
   height: 2em;
 }
 .current_user {
@@ -435,7 +465,7 @@ div.action:hover { color: #e1ebef; }
   color: #00aeef;
 }
 #current_project {
-  margin-top: 0.7em;
+  margin-top: 0.2em;
   height: 1.3em;
   font-family: 'Nobile', serif;
   font-size: 80%;
@@ -461,7 +491,7 @@ a.sprite-nav {
   text-indent: -10000px;
   padding: 1px;
   margin: 3px 0px 0 3px;
-  border: 3px solid white;
+  border: 3px solid #c6c8ca;
 }
 a.sprite-nav:hover { border-color: #efefef; }
 a.sprite-nav.selected { border-color: #efefef; }
@@ -536,12 +566,13 @@ div.action:hover { color: #e1ebef; }
 }
 #page .head {
   width: 90%;
-  margin: 1em 0 1em 10%;
+  margin: 1em 0 3em 10%;
 }
 #page .head h1 {
   display: block;
   font-size: 200%;
   margin: 5px 0 0 0;
+  width: 80%;
 }
 #page .head .description { font-style: italic; }
 #page .head .author { margin-top: 1em; }
@@ -706,6 +737,10 @@ a:hover { text-decoration: underline; }
   font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
+.indice_browser {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
 #page .indices {
   font-size: 80%;
   color: #3f3f3f;
@@ -849,6 +884,8 @@ div.action:hover { color: #e1ebef; }
 .browser.projects {
   overflow: hidden;
   background-color: #00aeef;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 .browser.projects .project {
   margin: 10px;
@@ -880,6 +917,12 @@ div.action:hover { color: #e1ebef; }
 }
 #page .projects a { color: black; }
 #page .projects h2 {
+  font-size: 150%;
+  margin: 1em 0 0 0;
+  display: block;
+  clear: both;
+}
+#page .project h2 {
   width: 100%;
   padding: 10px;
   display: block;
@@ -999,6 +1042,8 @@ div.action:hover { color: #e1ebef; }
   height: 100%;
   background-color: #efefef;
   overflow: hidden;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 #communicator .output {
   position: absolute;

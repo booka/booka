@@ -62,7 +62,10 @@ div.action:hover { color: #e1ebef; }
   background-color: #efefef;
   font-family: 'Nobile', serif;
 }
-.browser h1 { padding: 5px; }
+.browser h1 {
+  padding: 7px 0 0 7px;
+  font-size: 120%;
+}
 .browser .list {
   font-size: 80%;
   position: absolute;

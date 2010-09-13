@@ -51,6 +51,8 @@ div.action:hover { color: #e1ebef; }
   height: 100%;
   background-color: #efefef;
   overflow: hidden;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 #communicator .output {
   position: absolute;

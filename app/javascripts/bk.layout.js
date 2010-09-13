@@ -63,6 +63,9 @@
                     $("#site_navigation").html(navigation);
                 }
             },
+            projectStages : function(html) {
+              //$("#content").html(html);
+            },
             userNavigation : function(navigation) {
                 $("#user_navigation").html(navigation);
             },

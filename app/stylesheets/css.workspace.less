@@ -2,7 +2,7 @@
 @import "variables";
 
 @browser_size: 340px;
-@comm_size: 300px;
+@comm_size: 290px;
 
 #workspace {
     width: 100%;
@@ -11,30 +11,34 @@
     background-color: @gris;
 }
 
-#navigation {position: absolute; left: 0; right: 0; top: 0; height: 80px; background-color: white;}
-#main {position: absolute; left: 0; right: 0; top: 80px; bottom: 0; overflow: hidden; background-color: @gris;}
-#browser_viewport {position: absolute; left: 0; top: 1px; bottom: 0; width: @browser_size - 40; }
-#comm_viewport {position: absolute; right: 0; top: 1px; bottom: 0; width: @comm_size; }
-#content_viewport {position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: @gris; }
-#content_viewport.has_browser {left: @browser_size - 40;}
-#content_viewport.has_comm {right: @comm_size;}
-#content {position: absolute; left: 10px; top: 10px; right: 10px; bottom: 10px; overflow-x: hidden;}
+#bgnavigation {position: absolute; left: 0; right: 0; top: 0; height: 80px; background-color: @gris;}
+#navigation {position: absolute; left: 0; right: 0; top: 0; height: 80px; background-color: transparent; z-index:1000;}
+#main {position: absolute; left: 0; right: 0; top: 10px; bottom: 0; overflow: hidden;}
+#browser_viewport {position: absolute; left: 10px; top: 70px; bottom: 10px; width: @browser_size - 40; .rounded; }
+#comm_viewport {position: absolute; right: 10px; top: 70px; bottom: 10px; width: @comm_size; .rounded;}
+#content_viewport {position: absolute; left: 0; top: 0px; right: 0; bottom: 0; background-color: @gris; }
+#content_viewport.has_browser {left: @browser_size - 20;}
+#content_viewport.has_comm {right: @comm_size + 10;}
+#content {position: absolute; left: 10px; top: 0px; right: 10px; bottom: 10px; overflow-x: hidden;}
 
-#site_navigation {position: absolute; left: 10px; width: @browser_size; top: 0; bottom: 0;}
+#project_stages {width: 100%; overflow: hidden; margin-bottom: 5px;}
+#project_stages div {float: left; background-color: @grisclaro; .rounded; padding: 5px 10px; margin-left: 15px;}
+
+#site_navigation {position: absolute; padding-left: 10px; left: 0px; width: @browser_size; top: 0; bottom: 0;}
 #user_navigation {position: absolute; width: @comm_size; top: 0; right: 0; bottom: 0;}
-#messages {position: absolute; left: @browser_size - 20; top: 0; right: @comm_size + 20; bottom: 0;}
+#messages {padding: 0 15px 0 15px; position: absolute; left: @browser_size - 20; top: 0; right: @comm_size; bottom: 0;}
 
-#current_user {position: absolute; top: 0; width: 50%; right: 0; height: 2em;}
+#current_user {position: absolute; top: 0; width: 50%; right: 67px; height: 2em;}
 .current_user {padding: 5px 10px; background-color: @azulclaro; color: @azul;}
 #current_user a {display: block; float: right; .current_user;}
-#current_project {margin-top: 0.7em; height: 1.3em; font-family: @serif; font-size: @font-small;}
+#current_project {margin-top: 0.2em; height: 1.3em; font-family: @serif; font-size: @font-small;}
 #place {font-size: 150%; height: 1.5em; overflow: hidden; font-family: @serif; width: 95%;}
 
 #site_navigation li {display: block; float: left;}
 #user_navigation li {display: block; float: right;}
 a.sprite-nav {
     display: block; overflow: hidden; text-indent: -10000px; padding: 1px;
-    margin: 3px 0px 0 3px; border: 3px solid white;
+    margin: 3px 0px 0 3px; border: 3px solid @gris;
 }
 a.sprite-nav:hover, a.sprite-nav.selected {
     border-color: @grisclaro;

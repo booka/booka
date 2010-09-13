@@ -80,7 +80,3 @@ namespace :mysql do
   end
 end
 
-desc "Backup the database before running migrations"
-task :before_migrate do
-  backup
-end

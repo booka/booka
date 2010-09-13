@@ -46,6 +46,10 @@ a:hover { text-decoration: underline; }
   font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
+.indice_browser {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
 #page .indices {
   font-size: 80%;
   color: #3f3f3f;
