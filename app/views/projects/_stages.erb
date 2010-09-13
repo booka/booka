@@ -1,5 +1,20 @@
 <div id="project_stages">
-  <div id="stage-o">Presentación de propuestas</div>
-  <div id="stage-edicion">Edición</div>
-  <div id="stage-publish">Publicación</div>
+  <% if @project.stage?(:one) %>
+    <div id="stage-one">Esta investigación está en fase de
+      <%= link_to_ajax 'Presentación de propuestas', project_documents_path(@project) %>
+    </div>
+  <%  end %>
+  <% if @project.stage?(:two) %>
+    <div id="stage-two">
+      Esta investigación está en fase de
+      <%= link_to_ajax 'Edición colaborativa', project_disqs_path(@project) %>
+    </div>
+  <%  end %>
+  <% if @project.stage?(:three) %>
+    <div id="stage-three">
+      <img class="sprite-nav sprite-nav-bookaicon" />
+      Esta investigación está en fase de
+      <%= link_to_ajax 'Publicación y discusión', project_index_path(@project) %>
+    </div>
+  <%  end %>
 </div>

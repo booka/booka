@@ -12,7 +12,6 @@
         <% end %>
         <%= link_to_ajax h(project.title), project_project_call_path(project) %>
         <p class="description"><%= h project.description %></p>
-        <p class="property stage"><%= h t("data.project.stage.#{project.stage}") %></p>
         <p class="property collaborators"><%= project.permissions.size %> personas colaborando.</p>
         <%= content_tag(:p, 'Visible sólo por colaboradores', :class => 'property visibility') if project.visibility == 'private' %>
       </li>

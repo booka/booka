@@ -369,14 +369,14 @@ div.action:hover { color: #e1ebef; }
   position: absolute;
   left: 0;
   right: 0;
-  top: 10px;
+  top: 30px;
   bottom: 0;
   overflow: hidden;
 }
 #browser_viewport {
   position: absolute;
   left: 10px;
-  top: 70px;
+  top: 50px;
   bottom: 10px;
   width: 300px;
   -moz-border-radius: 3px;
@@ -385,7 +385,7 @@ div.action:hover { color: #e1ebef; }
 #comm_viewport {
   position: absolute;
   right: 10px;
-  top: 70px;
+  top: 50px;
   bottom: 10px;
   width: 290px;
   -moz-border-radius: 3px;
@@ -412,15 +412,27 @@ div.action:hover { color: #e1ebef; }
 #project_stages {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 5px;
+  margin: 5px 0 10px 0;
 }
 #project_stages div {
-  float: left;
+  width: 96%;
+  padding: 5px 0px;
+  margin-left: 15px;
+  text-align: center;
   background-color: #efefef;
+  color: #00aeef;
+  border: 1px solid #3f3f3f;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
-  padding: 5px 10px;
-  margin-left: 15px;
+}
+#project_stages a {
+  font-weight: bold;
+  color: #00aeef;
+}
+#project_stages img.sprite-nav {
+  overflow: hidden;
+  border: 0;
+  background-color: #efefef;
 }
 #site_navigation {
   position: absolute;
@@ -445,6 +457,25 @@ div.action:hover { color: #e1ebef; }
   right: 290px;
   bottom: 0;
 }
+#plataformabooka {
+  position: absolute;
+  top: -3px;
+  left: 24px;
+  color: #3f3f3f;
+  font-size: 80%;
+}
+.round-bottom { border-radius: 0 0 3px 3px; }
+#working {
+  text-align: center;
+  padding: 1px 0px;
+  position: absolute;
+  left: 40%;
+  right: 40%;
+  font-size: 80%;
+  background-color: #feff8f;
+  color: #00aeef;
+  border-radius: 0 0 3px 3px;
+}
 #current_user {
   position: absolute;
   top: 0;
@@ -453,16 +484,18 @@ div.action:hover { color: #e1ebef; }
   height: 2em;
 }
 .current_user {
-  padding: 5px 10px;
+  padding: 3px 10px;
   background-color: #e1ebef;
   color: #00aeef;
+  border-radius: 0 0 3px 3px;
 }
 #current_user a {
   display: block;
   float: right;
-  padding: 5px 10px;
+  padding: 3px 10px;
   background-color: #e1ebef;
   color: #00aeef;
+  border-radius: 0 0 3px 3px;
 }
 #current_project {
   margin-top: 0.2em;
@@ -485,14 +518,17 @@ div.action:hover { color: #e1ebef; }
   display: block;
   float: right;
 }
-a.sprite-nav {
+a.sprite-nav, div.navigation-disabled {
   display: block;
   overflow: hidden;
   text-indent: -10000px;
   padding: 1px;
   margin: 3px 0px 0 3px;
   border: 3px solid #c6c8ca;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
+div.navigation-disabled { opacity: 0.5; }
 a.sprite-nav:hover { border-color: #efefef; }
 a.sprite-nav.selected { border-color: #efefef; }
 #flash p {
@@ -965,6 +1001,14 @@ div.action:hover { color: #e1ebef; }
   -webkit-border-radius: 3px;
 }
 #page .project p { margin: 0 0 0 10px; }
+#page .project .stages {
+  margin-top: 1em;
+  font-style: italic;
+}
+#page .project .stages a {
+  color: #00aeef;
+  font-weight: bold;
+}
 #page .properties table {
   with: 80%;
   margin: 1em 10%;

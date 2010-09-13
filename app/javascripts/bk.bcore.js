@@ -11,6 +11,8 @@
     }
     console.log("Booka CORE");
 
+    var request_count = 0;
+
     var $B = $.booka = $.booka || {}
     $.extend($.booka, {
         core : {
@@ -45,6 +47,28 @@
     });
 
 
+    function setupAjax() {
+        $(document).ajaxError(function(e, xhr, settings, exception) {
+            var page = $('<div id="page" />');
+            $('<p class="error" />').append("<h2>Lo siento se ha producido un error</h2>").append(xhr.responseText).appendTo(page);
+            $("#content").append(page);
+        });
+
+        $(document).ajaxSend(function() {
+            request_count++;
+            console.log("SEND - Request count: " + request_count);
+            $("#working").fadeIn();
+        });
+
+        $(document).ajaxComplete(function() {
+            request_count--;
+            console.log("COMPLETE - Request count: " + request_count);
+            if (request_count == 0) {
+                $("#working").fadeOut();
+            }
+        });
+    }
+
     function init() {
         $.address.change(function() {
             $.booka.core.load($.address.value());
@@ -58,13 +82,7 @@
         $("form").live('submit', function() {
             $('input[type=submit]', this).attr('disabled', 'disabled');
         });
-
-        $(document).ajaxError(function(e, xhr, settings, exception) {
-            var page = $('<div id="page" />');
-            $('<p class="error" />').append("<h2>Lo siento se ha producido un error</h2>").append(xhr.responseText).appendTo(page);
-            $("#content").append(page);
-        });
-
+        setupAjax();
 
         console.log("Core loaded.");
     }

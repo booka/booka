@@ -13,9 +13,19 @@
         <% div_for(project, :class => 'clip') do %>
           <h2><%= link_to_ajax h(project.title), project_project_call_path(project) %></h2>
           <p class="description"><%= h project.description %></p>
-          <p class="property stage"><%= h t("data.project.stage.#{project.stage}") %></p>
-          <p class="property collaborators"><%= project.permissions.size %> personas colaborando.</p>
+          <p class="property collaborators"><%= link_to_ajax("#{project.permissions.size} personas colaborando.", project_path(project)) %></p>
           <%= content_tag(:p, 'Visible sólo por colaboradores', :class => 'property visibility') if project.visibility == 'private' %>
+          <div class="stages">
+            <p class="property stage">Fase de presentación de propuestas:
+              <%= project.stage?(:one) ? link_to_ajax("abierta", project_documents_path(project)) : 'cerrada' %>
+            </p>
+            <p class="property stage">Fase de edición colaborativa:
+              <%= project.stage?(:two) ? link_to_ajax("abierta", project_disqs_path(project)) : 'cerrada' %>
+            </p>
+            <p class="property stage">Fase de publicación y discusión:
+              <%= project.stage?(:three) ? link_to_ajax("abierta", project_index_path(project)) : 'cerrada' %>
+            </p>
+          </div>
         <% end %>
       <% end %>
     <% end %>

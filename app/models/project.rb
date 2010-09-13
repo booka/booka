@@ -25,12 +25,12 @@ class Project < Bok
   after_create :create_default_call_and_index
   after_update :update_call_and_index
 
-  def stage
-    properties[:stage]
+  def stage?(stage)
+    properties["stage-#{stage}"] == 'true'
   end
 
-  def stage=(stage)
-    properties[:stage] = stage
+  def stage(stage, value)
+    properties["stage-#{stage}"] = value.to_s
   end
 
   def visibility

@@ -6,6 +6,7 @@ with($.booka) {
   layout.place(<%= js_str "Convocatoria de '#{@project.title}'" %>);
   layout.requestBrowser('projects', <%= js_str browser_projects_path %>);
   layout.document(<%= js_partial @call %>);
+  layout.preDocument(<%= js_partial 'projects/stages' %>);
   comm.add('document', <%= js_str "Estás leyendo la convocatoria de '#{@project.title}'" %>);
 }
 
