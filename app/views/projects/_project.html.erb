@@ -1,0 +1,16 @@
+<!-- Projects - project (project document -->
+<div id="page">
+  <div class="head">
+    <h3><%= link_to_ajax project.title, project_project_call_path(project) %></h3>
+    <h1><%= "Investigación #{project.title}" %></h1>
+    <%= content_tag(:p, h(project.description), :class => 'description') unless project.description.blank? %>
+  </div>
+
+  <div class="properties">
+    <table>
+      <% project.properties.keys.each do |key| %>
+        <tr><td><%= key %></td><td><%= project.properties[key] %></td></tr>
+      <% end %>
+    </table>
+  </div>
+</div>

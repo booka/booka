@@ -107,3 +107,7 @@ div.action:hover { color: #e1ebef; }
   -webkit-border-radius: 3px;
 }
 #page .project p { margin: 0 0 0 10px; }
+#page .properties table {
+  with: 80%;
+  margin: 1em 10%;
+}

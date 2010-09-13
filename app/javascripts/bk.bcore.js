@@ -18,9 +18,6 @@
 
             },
             buildPath : function(path) {
-                if (path == "/") {
-                    path = root_path;
-                }
                 var params = "";
                 $.each($B.core.state, function(token, value) {
                     params += (params == "") ? "?" : "&";
@@ -29,6 +26,11 @@
                 return path +  ".js"  + params;
             },
             load: function(token) {
+                console.log("ajax.load: '" + token + "'");
+                if ( token == '/') {
+                    $.address.value(root_path);
+                    return;
+                }
                 var path = $.booka.core.buildPath(token);
                 console.log("Loading path: " + path);
                 $.getScript(path);
@@ -45,7 +47,6 @@
 
     function init() {
         $.address.change(function() {
-            console.log("Loading...", $.address.value());
             $.booka.core.load($.address.value());
         });
 
@@ -58,8 +59,15 @@
             $('input[type=submit]', this).attr('disabled', 'disabled');
         });
 
+        $(document).ajaxError(function(e, xhr, settings, exception) {
+            var page = $('<div id="page" />');
+            $('<p class="error" />').append("<h2>Lo siento se ha producido un error</h2>").append(xhr.responseText).appendTo(page);
+            $("#content").append(page);
+        });
+
+
         console.log("Core loaded.");
-    };
+    }
 
     $(init);
 

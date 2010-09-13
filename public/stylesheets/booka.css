@@ -576,6 +576,11 @@ div.action:hover { color: #e1ebef; }
 }
 #page .head .description { font-style: italic; }
 #page .head .author { margin-top: 1em; }
+#page .head h3 a {
+  color: black;
+  font-size: 80%;
+  margin-bottom: 0;
+}
 #page .floating_actions {
   display: none;
   overflow: hidden;
@@ -662,6 +667,16 @@ div#page a.slot:hover { border-color: #00aeef; }
   opacity: 0.7;
 }
 #page div.license a { color: white; }
+#page p.error {
+  color: #cc0000;
+  width: 80%;
+  margin: 1em 10%;
+  overflow: hidden;
+}
+#page p.error h1 {
+  font-size: 150%;
+  margin-bottom: 1em;
+}
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
@@ -950,6 +965,10 @@ div.action:hover { color: #e1ebef; }
   -webkit-border-radius: 3px;
 }
 #page .project p { margin: 0 0 0 10px; }
+#page .properties table {
+  with: 80%;
+  margin: 1em 10%;
+}
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {

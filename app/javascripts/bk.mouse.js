@@ -35,7 +35,6 @@
     $(function() {
         api.show();
         $("#content").hover(function() {
-            console.log("Content IN");
             api.show();
             stop_timeout = setTimeout(function() {
                 if (visible) {
@@ -43,7 +42,6 @@
                 }
             }, 2000);
         }, function() {
-            console.log("Content OUT");
             api.show();
         });
 
