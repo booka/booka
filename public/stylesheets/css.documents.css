@@ -144,3 +144,11 @@ div#page a.slot:hover { border-color: #00aeef; }
   font-size: 120%;
 }
 #clip_body { width: 600px; }
+#page div.license {
+  width: 80%;
+  margin: 30px 10%;
+  font-size: 70%;
+  color: black;
+  opacity: 0.7;
+}
+#page div.license a { color: white; }
