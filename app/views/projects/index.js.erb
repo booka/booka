@@ -1,8 +1,9 @@
 console.log("Projects - Index (projects document)");
 
 with($.booka) {
+layout.place(<%= js_str "Investigaciones en plataformabooka.net" %>);
 layout.project(null);
 layout.browser(null);
 layout.document(<%= js_partial 'projects_document' %>);
-comm.add('help', "Investigaciones cargadas. Pulsa en alguna de ellas para empezar a trabajar", 5000);
+comm.add('document', "Éstas son las investigaciones de plataformabooka.net. Pulsa sobre alguna de ellas para ver la convocatoria.", 5000);
 }

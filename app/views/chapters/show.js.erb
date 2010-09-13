@@ -4,7 +4,7 @@ console.log("Chapters - Show");
 <%= js_project @project %>
 with($.booka) {
   layout.place(<%= js_str @document.title %>);
-  layout.requestBrowser('index', '<%= project_index_path(@project) %>');
+  layout.requestBrowser('index', '<%= browser_project_index_path(@project) %>');
   layout.document(<%= js_partial @document %>);
-  layout.flash(<%= js_str "'#{@document.title}' cargado." %>);
+  comm.add('document', <%= js_str "Estás leyendo '#{@document.title}'." %>);
 }

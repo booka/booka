@@ -57,7 +57,7 @@
                     $("#current_project").html('');
                     $("#site_navigation").html('');
                 } else if (tokens.project != token) {
-                    $.booka.comm.add('project', "Estás en la investigación '" + title + "'.", 5000);
+                    $.booka.comm.add('project', "Acabas de abrir la investigación '" + title + "'.", 5000);
                     tokens.project = token;
                     $("#current_project").html(title);
                     $("#site_navigation").html(navigation);

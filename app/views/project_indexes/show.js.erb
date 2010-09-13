@@ -1,7 +1,9 @@
-console.log("ProjectIndexes - show");
+console.log("ProjectIndexes - show (document with browser)");
 
 <%= js_project @project %>
 with($.booka) {
   layout.browser('index', <%= js_partial 'indexes/browser' %>);
-  layout.flash(<%= js_str "Índice de '#{@project.title}' cargado." %>);
+  layout.document(<%= js_partial 'indexes/document' %>);
+  layout.place(<%= js_str "Índice de '#{@project.title}'" %>);
+  comm.add('document', <%= js_str "Puedes leer los artículos pinchando en el índice." %>);
 }

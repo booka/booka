@@ -6,6 +6,10 @@ class ProjectIndexesController < ApplicationController
   defaults :resource_class => Index, :collection_name => 'indexes', :instance_name => 'index'
   actions :show, :edit, :update
 
+  def browser
+    @index = @project.indexes.first
+  end
+
   def show
     @index = @project.indexes.first
     show!

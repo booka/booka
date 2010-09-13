@@ -10,6 +10,11 @@
             add(elementClass,html,5000);
         },
         add : function(elementClass, html, time) {
+            console.log("Event : " + elementClass, html);
+            if (elementClass == 'document' || elementClass == 'browser') {
+                api.clear(elementClass);
+            }
+            elementClass = "event-" + elementClass;
             var element = $('<div class="item ' + elementClass + '">' + html + '</div>');
             $("#communicator .output").prepend(element);
             if (false && time > 0) {
@@ -19,7 +24,8 @@
             }
         },
         clear : function (elementClass) {
-            $("#communicator ." + elementClass).remove();
+            console.log("Clear event: " + elementClass);
+            $("#communicator .event-" + elementClass).remove();
         }
     };
 

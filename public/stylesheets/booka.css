@@ -706,6 +706,51 @@ a:hover { text-decoration: underline; }
   font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
+#page .indices {
+  font-size: 80%;
+  color: #3f3f3f;
+  width: 90%;
+  margin-left: 10%;
+}
+#page .indices a { color: black; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.debug {
+  font-family: 'Nobile', serif;
+  font-size: 65%;
+  color: gray;
+}
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+.rounded {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.button {
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: 'Nobile', serif;
+}
+.action {
+  background-color: #00aeef;
+  color: white;
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: 'Nobile', serif;
+}
+div.action:hover { color: #e1ebef; }
 .rall {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -987,20 +1032,24 @@ div.action:hover { color: #e1ebef; }
   font-weight: bold;
   color: #3f3f3f;
 }
-#communicator .help {
+#communicator .event-browser {
+  background-color: #c6c8ca;
+  border: 1px solid #3f3f3f;
+}
+#communicator .event-document {
   background-color: #ff99ff;
   border: 1px solid #ff5cff;
 }
-#communicator .flash {
+#communicator .event-flash {
   background-color: #feff8f;
   border: 1px solid #ffcc00;
 }
-#communicator .activity {
+#communicator .event-activity {
   background-color: #feff8f;
   border: 1px solid #ffcc00;
 }
-#communicator .message label { color: #c6c8ca; }
-#communicator .project {
+#communicator .event-project {
   background-color: #4dff79;
   border: 1px solid #1aff53;
 }
+#communicator .event-message label { color: #c6c8ca; }

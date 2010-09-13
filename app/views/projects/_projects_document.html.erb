@@ -1,17 +1,12 @@
 <div id="page">
   <div class="head">
-    <h1 class="title">Investigaciones en plataformabooka.net</h1>
+    <h1 class="title">Investigaciones</h1>
   </div>
 
   <div class="projects">
     <% @projects.each do |project| %>
       <% if can? :read, project %>
         <% div_for(project, :class => 'clip') do %>
-          <% if can? :manage, project %>
-            <div class="floating_actions">
-              <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_project_path(project) %>
-            </div>
-          <% end %>
           <h2><%= link_to_ajax h(project.title), project_project_call_path(project) %></h2>
           <p class="description"><%= h project.description %></p>
           <p class="property stage"><%= h t("data.project.stage.#{project.stage}") %></p>

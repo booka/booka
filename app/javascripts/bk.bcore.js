@@ -31,8 +31,10 @@
             load: function(token) {
                 var path = $.booka.core.buildPath(token);
                 console.log("Loading path: " + path);
-                $.booka.comm.clear('flash');
                 $.booka.layout.flash("Cargando, espera un momento...");
+                $.booka.comm.clear('flash');
+                var name = token.replace(/\//g, ' > ').replace(/\d+-/g, '').replace(/-/, ' ');
+                $.booka.comm.add('navigation', 'Abriendo <a href="#'+ token + '">' + name + "</a>");
                 $.getScript(path);
             }
         }

@@ -84,20 +84,24 @@ div.action:hover { color: #e1ebef; }
   font-weight: bold;
   color: #3f3f3f;
 }
-#communicator .help {
+#communicator .event-browser {
+  background-color: #c6c8ca;
+  border: 1px solid #3f3f3f;
+}
+#communicator .event-document {
   background-color: #ff99ff;
   border: 1px solid #ff5cff;
 }
-#communicator .flash {
+#communicator .event-flash {
   background-color: #feff8f;
   border: 1px solid #ffcc00;
 }
-#communicator .activity {
+#communicator .event-activity {
   background-color: #feff8f;
   border: 1px solid #ffcc00;
 }
-#communicator .message label { color: #c6c8ca; }
-#communicator .project {
+#communicator .event-project {
   background-color: #4dff79;
   border: 1px solid #1aff53;
 }
+#communicator .event-message label { color: #c6c8ca; }
