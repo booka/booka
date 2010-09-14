@@ -22,29 +22,41 @@
     <% @workspace_settings ||= {:browser => true, :comm => true} %>
 
     <div id="workspace">
-      <div id="bgnavigation"></div>
-      <div id="navigation">
-        <%= render '/layouts/navigation' %>
+      <div id="left">
+        <ul id="site_navigation">
+          <%= render '/layouts/site_navigation' %>
+        </ul>
+        <div id="browser_viewport">
+          <%= yield :browser %>
+        </div>
       </div>
-      <div id="main">
-        <% if @workspace_settings[:browser] %>
-          <div id="browser_viewport">
-            <%= yield :browser %>
+      <div id="center">
+        <div id="messages">
+          <div id="current_user">
+            <% if current_user %>
+              <%= link_to current_user.name, '#', :rel => "dialog:#{close_user_sessions_path(:url => request.path)}" %>
+            <% else %>
+              <%= dialog_to t('.login'), new_user_sessions_path(:url => request.path) %>
+            <% end %>
           </div>
-        <% end %>
-        <div id="content_viewport" class="<%= 'has_browser' if @workspace_settings[:browser] %> <%= 'has_comm' if @workspace_settings[:comm] %>">
+          <div id="working">Trabajando...</div>
+        </div>
+        <div id="content_viewport">
           <div id="content">
             <%= yield  %>
           </div>
         </div>
-        <% if @workspace_settings[:comm] %>
-          <div id="comm_viewport">
-            <div id="communicator">
-              <div class="output"></div>
-            </div>
+      </div>
+      <div id="right">
+        <ul id="user_navigation">
+          <%= render '/layouts/user_navigation' %>
+        </ul>
+        <div id="comm_viewport">
+          <div id="communicator">
+            <div class="output"></div>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
     <%= render 'layouts/ga' %>
   </body>

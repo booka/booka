@@ -1,8 +1,8 @@
 
 @import "variables";
 
-@browser_size: 340px;
-@comm_size: 290px;
+@browser_size: 300px;
+@comm_size: 264px;
 
 #workspace {
     width: 100%;
@@ -11,35 +11,20 @@
     background-color: @gris;
 }
 
-#bgnavigation {position: absolute; left: 0; right: 0; top: 0; height: 80px; background-color: @gris;}
-#navigation {position: absolute; left: 0; right: 0; top: 0; height: 80px; background-color: transparent; z-index:1000;}
-#main {position: absolute; left: 0; right: 0; top: 30px; bottom: 0; overflow: hidden;}
-#browser_viewport {position: absolute; left: 10px; top: 50px; bottom: 10px; width: @browser_size - 40; .rounded; }
-#comm_viewport {position: absolute; right: 10px; top: 50px; bottom: 10px; width: @comm_size; .rounded;}
-#content_viewport {position: absolute; left: 0; top: 0px; right: 0; bottom: 0; background-color: @gris; }
-#content_viewport.has_browser {left: @browser_size - 20;}
-#content_viewport.has_comm {right: @comm_size + 10;}
-#content {position: absolute; left: 10px; top: 0px; right: 10px; bottom: 10px; overflow-x: hidden;}
+#left {overflow: hidden; position: absolute; left: 0; top: 0; width: @browser_size; bottom: 0;}
+#center {overflow: hidden; position: absolute; top: 0; bottom: 0; left: @browser_size; right: @comm_size;}
+#right {overflow: hidden; position: absolute; top: 0; right: 0; bottom: 0; width: @comm_size;}
+#browser_viewport {position: absolute; left: 10px; top: 80px; bottom: 10px; right: 10px; .rounded; }
+#comm_viewport {position: absolute; left: 10px; top: 80px; bottom: 10px; right: 10px; .rounded;}
+#content {position: absolute; left: 10px; top: 15px; right: 10px; bottom: 10px; overflow-x: hidden;}
+#user_navigation {width: 100%; overflow: hidden;}
 
-#project_stages {width: 70%; overflow: hidden; margin: 5px 10% 10px 10%; padding: 5px 5%;
-    background-color: @grisclaro; color: @azul; border: 1px solid @grisoscuro; .rounded; }
-#project_stages .icons {height: 10px; float: left;}
-#project_stages a {font-weight: bold; color: @azul;}
-
-#project_stages icons div {text-indent: -1000px; overflow: hidden; border: 0; background-color: @grisclaro; }
-
-#site_navigation {position: absolute; padding-left: 10px; left: 0px; width: @browser_size; top: 0; bottom: 0;}
-#user_navigation {position: absolute; width: @comm_size; top: 0; right: 0; bottom: 0;}
-#messages {padding: 0 15px 0 15px; position: absolute; left: @browser_size - 20; top: 0; right: @comm_size; bottom: 0;}
-#plataformabooka {position: absolute; top: -3px; left: 24px; color: @grisoscuro; font-size: @font-small;}
 .round-bottom {border-radius: 0 0 3px 3px;}
-#working {text-align: center; padding: 1px 0px; position: absolute; left: 40%; right: 40%; font-size: @font-small; background-color: @amarillo; color: @azul; .round-bottom;}
-
-#current_user {position: absolute; top: 0; width: 50%; right: 67px; height: 2em;}
-.current_user {padding: 3px 10px; background-color: @azulclaro; color: @azul; .round-bottom;}
-#current_user a {display: block; float: right; .current_user;}
-#current_project {margin-top: 0.2em; height: 1.3em; font-family: @serif; font-size: @font-small;}
-#place {font-size: 150%; height: 1.5em; overflow: hidden; font-family: @serif; width: 95%;}
+#current_user {position: absolute; top: 0; right: 50px; height: 2em; z-index: 5000;}
+#current_user a {display: block; float: right; padding: 3px 10px; background-color: @azulclaro; box-shadow: 1px 1px 3px rgb(0,0,0);
+   border-right: 1px solid @azul; border-bottom: 1px solid @azul; border-left: 1px solid @azul; color: @azul;  .round-bottom;}
+#working {text-align: center; padding: 1px 0px; position: absolute; left: 40%; right: 40%; font-size: @font-small; background-color: @amarillo; color: @azul; .round-bottom;z-index: 5000;}
+.browser {.rounded;}
 
 #site_navigation li {display: block; float: left;}
 #user_navigation li {display: block; float: right;}

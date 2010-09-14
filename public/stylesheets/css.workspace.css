@@ -52,123 +52,71 @@ div.action:hover { color: #e1ebef; }
   overflow: hidden;
   background-color: #c6c8ca;
 }
-#bgnavigation {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 80px;
-  background-color: #c6c8ca;
-}
-#navigation {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 80px;
-  background-color: transparent;
-  z-index: 1000;
-}
-#main {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 30px;
-  bottom: 0;
+#left {
   overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  bottom: 0;
 }
-#browser_viewport {
+#center {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 300px;
+  right: 264px;
+}
+#right {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 264px;
+}
+#browser_viewport, #comm_viewport {
   position: absolute;
   left: 10px;
-  top: 50px;
+  top: 80px;
   bottom: 10px;
-  width: 300px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-}
-#comm_viewport {
-  position: absolute;
   right: 10px;
-  top: 50px;
-  bottom: 10px;
-  width: 290px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-#content_viewport {
-  position: absolute;
-  left: 0;
-  top: 0px;
-  right: 0;
-  bottom: 0;
-  background-color: #c6c8ca;
-}
-#content_viewport.has_browser { left: 320px; }
-#content_viewport.has_comm { right: 300px; }
 #content {
   position: absolute;
   left: 10px;
-  top: 0px;
+  top: 15px;
   right: 10px;
   bottom: 10px;
   overflow-x: hidden;
 }
-#project_stages {
-  width: 70%;
-  overflow: hidden;
-  margin: 5px 10% 10px 10%;
-  padding: 5px 5%;
-  background-color: #efefef;
-  color: #00aeef;
-  border: 1px solid #3f3f3f;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-}
-#project_stages .icons {
-  height: 10px;
-  float: left;
-}
-#project_stages a {
-  font-weight: bold;
-  color: #00aeef;
-}
-#project_stages icons div {
-  text-indent: -1000px;
-  overflow: hidden;
-  border: 0;
-  background-color: #efefef;
-}
-#site_navigation {
-  position: absolute;
-  padding-left: 10px;
-  left: 0px;
-  width: 340px;
-  top: 0;
-  bottom: 0;
-}
 #user_navigation {
-  position: absolute;
-  width: 290px;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-#messages {
-  padding: 0 15px 0 15px;
-  position: absolute;
-  left: 320px;
-  top: 0;
-  right: 290px;
-  bottom: 0;
-}
-#plataformabooka {
-  position: absolute;
-  top: -3px;
-  left: 24px;
-  color: #3f3f3f;
-  font-size: 80%;
+  width: 100%;
+  overflow: hidden;
 }
 .round-bottom { border-radius: 0 0 3px 3px; }
+#current_user {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  height: 2em;
+  z-index: 5000;
+}
+#current_user a {
+  display: block;
+  float: right;
+  padding: 3px 10px;
+  background-color: #e1ebef;
+  box-shadow: 1px 1px 3px #000000;
+  border-right: 1px solid #00aeef;
+  border-bottom: 1px solid #00aeef;
+  border-left: 1px solid #00aeef;
+  color: #00aeef;
+  border-radius: 0 0 3px 3px;
+}
 #working {
   text-align: center;
   padding: 1px 0px;
@@ -179,40 +127,11 @@ div.action:hover { color: #e1ebef; }
   background-color: #feff8f;
   color: #00aeef;
   border-radius: 0 0 3px 3px;
+  z-index: 5000;
 }
-#current_user {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  right: 67px;
-  height: 2em;
-}
-.current_user {
-  padding: 3px 10px;
-  background-color: #e1ebef;
-  color: #00aeef;
-  border-radius: 0 0 3px 3px;
-}
-#current_user a {
-  display: block;
-  float: right;
-  padding: 3px 10px;
-  background-color: #e1ebef;
-  color: #00aeef;
-  border-radius: 0 0 3px 3px;
-}
-#current_project {
-  margin-top: 0.2em;
-  height: 1.3em;
-  font-family: 'Nobile', serif;
-  font-size: 80%;
-}
-#place {
-  font-size: 150%;
-  height: 1.5em;
-  overflow: hidden;
-  font-family: 'Nobile', serif;
-  width: 95%;
+.browser {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 #site_navigation li {
   display: block;

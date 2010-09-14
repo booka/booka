@@ -60,6 +60,25 @@ div.action:hover { color: #e1ebef; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+#project_stages {
+  width: 70%;
+  overflow: hidden;
+  margin: 5px 10% 10px 10%;
+  padding: 5px 5%;
+  background-color: #efefef;
+  color: #00aeef;
+  border: 1px solid #3f3f3f;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+#project_stages .icons {
+  height: 10px;
+  float: left;
+}
+#project_stages a {
+  font-weight: bold;
+  color: #00aeef;
+}
 .project .property {
   font-family: 'Nobile', serif;
   font-size: 80%;
