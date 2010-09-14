@@ -43,7 +43,7 @@
             },
 
             load: function(token) {
-                var path = $.booka.core.buildPath(token);
+                var path = $.booka.ajax.buildPath(token);
                 $("#flash").html("<p>Cargando... <p>");
                 $.getScript(path);
             }

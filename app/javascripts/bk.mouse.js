@@ -3,7 +3,8 @@
 
     var stop_timeout = false;
     var visible = true;
-
+    var active = true;
+    
     var api = {
         show : function () {
             clearTimeout(stop_timeout);
@@ -17,7 +18,7 @@
             }
         },
         hide  : function() {
-            if (visible) {
+            if (active && visible) {
                 $("#site_navigation").fadeOut();
                 $("#user_navigation").fadeOut();
                 $("#bgnavigation").fadeOut();
@@ -25,6 +26,13 @@
                 $("#comm_viewport").fadeOut('slow');
                 visible = false;
             }
+        },
+        stop : function() {
+            active = false;
+            api.show();
+        },
+        run : function() {
+            active = true;
         }
     };
 
@@ -43,15 +51,6 @@
             }, 2000);
         }, function() {
             api.show();
-        });
-
-        $("#nocontent").mousemove(function() {
-            api.show();
-            stop_timeout = setTimeout(function() {
-                if (visible && should_hide) {
-                    api.hide();
-                }
-            }, 2000);
         });
     });
 

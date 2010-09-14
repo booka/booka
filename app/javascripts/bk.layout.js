@@ -10,7 +10,7 @@
     }
 
 
-    var tokens = $.booka.core.state;
+    var tokens = $.booka.ajax.state;
     var place = null;
     
     $.extend(tokens, {

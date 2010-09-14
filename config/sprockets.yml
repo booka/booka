@@ -6,5 +6,5 @@
   - vendor/plugins/*/app/javascripts
 :source_files:
   - app/javascripts/jquery.*.js
-  - app/javascripts/bk.core.js
+  - app/javascripts/booka.js
   - app/javascripts/bk.*.js
