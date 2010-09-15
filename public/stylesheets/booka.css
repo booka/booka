@@ -259,6 +259,59 @@ a:hover { text-decoration: underline; }
   font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
+#page.editor h1 {
+  font-size: 150%;
+  margin: 1em 0 10px 0;
+}
+#page.editor form {
+  background-color: #efefef;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 1em;
+}
+#page.editor form textarea {
+  width: 100%;
+  height: 10em;
+}
+#page.editor form input[type=submit] { padding: 2px 10px; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.debug {
+  font-family: 'Nobile', serif;
+  font-size: 65%;
+  color: gray;
+}
+.container {
+  width: 100%;
+  overflow: hidden;
+}
+.rounded {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.button {
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: 'Nobile', serif;
+}
+.action {
+  background-color: #00aeef;
+  color: white;
+  cursor: pointer;
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 0 0 3px;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: 'Nobile', serif;
+}
+div.action:hover { color: #e1ebef; }
 .browser .floating_actions a {
   opacity: 0.5;
   float: right;
@@ -282,9 +335,9 @@ div.action:hover { color: #e1ebef; }
 .browser .list {
   font-size: 80%;
   position: absolute;
-  left: 0;
+  left: 5px;
   top: 40px;
-  right: 0;
+  right: 5px;
   bottom: 30px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -515,10 +568,13 @@ div.action:hover { color: #e1ebef; }
   width: 96%;
   margin-left: 2%;
   min-height: 400px;
-  border: 1px solid gray;
-  background-color: white;
   font-family: 'Nobile', serif;
 }
+#page.doc {
+  border: 1px solid gray;
+  background-color: white;
+}
+#page a { color: #00aeef; }
 #page .head {
   width: 90%;
   margin: 1em 0 3em 10%;
@@ -537,7 +593,6 @@ div.action:hover { color: #e1ebef; }
   margin-bottom: 0;
 }
 #page .floating_actions {
-  display: none;
   overflow: hidden;
   float: right;
   padding: 3px 3px 5px 5px;
@@ -549,16 +604,15 @@ div.action:hover { color: #e1ebef; }
 }
 #page .floating_actions a {
   display: block;
-  float: right;
   opacity: 0.5;
   margin-right: 2px;
 }
 #page .floating_actions a:hover { opacity: 1; }
-#page div.document:hover { border-color: white; }
-#page div.document:hover .floating_actions { display: block; }
-.clip { margin: 2px 0%; }
-#page div.clip:hover .floating_actions { display: block; }
-.slot {
+#page div.doc:hover { border-color: white; }
+#page div.doc:hover .floating_actions { display: block; }
+.section { margin: 2px 0%; }
+#page div.section:hover .floating_actions { display: block; }
+#page .slot {
   display: block;
   width: 60%;
   margin: 3px auto;
@@ -573,36 +627,36 @@ div#page:hover .slot {
   border: 1px solid white;
 }
 div#page a.slot:hover { border-color: #00aeef; }
-#page .clip p {
+#page .section p {
   width: 80%;
   margin: 10px 10%;
   overflow: hidden;
 }
-#page .clip ol {
+#page .section ol {
   width: 80%;
   margin: 10px 10%;
   overflow: hidden;
 }
-#page .clip h2 {
+#page .section h2 {
   width: 80%;
   margin: 10px 10%;
   overflow: hidden;
 }
-#page .clip h2 { font-size: 130%; }
-#page .clip img {
+#page .section h2 { font-size: 130%; }
+#page .section img {
   display: block;
   margin: 10px auto;
 }
-#page .clip object { margin: 10px auto; }
-#page .clip ol {
+#page .section object { margin: 10px auto; }
+#page .section ol {
   width: 80%;
   margin: 10px 10%;
 }
-#page .clip ul {
+#page .section ul {
   width: 80%;
   margin: 10px 10%;
 }
-#page .clip ol li {
+#page .section ol li {
   font-size: 80%;
   list-style: decimal;
   list-style-position: outside;
@@ -732,13 +786,6 @@ div.action:hover { color: #e1ebef; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
-#page .indices {
-  font-size: 80%;
-  color: #3f3f3f;
-  width: 90%;
-  margin-left: 10%;
-}
-#page .indices a { color: black; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
@@ -893,7 +940,7 @@ div.action:hover { color: #e1ebef; }
   padding: 5px 5%;
   background-color: #efefef;
   color: #00aeef;
-  border: 1px solid #3f3f3f;
+  border: 1px solid gray;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
@@ -908,7 +955,7 @@ div.action:hover { color: #e1ebef; }
 .project .property {
   font-family: 'Nobile', serif;
   font-size: 80%;
-  color: #3f3f3f;
+  color: gray;
 }
 .project .stage { margin-top: 5px; }
 .project .visibility { font-weight: bold; }
@@ -1072,7 +1119,7 @@ div.action:hover { color: #e1ebef; }
   padding: 3px 1%;
   width: 94%;
   overflow: auto;
-  color: #3f3f3f;
+  color: gray;
 }
 #communicator .input {
   position: absolute;
@@ -1093,11 +1140,11 @@ div.action:hover { color: #e1ebef; }
 }
 #communicator .item a {
   font-weight: bold;
-  color: #3f3f3f;
+  color: gray;
 }
 #communicator .event-browser {
   background-color: #c6c8ca;
-  border: 1px solid #3f3f3f;
+  border: 1px solid gray;
 }
 #communicator .event-document {
   background-color: #ff99ff;

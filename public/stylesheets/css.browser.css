@@ -69,9 +69,9 @@ div.action:hover { color: #e1ebef; }
 .browser .list {
   font-size: 80%;
   position: absolute;
-  left: 0;
+  left: 5px;
   top: 40px;
-  right: 0;
+  right: 5px;
   bottom: 30px;
   overflow-y: auto;
   overflow-x: hidden;

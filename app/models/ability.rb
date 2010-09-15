@@ -7,6 +7,10 @@ class Ability
       !user.nil?
     end
 
+    can(:manage, Site) do |site|
+      !user.nil?
+    end
+
     can(:read, Project) do |project|
       !user.nil? || project.visibility == 'public'
     end

@@ -11,6 +11,9 @@
         state : {
 
         },
+        token : function(token) {
+            $.address.value(token);
+        },
         buildPath : function(path) {
             var params = "";
             $.each(api.state, function(token, value) {
@@ -20,11 +23,11 @@
             return path +  ".js"  + params;
         },
         load: function(token) {
-            console.log("ajax.load: '" + token + "'");
             if ( token == '/') {
-                $.address.value(root_path);
-                return;
+                token = root_path;
             }
+            console.log("ajax.load: '" + token + "'");
+            
             var path = $.booka.ajax.buildPath(token);
             console.log("Loading path: " + path);
             $.getScript(path);
@@ -67,12 +70,12 @@
     }
 
     function init() {
-        $.address.change(function() {
+        $.address.externalChange(function() {
             $.booka.ajax.load($.address.value());
         });
 
         $('a[rel*=address:]').live('click', function() {
-            $.address.value($(this).attr('href'));
+            $.booka.ajax.load($(this).attr('href'));
             return false;
         });
 

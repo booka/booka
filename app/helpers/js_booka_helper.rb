@@ -4,13 +4,18 @@ module JsBookaHelper
     escape_javascript(text)
   end
 
+  def js_action_to(label, icon, url)
+    link_to_ajax(label, url, :title => label, :class => "iconic iconic-#{icon}_12x12")
+  end
+
   def js_str(text)
     "'#{escape_javascript(h text)}'"
   end
 
 
-  def js_partial(partial)
-    "\"#{escape_javascript(render :partial => partial)}\""
+  def js_partial(partial, model = nil)
+    rendered = model ? render(:partial => partial, :object => model) : render(:partial => partial)
+    "\"#{escape_javascript(rendered)}\""
   end
 
   def js_project(project)
@@ -23,11 +28,11 @@ module JsBookaHelper
   end
 
   def js_before
-    code = nil
+    code = "$.booka.ajax.token(#{js_str request.path[0..-4]});"
     if current_user
-      code = "$.booka.user.set(#{current_user.id}, #{js_str current_user.name}, 'address:#{js current_user_path}');"
+      code = code + "$.booka.user.set(#{current_user.id}, #{js_str current_user.name}, 'address:#{js current_user_path}');"
     else
-      code = "$.booka.user.set(null, 'Entrar', 'dialog:#{js new_user_sessions_path(:url => request.path)}');"
+      code = code + "$.booka.user.set(null, 'Entrar', 'dialog:#{js new_user_sessions_path(:url => request.path)}');"
     end
     if @project
       code = code + js_project(@project)

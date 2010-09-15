@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   SprocketsApplication.routes(map)
 
-  map.resource(:site, :as => 'ui', :controller => :site)
+  map.resource(:site, :as => 'booka', :controller => :site)
   
   map.resource(:user_sessions, :as => 'sesion', :member => {:close => :get})
 
@@ -31,6 +31,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources(:chapters, :as => 'ver')
 
   map.chat '/chat', :controller => 'site', :action => 'chat'
+  map.ui '/ui', :controller => 'site', :action => 'workspace'
   map.root :controller => 'site', :action => 'about'
   map.connect 'test_exception', :controller => 'site', :action => 'test_exception_notifier'
   map.pusher_trigger '/pusher/trigger', :controller => 'pusher', :action => 'trigger'

@@ -1,19 +1,15 @@
 
 @import "variables";
 
+
 #page {
     width: 96%;
     margin-left: 2%;
     min-height: 400px;
+    border: 1px solid gray;
+    background-color: white;
     font-family: 'Nobile', serif;
 }
-
-#page.doc {
-    border: 1px solid @grisoscuro;
-    background-color: white;
-}
-
-#page a {color: @azul;}
 
 
 #page .head {width: 90%; margin: 1em 0 3em 10%; }
@@ -23,24 +19,23 @@
 #page .head h3 a {color: black; font-size: @font-small; margin-bottom: 0;}
 
 #page .floating_actions {
-    /*display: none; */
-    overflow: hidden;
+    display: none; overflow: hidden;
     float: right; padding: 3px 3px 5px 5px;
     margin-right: 2px;
     background-color: @azulclaro; .rounded; border: 1px solid @azul;
 }
-#page .floating_actions a {display: block; opacity: 0.5; margin-right: 2px;}
+#page .floating_actions a {display: block; float: right; opacity: 0.5; margin-right: 2px;}
 #page .floating_actions a:hover {opacity: 1;}
 /** DOCUMENT **/
-#page div.doc:hover {border-color: white;}
-#page div.doc:hover .floating_actions {display: block; }
+#page div.document:hover {border-color: white;}
+#page div.document:hover .floating_actions {display: block; }
 
 /** CLIPS **/
-.section { margin: 2px 0%;  }
-#page div.section:hover .floating_actions {display: block;}
+.clip { margin: 2px 0%;  }
+#page div.clip:hover .floating_actions {display: block;}
 
 /** SLOTS **/
-#page .slot {
+.slot {
     display: block; width: 60%; margin: 3px auto; overflow: hidden; padding: 0px 0px 1px 0px; height: 2px;
     background-color: white; border: 1px solid white;
 }
@@ -48,12 +43,12 @@ div#page:hover .slot {background-color: @azulclaro; border: 1px solid white;}
 div#page a.slot:hover {border-color: @azul;}
 
 
-#page .section p, #page .section ol, #page .section h2 {width: 80%; margin: 10px 10%; overflow: hidden;}
-#page .section h2 {font-size: 130%;}
-#page .section img {display: block; margin: 10px auto;  }
-#page .section object {margin: 10px auto;}
-#page .section ol, #page .section ul {width: 80%; margin: 10px 10%;}
-#page .section ol li {font-size: 80%; list-style: decimal; list-style-position: outside;}
+#page .clip p, #page .clip ol, #page .clip h2 {width: 80%; margin: 10px 10%; overflow: hidden;}
+#page .clip h2 {font-size: 130%;}
+#page .clip img {display: block; margin: 10px auto;  }
+#page .clip object {margin: 10px auto;}
+#page .clip ol, #page .clip ul {width: 80%; margin: 10px 10%;}
+#page .clip ol li {font-size: 80%; list-style: decimal; list-style-position: outside;}
 
 #page .index h1 {margin-bottom: 50px;}
 #page .pointer {display: block; margin: 10px 40px; font-size: 120%; }

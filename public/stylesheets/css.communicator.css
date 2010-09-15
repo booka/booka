@@ -63,7 +63,7 @@ div.action:hover { color: #e1ebef; }
   padding: 3px 1%;
   width: 94%;
   overflow: auto;
-  color: #3f3f3f;
+  color: gray;
 }
 #communicator .input {
   position: absolute;
@@ -84,11 +84,11 @@ div.action:hover { color: #e1ebef; }
 }
 #communicator .item a {
   font-weight: bold;
-  color: #3f3f3f;
+  color: gray;
 }
 #communicator .event-browser {
   background-color: #c6c8ca;
-  border: 1px solid #3f3f3f;
+  border: 1px solid gray;
 }
 #communicator .event-document {
   background-color: #ff99ff;

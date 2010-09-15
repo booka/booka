@@ -1,4 +1,4 @@
-<%= navigate_to true, :entrance, 'Investigaciones', projects_path %>
+<%= navigate_to true, :entrance, 'Investigaciones', site_path %>
 <% if has_project? %>
   <%= navigate_to @project.stage?(:one), :archives, 'Archivos', project_documents_path(@project) %>
   <%= navigate_to @project.stage?(:two), :edition, 'Discusiones', project_disqs_path(@project) %>

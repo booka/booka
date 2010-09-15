@@ -104,7 +104,7 @@ html, body {
 h1 {
   font-size: 300%;
   text-align: center;
-  color: #3f3f3f;
+  color: gray;
 }
 p {
   line-height: 1.6em;

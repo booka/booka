@@ -1,10 +1,10 @@
 <!-- ProjectIndex - the index document -->
-<div id="page">
+<div id="page" class="doc">
   <div class="head">
     <h3><%= @project.title %></h3>
     <h1>Índice</h1>
   </div>
-  <div class="indices">
+  <div class="body">
     <% @index.each do |pointer| %>
       <% div_for(pointer, :class => "item #{'not-selectable' unless pointer.document?}") do  %>
         <%= pointer.document? ? link_to_ajax(pointer.title, chapter_path(:id => "#{pointer.id}-#{pointer.title.parameterize}")) : pointer.title %>

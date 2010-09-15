@@ -67,7 +67,7 @@ div.action:hover { color: #e1ebef; }
   padding: 5px 5%;
   background-color: #efefef;
   color: #00aeef;
-  border: 1px solid #3f3f3f;
+  border: 1px solid gray;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
@@ -82,7 +82,7 @@ div.action:hover { color: #e1ebef; }
 .project .property {
   font-family: 'Nobile', serif;
   font-size: 80%;
-  color: #3f3f3f;
+  color: gray;
 }
 .project .stage { margin-top: 5px; }
 .project .visibility { font-weight: bold; }

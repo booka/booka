@@ -1,7 +1,7 @@
 <% if can? :manager, clip %>
   <%= slot_for clip.parent, clip %>
 <% end %>
-<% div_for clip do %>
+<% div_for(clip, :class => 'section') do %>
   <% if can? :manager, clip %>
     <div class="floating_actions">
       <%= iminbutton_to t('.edit'), "bolt", "#" %>

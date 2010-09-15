@@ -1,0 +1,16 @@
+
+<div id="page" class="editor">
+  <h1>Editando <%= @site.title %></h1>
+  <% semantic_form_for(:site, :url => site_path, :html => { :method => :put}) do |form| %>
+    <%= form.error_messages %>
+    <% form.inputs do %>
+      <%= form.input :content_type, :as => :hidden %>
+      <%= form.input :body %>
+    <% end %>
+    <% form.buttons do %>
+      <%= form.commit_button %>
+      <%= link_to 'No cambiar', '#', :class => 'cancel' %>
+    <% end %>
+  <% end %>
+</div>
+

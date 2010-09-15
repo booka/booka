@@ -1,5 +1,5 @@
 <!-- Documents - the document -->
-<div id="page">
+<div id="page" class="doc">
   <div id="document_<%= document.id %>" class="head document">
     <% if can? :manage, document %>
       <div class="floating_actions">
@@ -8,7 +8,7 @@
       </div>
     <% end %>
     <h3><%= link_to_ajax @project.title, project_project_call_path(@project) %></h3>
-    <h1 class="title"><%= h document.title %></h1>
+    <h1><%= h document.title %></h1>
     <%= content_tag(:p, h(document.description), :class => 'description') unless document.description.blank? %>
     <%= content_tag(:p, h(document.author), :class => 'author') unless document.author.blank? %>
   </div>

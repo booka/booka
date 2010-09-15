@@ -1,9 +1,25 @@
 class SiteController < ApplicationController
-  caches_page :show
+  caches_page :workspace
+
+  def workspace
+    @remote = true
+  end
+
+  def edit
+    @site = Site.get
+  end
+
+  def update
+    @site = Site.get
+    if @site.update_attributes(params[:site])
+      render :action => 'show'
+    else
+      render :action => 'edit'
+    end
+  end
 
   def show
     @site = Site.get
-    @remote = true
   end
 
   def about

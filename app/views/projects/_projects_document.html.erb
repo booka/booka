@@ -1,4 +1,4 @@
-<div id="page">
+<div id="page" class="doc">
   <div class="head">
     <h2>Bienvenidx a la plataformabooka.net</h2>
     <h1 class="title">Investigaciones en plataformabooka.net</h1>
@@ -7,7 +7,7 @@
     <p></p>
   </div>
 
-  <div class="projects">
+  <div class="body projects">
     <% @projects.each do |project| %>
       <% if can? :read, project %>
         <% div_for(project, :class => 'clip') do %>

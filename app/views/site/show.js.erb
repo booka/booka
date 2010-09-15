@@ -1,0 +1,9 @@
+console.log("Site - Show (site document)");
+
+<%= js_before %>
+with($.booka) {
+layout.place(<%= js_str @site.title %>);
+layout.requestBrowser('projects', '<%= browser_projects_path %>');
+layout.document(<%= js_partial 'site'%>);
+comm.add('document', <%= js_str "Estás leyendo '#{@site.title}'." %>);
+}

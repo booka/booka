@@ -1,0 +1,9 @@
+console.log("Site - Edit (edit site document)");
+
+<%= js_before %>
+with($.booka) {
+layout.place(<%= js_str "Editando '#{@site.title}'" %>);
+layout.document(<%= js_partial 'form'%>);
+comm.add('document', <%= js_str "Estás editando '#{@site.title}'." %>);
+editor.setup();
+}
