@@ -1,5 +1,6 @@
 console.log("Activities - Index (activity page)");
 
+<%= js_before %>
 with($.booka) {
   layout.place(<%= js_str @activity_report.title %>);
   layout.requestBrowser('activities', '<%= activity_reports_path %>');

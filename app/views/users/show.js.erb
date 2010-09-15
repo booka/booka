@@ -1,6 +1,6 @@
-
 console.log("Users - Show");
 
+<%= js_before %>
 with($.booka) {
   layout.place(<%= js_str @user.name %>);
   layout.requestBrowser('users', '<%= users_path %>');

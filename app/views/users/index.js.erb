@@ -1,5 +1,6 @@
 console.log("Users - Index (users browser)");
 
+<%= js_before %>
 with($.booka) {
   layout.browser('users', <%= js_partial 'browser' %>);
   layout.flash("Lista de colaboradorxs cargada.");

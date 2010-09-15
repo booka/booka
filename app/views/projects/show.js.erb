@@ -1,5 +1,6 @@
 console.log("Project - Show (project properties)");
 
+<%= js_before %>
 with($.booka) {
   layout.place(<%= js_str @project.title %>);
   layout.requestBrowser('projects', '<%= browser_projects_path %>');

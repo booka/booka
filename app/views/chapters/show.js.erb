@@ -1,7 +1,7 @@
 
 console.log("Chapters - Show");
 
-<%= js_project @project %>
+<%= js_before %>
 with($.booka) {
   layout.place(<%= js_str @document.title %>);
   layout.requestBrowser('index', '<%= browser_project_index_path(@project) %>');

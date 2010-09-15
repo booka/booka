@@ -18,9 +18,6 @@
     <%= javascript_include_tag 'ckeditor/ckeditor.js' , 'ckeditor/adapters/jquery.js' %>
   </head>
   <body>
-
-    <% @workspace_settings ||= {:browser => true, :comm => true} %>
-
     <div id="workspace">
       <div id="left">
         <ul id="site_navigation">
@@ -33,11 +30,6 @@
       <div id="center">
         <div id="messages">
           <div id="current_user">
-            <% if current_user %>
-              <%= link_to current_user.name, '#', :rel => "dialog:#{close_user_sessions_path(:url => request.path)}" %>
-            <% else %>
-              <%= dialog_to t('.login'), new_user_sessions_path(:url => request.path) %>
-            <% end %>
           </div>
           <div id="working">Trabajando...</div>
         </div>

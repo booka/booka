@@ -1,7 +1,7 @@
 
 console.log("documents - Show");
 
-<%= js_project @project %>
+<%= js_before %>
 with($.booka) {
   layout.place(<%= js_str @document.title %>);
   layout.requestBrowser('documents', '<%= project_documents_path(@project) %>');

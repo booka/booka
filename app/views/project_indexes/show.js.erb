@@ -1,6 +1,6 @@
 console.log("ProjectIndexes - show (document with browser)");
 
-<%= js_project @project %>
+<%= js_before %>
 with($.booka) {
   layout.browser('index', <%= js_partial 'indexes/browser' %>);
   layout.document(<%= js_partial 'indexes/document' %>);
