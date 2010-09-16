@@ -20,6 +20,9 @@ class SiteController < ApplicationController
 
   def show
     @site = Site.get
+    if (params[:browser] != 'projects')
+      @projects = @site.projects
+    end
   end
 
   def about

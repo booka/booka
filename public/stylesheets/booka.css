@@ -114,6 +114,19 @@ pre.debug_dump:hover {
   margin-bottom: 10px;
 }
 .under_construction p { margin: 10px 0; }
+h1 {
+  font-size: 200%;
+  margin-bottom: 1em;
+}
+h2 {
+  font-size: 150%;
+  margin-bottom: 0.5em;
+}
+h3 {
+  font-size: 120%;
+  margin-bottom: 0.2em;
+}
+p { margin: 0.5em 0; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
@@ -526,6 +539,14 @@ a.sprite-nav.selected { border-color: #efefef; }
   opacity: 1;
   background-color: #00aeef;
 }
+#page .info {
+  width: 80%;
+  margin: 65px auto 10px auto;
+  padding: 2em 10%;
+  background-color: #efefef;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .debug {
@@ -573,6 +594,7 @@ div.action:hover { color: #e1ebef; }
 #page.doc {
   border: 1px solid gray;
   background-color: white;
+  font-size: 80%;
 }
 #page a { color: #00aeef; }
 #page .head {
@@ -926,7 +948,7 @@ div.action:hover { color: #e1ebef; }
   -webkit-border-radius: 3px;
 }
 .browser.projects .project {
-  margin: 10px;
+  margin: 10px 0;
   display: block;
   background-color: white;
   padding: 5px;
@@ -959,6 +981,12 @@ div.action:hover { color: #e1ebef; }
 }
 .project .stage { margin-top: 5px; }
 .project .visibility { font-weight: bold; }
+.browser.projects .list {
+  margin: 10px 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #00aeef;
+}
 .browser.projects h1 {
   margin-left: 10px;
   color: white;
@@ -967,6 +995,10 @@ div.action:hover { color: #e1ebef; }
 .browser.projects a {
   color: black;
   font-size: 120%;
+}
+.browser.projects .stages a {
+  color: #00aeef;
+  font-size: 80%;
 }
 #page .projects {
   width: 100%;

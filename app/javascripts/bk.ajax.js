@@ -75,7 +75,9 @@
         });
 
         $('a[rel*=address:]').live('click', function() {
-            $.booka.ajax.load($(this).attr('href'));
+            var url = $(this).attr('href');
+            console.log("Address: " + url);
+            $.booka.ajax.load(url);
             return false;
         });
 

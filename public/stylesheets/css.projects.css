@@ -53,7 +53,7 @@ div.action:hover { color: #e1ebef; }
   -webkit-border-radius: 3px;
 }
 .browser.projects .project {
-  margin: 10px;
+  margin: 10px 0;
   display: block;
   background-color: white;
   padding: 5px;
@@ -86,6 +86,12 @@ div.action:hover { color: #e1ebef; }
 }
 .project .stage { margin-top: 5px; }
 .project .visibility { font-weight: bold; }
+.browser.projects .list {
+  margin: 10px 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #00aeef;
+}
 .browser.projects h1 {
   margin-left: 10px;
   color: white;
@@ -94,6 +100,10 @@ div.action:hover { color: #e1ebef; }
 .browser.projects a {
   color: black;
   font-size: 120%;
+}
+.browser.projects .stages a {
+  color: #00aeef;
+  font-size: 80%;
 }
 #page .projects {
   width: 100%;

@@ -27,6 +27,14 @@ module JsBookaHelper
     code
   end
 
+  def js_browse(name, path, message = nil)
+    code = ""
+    if (params[:browser] != name)
+      code = "$.booka.layout.browser('#{name}', #{js_partial path});"
+    end
+    code
+  end
+
   def js_before
     code = "$.booka.ajax.token(#{js_str request.path[0..-4]});"
     if current_user

@@ -32,7 +32,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.chat '/chat', :controller => 'site', :action => 'chat'
   map.ui '/ui', :controller => 'site', :action => 'workspace'
-  map.root :controller => 'site', :action => 'about'
+  map.root :controller => 'site', :action => 'workspace'
   map.connect 'test_exception', :controller => 'site', :action => 'test_exception_notifier'
   map.pusher_trigger '/pusher/trigger', :controller => 'pusher', :action => 'trigger'
   map.connect '/pusher/:action', :controller => 'pusher'

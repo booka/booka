@@ -6,6 +6,7 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.find(params[:id])
     @project = @document.project
+    @documents = @project.documents if (params[:browser] != 'documents')
     show!
   end
 

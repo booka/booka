@@ -1,8 +1,8 @@
 console.log("ProjectIndexes - show (document with browser)");
 
 <%= js_before %>
+<%= js_browse('index', 'indexes/browser')  %>
 with($.booka) {
-  layout.browser('index', <%= js_partial 'indexes/browser' %>);
   layout.document(<%= js_partial 'indexes/document' %>);
   layout.place(<%= js_str "Índice de '#{@project.title}'" %>);
   comm.add('document', <%= js_str "Puedes leer los artículos pinchando en el índice." %>);

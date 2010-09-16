@@ -1,15 +1,22 @@
 
 
-<ul class="browser projects">
+<div class="browser projects">
   <h1>Investigaciones</h1>
-  <% @projects.each do |project| %>
-    <% if can? :read, project %>
-      <li class="project">
-        <%= link_to_ajax h(project.title), project_project_call_path(project) %>
-        <p class="description"><%= h project.description %></p>
-        <p class="property collaborators"><%= link_to_ajax("#{project.permissions.size} personas colaborando.", project_path(project)) %></p>
-        <%= content_tag(:p, 'Visible sólo por colaboradores', :class => 'property visibility') if project.visibility == 'private' %>
-      </li>
+  <ul class="list">
+    <% @projects.each do |project| %>
+      <% if can? :read, project %>
+        <li class="project">
+          <%= link_to_ajax h(project.title), project_project_call_path(project) %>
+          <p class="description"><%= h project.description %></p>
+          <p class="property collaborators"><%= link_to_ajax("#{project.permissions.size} personas colaborando.", project_path(project)) %></p>
+          <%= content_tag(:p, 'Visible sólo por colaboradores', :class => 'property visibility') if project.visibility == 'private' %>
+          <div class="stages">
+            <%= link_to_ajax('En fase de presentación de propuestas', project_documents_path(project)) if project.stage?(:one) %>
+            <%= link_to_ajax('En fase de edición', project_disqs_path(project)) if project.stage?(:two) %>
+            <%= link_to_ajax('En fase de publicación y discusión', project_index_path(project)) if project.stage?(:three) %>
+          </div>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>

@@ -5,7 +5,7 @@
     <%= form.error_messages %>
     <% form.inputs do %>
       <%= form.input :content_type, :as => :hidden %>
-      <%= form.input :body %>
+      <%= form.input :body, :as => :text %>
     <% end %>
     <% form.buttons do %>
       <%= form.commit_button %>

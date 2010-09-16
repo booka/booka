@@ -177,3 +177,11 @@ a.sprite-nav.selected { border-color: #efefef; }
   opacity: 1;
   background-color: #00aeef;
 }
+#page .info {
+  width: 80%;
+  margin: 65px auto 10px auto;
+  padding: 2em 10%;
+  background-color: #efefef;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}

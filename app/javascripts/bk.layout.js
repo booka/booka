@@ -36,6 +36,9 @@
         preDocument : function(content) {
             $("#content").prepend(content);
         },
+        /**
+         * Change the browser. Use browser(null) to clear the browser
+         */
         browser : function(token, content) {
             console.log("Set browser " + token);
             tokens.browser = token;
@@ -43,13 +46,6 @@
                 $("#browser_viewport").html(content);
             } else {
                 $("#browser_viewport").html('');
-            }
-        },
-        requestBrowser : function(token, path) {
-            console.log("Requested browser : " + token + " current: " + tokens.browser);
-            if (tokens.browser == null) {
-                console.log("Request browser: " + token + " - " + path);
-                $.getScript(path + ".js");
             }
         },
         project : function(token, title, navigation) {

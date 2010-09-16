@@ -30,6 +30,6 @@ class Site < Bok
   end
 
   def projects
-    childrens_of_type(Project)
+    children_of_type(Project)
   end
 end

@@ -1,9 +1,9 @@
 console.log("Users - Show");
 
 <%= js_before %>
+<%= js_browse('users', users_path) %>
 with($.booka) {
   layout.place(<%= js_str @user.name %>);
-  layout.requestBrowser('users', '<%= users_path %>');
   layout.document(<%= js_partial @user %>);
   layout.flash(<%= js_str "Estás viendo la página de '#{@user.name}'." %>);
 }

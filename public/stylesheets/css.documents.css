@@ -55,6 +55,7 @@ div.action:hover { color: #e1ebef; }
 #page.doc {
   border: 1px solid gray;
   background-color: white;
+  font-size: 80%;
 }
 #page a { color: #00aeef; }
 #page .head {

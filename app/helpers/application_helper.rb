@@ -5,9 +5,9 @@ module ApplicationHelper
     content_for(:title) {title}
   end
 
-  def link_to_ajax(name, options = {}, html_options = {})
-    html_options[:rel] = "address:" + options
-    link_to(name, options, html_options)
+  def link_to_ajax(name, url = {}, html_options = {})
+    html_options[:rel] = "address:" + url
+    link_to(name, url, html_options)
   end
 
   def dialog_to(name, options = {}, html_options = {})

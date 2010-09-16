@@ -18,7 +18,8 @@
             }
         },
         hide  : function() {
-            if (active && visible) {
+            var doc = $("#content .doc").size > 0;
+            if (doc && active && visible) {
                 $("#site_navigation").fadeOut();
                 $("#user_navigation").fadeOut();
                 $("#bgnavigation").fadeOut();

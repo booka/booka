@@ -1,10 +1,13 @@
 
-console.log("documents - Show");
+console.log("Documents - Show");
 
 <%= js_before %>
 with($.booka) {
-  layout.place(<%= js_str @document.title %>);
-  layout.requestBrowser('documents', '<%= project_documents_path(@project) %>');
-  layout.document(<%= js_partial @document %>);
-  layout.flash(<%= js_str "'#{@document.title}' cargado." %>);
+layout.place(<%= js_str @document.title %>);
+<% if @documents %>
+  layout.browser('documents', <%= js_partial '/documents/browser' %>);
+  layout.flash(<%= js_str "Archivos de '#{@project.title}' cargados" %>);
+<% end %>
+layout.document(<%= js_partial @document %>);
+layout.flash(<%= js_str "'#{@document.title}' cargado." %>);
 }

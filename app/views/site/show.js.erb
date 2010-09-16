@@ -3,7 +3,10 @@ console.log("Site - Show (site document)");
 <%= js_before %>
 with($.booka) {
 layout.place(<%= js_str @site.title %>);
-layout.requestBrowser('projects', '<%= browser_projects_path %>');
+<% if @projects %>
+  layout.browser("projects", <%= js_partial 'projects/browser' %>);
+  comm.add("browser", "Puedes leer las convocatorias pulsando sobre alguna investigación de la lista.");
+<% end %>
 layout.document(<%= js_partial 'site'%>);
 comm.add('document', <%= js_str "Estás leyendo '#{@site.title}'." %>);
 }

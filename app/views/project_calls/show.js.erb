@@ -2,11 +2,14 @@ console.log("ProjectCalls - Show (call document)");
 
 <%= js_before %>
 with($.booka) {
-  layout.place(<%= js_str "Convocatoria de '#{@project.title}'" %>);
-  layout.requestBrowser('projects', <%= js_str browser_projects_path %>);
-  layout.document(<%= js_partial @call %>);
-  layout.preDocument(<%= js_partial 'projects/stages' %>);
-  comm.add('document', <%= js_str "Estás leyendo la convocatoria de '#{@project.title}'" %>);
+layout.place(<%= js_str "Convocatoria de '#{@project.title}'" %>);
+<% if @projects %>
+  layout.browser("projects", <%= js_partial 'projects/browser' %>);
+  comm.add("browser", "Puedes leer las convocatorias pulsando sobre alguna investigación de la lista.");
+<% end %>
+layout.document(<%= js_partial @call %>);
+layout.preDocument(<%= js_partial 'projects/stages' %>);
+comm.add('document', <%= js_str "Estás leyendo la convocatoria de '#{@project.title}'" %>);
 }
 
 // js_tooltip_for 'navigate-to-archives' do

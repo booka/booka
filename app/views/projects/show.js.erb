@@ -3,6 +3,9 @@ console.log("Project - Show (project properties)");
 <%= js_before %>
 with($.booka) {
   layout.place(<%= js_str @project.title %>);
-  layout.requestBrowser('projects', '<%= browser_projects_path %>');
+<% if @projects %>
+  layout.browser("projects", <%= js_partial 'projects/browser' %>);
+  comm.add("browser", "Puedes leer las convocatorias pulsando sobre alguna investigación de la lista.");
+<% end %>
   layout.document(<%= js_partial @project %>);
 }
