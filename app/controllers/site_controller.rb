@@ -33,6 +33,10 @@ class SiteController < ApplicationController
     render :action => 'chat', :layout => 'public'
   end
 
+  def ccc
+    redirect_to '/#/investigaciones/174-camiones-contenedores-colectivos/convocatoria'
+  end
+
   def test_exception_notifier
     raise 'Test exception notifier (booka).'
   end
