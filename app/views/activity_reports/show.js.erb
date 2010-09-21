@@ -1,9 +1,9 @@
 console.log("Activities - Index (activity page)");
 
 <%= js_before %>
+<%= js_browse('activities', 'browser', 'En la lista puedes ver los ditintos tipos de informes de actividad') %>
 with($.booka) {
   layout.place(<%= js_str @activity_report.title %>);
-  layout.browser(null);
   layout.document(<%= js_partial @activity_report %>);
   layout.flash(<%= js_str "Estás viendo la #{@activity_report.title}" %>);
 }

@@ -8,5 +8,8 @@ class ActivityReportsController < ApplicationController
     else
       Activity.find(-1)
     end
+    if (params[:browser] != 'activities')
+      
+    end
   end
 end

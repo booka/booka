@@ -2,7 +2,10 @@
 es:
   formtastic:
     submit: "Guardar"
-  data:
+  actions:
+    create: "Crear %{model}"
+    update: "Guardar %{model}"
+      
     project:
       stage:
         calls: "Presentación de propuestas"

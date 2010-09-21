@@ -2,6 +2,7 @@ console.log("AcitivityGroups - Index (project browser)");
 
 
 <%= js_before %>
+<%= js_browse('activities', 'browser', 'En la lista puedes ver los ditintos tipos de informes de actividad') %>
 with($.booka) {
-  layout.browser('activities', <%= js_partial 'browser' %>);
+layout.document(<%= js_partial 'index' %>);
 }

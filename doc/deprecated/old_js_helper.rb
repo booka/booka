@@ -11,14 +11,6 @@ module OldJsHelper
     "$('#place').html('#{escape_javascript text}');"
   end
 
-
-
-  def js_browser(partial)
-    if (params[:browser] != partial)
-      "$.booka.layout.browser('#{partial}', '#{js_partial partial}');"
-    end
-  end
-
   def js_content_for(div_id, content)
     "$('##{div_id}').html('#{escape_javascript content}');"
   end

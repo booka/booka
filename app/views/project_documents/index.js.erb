@@ -2,9 +2,9 @@ console.log("ProjectIndex - Index (index browser)");
 
 
 <%= js_before %>
+<%= js_browser('documents', '/documents/browser') %>
 with($.booka) {
 layout.document(<%= js_partial 'index' %>);
-layout.browser('documents', <%= js_partial '/documents/browser' %>);
 layout.flash(<%= js_str "Archivos de '#{@project.title}' cargados" %>);
 }
 
