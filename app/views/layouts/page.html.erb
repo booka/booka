@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="shortcut icon" href="/booka.ico" type="image/x-icon" />
+    <title>Plataformaboka.net - <%= yield :title %></title>
+    <%=  stylesheet_link_tag('booka', 'icons') %>
+    <link  href="//fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" />
+    <% if RAILS_ENV == 'production' %>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+      <script src="http://js.pusherapp.com/1.6/pusher.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js"></script>
+    <% else %>
+      <%= javascript_include_tag 'jquery.min.js', 'pusher.min.js', 'jquery.tools.min.js' %>
+    <% end %>
+    <%= sprockets_include_tag if @remote %>
+    <%= javascript_include_tag 'ckeditor/ckeditor.js' , 'ckeditor/adapters/jquery.js' %>
+  </head>
+  <body>
+    <div id="workspace">
+      <div id="left">
+        <ul id="site_navigation">
+        </ul>
+        <div id="browser_viewport">
+        </div>
+      </div>
+      <div id="center">
+        <div id="messages">
+          <div id="current_user">
+          </div>
+        </div>
+        <div id="content_viewport">
+          <div id="content">
+          <div id="view_mode">
+            Estás en modo visualización. Para entrar en modo edición pulsa <a href="/#<%= request.env['PATH_INFO'] %>" id="workspace_mode">aquí</a>
+            <br/>
+          </div>
+            <%= yield  %>
+          </div>
+        </div>
+      </div>
+      <div id="right">
+        <ul id="user_navigation">
+        </ul>
+      </div>
+    </div>
+    <%= render 'layouts/ga' %>
+  </body>
+</html>

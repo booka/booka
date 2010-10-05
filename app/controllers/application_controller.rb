@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include ExceptionNotification::Notifiable
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  layout 'workspace'
+  layout 'page'
   helper_method :has_project?, :current_project
   helper_method :current_user_session, :current_user
 

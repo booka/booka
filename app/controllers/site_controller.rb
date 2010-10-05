@@ -3,6 +3,7 @@ class SiteController < ApplicationController
 
   def workspace
     @remote = true
+    render :layout => 'workspace'
   end
 
   def edit
@@ -34,7 +35,7 @@ class SiteController < ApplicationController
   end
 
   def ccc
-    redirect_to '/#/investigaciones/174-camiones-contenedores-colectivos/convocatoria'
+    redirect_to '/investigaciones/174-camiones-contenedores-colectivos/convocatoria'
   end
 
   def test_exception_notifier
