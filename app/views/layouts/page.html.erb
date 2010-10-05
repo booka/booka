@@ -16,6 +16,11 @@
     <% end %>
     <%= sprockets_include_tag if @remote %>
     <%= javascript_include_tag 'ckeditor/ckeditor.js' , 'ckeditor/adapters/jquery.js' %>
+    <style type="text/css">
+      .floating_actions {display: none;}
+      #page div.section:hover .floating_actions {display: none;}
+      #page .slot { display: none; }
+    </style>
   </head>
   <body>
     <div id="workspace">
@@ -32,10 +37,10 @@
         </div>
         <div id="content_viewport">
           <div id="content">
-          <div id="view_mode">
-            Estás en modo visualización. Para entrar en modo edición pulsa <a href="/#<%= request.env['PATH_INFO'] %>" id="workspace_mode">aquí</a>
-            <br/>
-          </div>
+            <div id="view_mode">
+              Estás en modo visualización. Para entrar en modo edición pulsa <a href="/#<%= request.env['PATH_INFO'] %>" id="workspace_mode">aquí</a>
+              <br/>
+            </div>
             <%= yield  %>
           </div>
         </div>

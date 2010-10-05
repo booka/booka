@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   inherit_resources
-  respond_to :html, :xml, :json, :js
+  respond_to :js
   actions :update
 
   def browser

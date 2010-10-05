@@ -48,5 +48,9 @@ module JsBookaHelper
     code
   end
 
+  def js_show_dialog(partial)
+    "$.booka.dialogs.show('#{js_partial partial}');"
+  end
+
 
 end
