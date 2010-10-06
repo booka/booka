@@ -1,0 +1,16 @@
+<div id="page" class="doc">
+  <div class="head">
+    <h2>Colaboradrxs</h2>
+    <h1 class="title">Colaboradorxs registradxs en plataformabooka.net</h1>
+  </div>
+  <% @users.each do |user| %>
+    <% div_for(user, :class => 'bloq') do  %>
+      <% if can? :manage, user %>
+        <div class="floating_actions">
+          <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_user_path(user) %>
+        </div>
+      <% end %>
+      <%= link_to_ajax h(user.name), user_path(user) %>
+    <% end %>
+  <% end %>
+</div>

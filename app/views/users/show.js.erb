@@ -1,7 +1,7 @@
 console.log("Users - Show");
 
 <%= js_before %>
-<%= js_browse('users', users_path) %>
+<%= js_browse('users', 'users/browser') %>
 with($.booka) {
   layout.place(<%= js_str @user.name %>);
   layout.document(<%= js_partial @user %>);

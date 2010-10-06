@@ -38,6 +38,7 @@
         <div id="content_viewport">
           <div id="content">
             <div id="view_mode">
+              <%= "Hola #{current_user.name}." if current_user %>
               Estás en modo visualización. Para entrar en modo edición pulsa <a href="/#<%= request.env['PATH_INFO'] %>" id="workspace_mode">aquí</a>
               <br/>
             </div>

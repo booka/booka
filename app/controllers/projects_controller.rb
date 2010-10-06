@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   inherit_resources
   respond_to :js
-  actions :update
+  actions :update, :index
 
   def browser
     @projects = Project.all
