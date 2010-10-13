@@ -1,7 +1,7 @@
-<%= navigate_to true, :entrance, 'Investigaciones', site_path %>
+<%= navigate_to true, :entrance, 'Investigaciones', site_path, 'projects' %>
 <% if has_project? %>
-  <%= navigate_to @project.stage?(:one), :archives, 'Archivos', project_documents_path(@project) %>
-  <%= navigate_to @project.stage?(:two), :edition, 'Discusiones', project_disqs_path(@project) %>
-  <%= navigate_to @project.stage?(:three), :booka, 'Índice', project_index_path(@project) %>
+  <%= navigate_to @project.stage?(:one), :archives, 'Artículos', project_documents_path(@project), 'documents' %>
+  <%= navigate_to @project.stage?(:two), :edition, 'Discusiones', project_disqs_path(@project), 'disqs' %>
+  <%= navigate_to @project.stage?(:three), :booka, 'Índice', project_index_path(@project), 'index' %>
 <% end %>
 

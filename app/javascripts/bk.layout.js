@@ -33,6 +33,10 @@
         document : function(content) {
             $("#content").html(content).scrollTop(0);
         },
+        edit : function(content) {
+            $("#content").html(content).scrollTop(0);
+            $("#content textarea").wymeditor();
+        },
         preDocument : function(content) {
             $("#content").prepend(content);
         },
@@ -47,6 +51,8 @@
             } else {
                 $("#browser_viewport").html('');
             }
+            $("#site_navigation a.active").removeClass('active');
+            $("#navigate-to-" + token).addClass("active");
         },
         project : function(token, title, navigation) {
             $.booka.comm.clear('project');

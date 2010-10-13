@@ -13,8 +13,10 @@ class SiteController < ApplicationController
   def update
     @site = Site.get
     if @site.update_attributes(params[:site])
+      flash[:notice] = "Se ha guardado la información."
       render :action => 'show'
     else
+      flash[:error] = "Ha habiedo un error."
       render :action => 'edit'
     end
   end

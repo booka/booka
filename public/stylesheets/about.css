@@ -61,6 +61,8 @@ a:hover { text-decoration: underline; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+.round-bottom { border-radius: 0 0 3px 3px; }
+.round-top { border-radius: 3px 3px 0 0; }
 .button {
   cursor: pointer;
   display: block;
@@ -104,7 +106,7 @@ html, body {
 h1 {
   font-size: 300%;
   text-align: center;
-  color: gray;
+  color: #3f3f3f;
 }
 p {
   line-height: 1.6em;

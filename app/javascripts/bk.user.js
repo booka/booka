@@ -13,6 +13,10 @@
         set : function(id, label, url) {
             tokens.user_id = id;
             $("#current_user").html('<a href="#" rel="' + url + '">' + label + '</a>');
+        },
+        setProject : function(title, url) {
+            $("#current_project").text(title).attr('href', url);
+
         }
     };
 

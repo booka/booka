@@ -3,6 +3,6 @@ class ProjectCallsController < ApplicationController
   
   def show
     @call = Document.find @project.properties[:call]
-    @projects = Project.all if params[:browser] != 'projects'
+    @projects = Project.all # if params[:browser] != 'projects'
   end
 end

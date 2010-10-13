@@ -5,7 +5,7 @@ with($.booka) {
 layout.place(<%= js_str "Convocatoria de '#{@project.title}'" %>);
 <% if @projects %>
   layout.browser("projects", <%= js_partial 'projects/browser' %>);
-  comm.add("browser", "Puedes leer las convocatorias pulsando sobre alguna investigación de la lista.");
+  comm.add("browser", "A la izquierda tienes la lista de investigaciones.");
 <% end %>
 layout.document(<%= js_partial @call %>);
 layout.preDocument(<%= js_partial 'projects/stages' %>);

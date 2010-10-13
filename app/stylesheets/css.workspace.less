@@ -14,28 +14,44 @@
 #left {overflow: hidden; position: absolute; left: 0; top: 0; width: @browser_size; bottom: 0;}
 #center {overflow: hidden; position: absolute; top: 0; bottom: 0; left: @browser_size; right: @comm_size;}
 #right {overflow: hidden; position: absolute; top: 0; right: 0; bottom: 0; width: @comm_size;}
-#browser_viewport {position: absolute; left: 10px; top: 80px; bottom: 10px; right: 10px; .rounded; }
-#comm_viewport {position: absolute; left: 10px; top: 80px; bottom: 10px; right: 10px; .rounded;}
-#content {position: absolute; left: 10px; top: 15px; right: 10px; bottom: 10px; overflow-x: hidden;}
+
+#user_controls {width: 100%; overflow: hidden; height: 23px;
+                background-color: @grismas; .round-bottom;}
+#user_controls a {display: block; float: left; margin-left: 5px; color: @grisclaro;}
+#user_controls a:hover {color: white; text-decoration: none;}
+#current_user {float: right; margin-right: 5px;}
+#current_user a {float: none;}
+
+#comm_viewport {position: absolute; left: 10px; top: 70px; bottom: 10px; right: 10px; .rounded;}
+#content {position: absolute; left: 10px; top: 35px; right: 10px; bottom: 35px; overflow-x: hidden;}
+#browser_viewport {position: absolute; left: 10px; top: 70px; bottom: 10px; right: 10px; .rounded; }
+
 #user_navigation {width: 100%; overflow: hidden;}
 
-.round-bottom {border-radius: 0 0 3px 3px;}
-#current_user {position: absolute; top: 0; right: 50px; height: 2em; z-index: 5000;}
-#current_user a {display: block; float: right; padding: 3px 10px; background-color: @azulclaro; box-shadow: 1px 1px 3px rgb(0,0,0);
+#talk_controls {position: absolute; left: 0; bottom: 0; width: 100%; height: 23px; overflow: hidden;
+    background-color: @grismas; .round-top; color: white;}
+#online_users {float: left; margin-left: 5px;}
+#unreaded_messages {float: right; margin-right: 5px;}
+
+#NOcurrent_user {position: absolute; top: 0; right: 50px; height: 2em; z-index: 5000;}
+#NOcurrent_user a {display: block; float: right; padding: 3px 10px; background-color: @azulclaro; box-shadow: 1px 1px 3px rgb(0,0,0);
    border-right: 1px solid @azul; border-bottom: 1px solid @azul; border-left: 1px solid @azul; color: @azul;  .round-bottom;}
 #working {text-align: center; padding: 1px 0px; position: absolute; left: 40%; right: 40%; font-size: @font-small; background-color: @amarillo; color: @azul; .round-bottom;z-index: 5000;}
 .browser {.rounded;}
 
-#site_navigation li {display: block; float: left;}
-#user_navigation li {display: block; float: right;}
+#site_navigation {width: 100%; overflow: hidden; margin: 2px 0 0 6px;}
+#site_navigation li {display: block; float: left; margin-left: 1px; }
+#user_navigation {width: 100%; overflow: hidden; margin: 2px 0 0 -6px; padding-right: 10px;}
+#user_navigation li {display: block; float: right; margin-right: 1px;}
 a.sprite-nav, div.navigation-disabled {
-    display: block; overflow: hidden; text-indent: -10000px; padding: 1px;
-    margin: 3px 0px 0 3px; border: 3px solid @gris; .rounded;
+    display: block; overflow: hidden; text-indent: -10000px; border: 2px solid @gris;
+    margin: 3px 0px 0 3px; .round-top;
 }
 div.navigation-disabled {
     opacity: 0.5;
 }
-a.sprite-nav:hover, a.sprite-nav.selected {
+a.sprite-nav:hover, a.sprite-nav.active {
+    background-color: @grisclaro;
     border-color: @grisclaro;
 }
 

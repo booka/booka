@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources(:projects, :as => 'investigaciones', :collection  => {:browser => :get}) do |project|
     project.resource(:project_call, :as => 'convocatoria')
     project.resource(:index, :controller => 'project_indexes', :as => 'indice', :member => {:browser => :get})
-    project.resources(:documents, :controller => 'project_documents', :as => 'archivos')
+    project.resources(:documents, :controller => 'project_documents', :as => 'articulos')
     project.resources(:disqs, :controller => 'project_disqs', :as => 'discusiones')
     #project.resources(:pages, :controller => 'project_pages',  :as => 'explorar')
   end

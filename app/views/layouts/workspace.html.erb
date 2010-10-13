@@ -15,7 +15,7 @@
       <%= javascript_include_tag 'jquery.min.js', 'pusher.min.js', 'jquery.tools.min.js' %>
     <% end %>
     <%= sprockets_include_tag if @remote %>
-    <%= javascript_include_tag 'ckeditor/ckeditor.js' , 'ckeditor/adapters/jquery.js' %>
+    <%= javascript_include_tag 'wymeditor/jquery.wymeditor.pack' %>
   </head>
   <body>
     <div id="workspace">
@@ -28,7 +28,9 @@
         </div>
       </div>
       <div id="center">
-        <div id="messages">
+        <div id="user_controls">
+          <a id="plataformabooka" href="#">Plataformabooka.net > </a>
+          <a id="current_project" href="#"></a>
           <div id="current_user">
           </div>
           <div id="working">Trabajando...</div>
@@ -37,6 +39,10 @@
           <div id="content">
             <%= yield  %>
           </div>
+        </div>
+        <div id="talk_controls">
+          <div id="online_users">Personas conectadas: 0</div>
+          <div id="unreaded_messages">Mensajes sin leer: 0</div>
         </div>
       </div>
       <div id="right">

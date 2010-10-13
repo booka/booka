@@ -1,7 +1,7 @@
 
-<div class="dialog">
-  <h2><%= @document.new_record? ? 'Añadir nuevo archivo' : 'Editar archivo' %></h2>
-  <%= content_tag(:h1, h(@document.title)) unless @document.new_record? %>
+<div id="page" class="editor">
+  <h3><%= @document.new_record? ? 'Crear un artículo' : 'Editar artículo' %></h3>
+  <%= content_tag(:h1, "Editando: #{h(@document.title)}") unless @document.new_record? %>
   <% semantic_form_for(@document) do |form| %>
     <%= form.error_messages %>
     <% form.inputs do %>

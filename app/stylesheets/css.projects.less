@@ -1,19 +1,7 @@
 
 @import "variables";
 
-.browser.projects {
-    overflow: hidden;
-    background-color: @azul;
-    .rounded;
-}
 
-.browser.projects .project {
-    margin: 10px 0;
-    display: block;
-    background-color: white;
-    padding: 5px;
-    .rounded;
-}
 
 #project_stages {width: 70%; overflow: hidden; margin: 5px 10% 10px 10%; padding: 5px 5%;
     background-color: @grisclaro; color: @azul; border: 1px solid @grisoscuro; .rounded; }
@@ -25,11 +13,23 @@
 .project .collaborators {}
 .project .visibility {font-weight: bold;}
 
-.browser.projects .list {margin: 10px 5px; overflow-y: auto; overflow-x: hidden; background-color: @azul;}
-.browser.projects h1 {margin-left: 10px; color: white; font-family: @sans;}
+.browser.projects .list {margin: 10px 5px; overflow-y: auto; overflow-x: hidden; background-color: @grisclaro; padding-right: 5px;}
+.browser.projects h1 {margin-left: 10px; color: black; font-family: @sans;}
 
 .browser.projects a {color: black; font-size: 120%;}
 .browser.projects .stages a {color: @azul; font-size: 80%;}
+
+.browser.projects .project {
+    margin: 10px 0;
+    display: block;
+    background-color: white;
+    padding: 5px;
+    .rounded;
+}
+
+.browser.projects .project.current {background-color: @amarilloclaro; margin-top: 10; margin-bottom: 20px; color: black;}
+.browser.projects .info {font-weight: bold;}
+
 #page .projects {width: 100%; overflow: hidden;}
 #page .projects a {color: black;}
 #page .projects h2 {font-size: 150%; margin: 1em 0 0 0; display: block; clear: both;}

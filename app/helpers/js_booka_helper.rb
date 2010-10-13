@@ -37,6 +37,12 @@ module JsBookaHelper
 
   def js_before
     code = "$.booka.ajax.token(#{js_str request.path[0..-4]});"
+    if flash[:notice].present?
+      code = code + "alert ('#{js flash[:notice]}');"
+    end
+    if @project
+      code = code + "$.booka.user.setProject(#{js_str @project.title}, '##{js project_project_call_path(@project)}');"
+    end
     if current_user
       code = code + "$.booka.user.set(#{current_user.id}, #{js_str current_user.name}, 'address:#{js current_user_path}');"
     else

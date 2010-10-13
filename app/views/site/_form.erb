@@ -1,7 +1,7 @@
 
 <div id="page" class="editor">
-  <h1>Editando <%= @site.title %></h1>
-  <% semantic_form_for(:site, :url => site_path, :html => { :method => :put}) do |form| %>
+  <h1>Estás editando el texto de presentación de '<%= @site.title %>'</h1>
+  <% semantic_form_for(@site) do |form| %>
     <%= form.error_messages %>
     <% form.inputs do %>
       <%= form.input :content_type, :as => :hidden %>

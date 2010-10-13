@@ -1,0 +1,14 @@
+console.log("Site - Edit (edit site document)");
+
+<%= js_before %>
+with($.booka) {
+layout.place(<%= js_str "Editando '#{@document.title}'" %>);
+layout.edit(<%= js_partial 'form'%>);
+<% if @documents %>
+  layout.browser('documents', <%= js_partial '/documents/browser' %>);
+  layout.flash(<%= js_str "Archivos de '#{@project.title}' cargados" %>);
+<% end %>
+
+comm.add('document', <%= js_str "Estás editando '#{@document.title}'." %>);
+//editor.setup();
+}

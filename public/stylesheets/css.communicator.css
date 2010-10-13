@@ -23,6 +23,8 @@ a:hover { text-decoration: underline; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+.round-bottom { border-radius: 0 0 3px 3px; }
+.round-top { border-radius: 3px 3px 0 0; }
 .button {
   cursor: pointer;
   display: block;
@@ -63,7 +65,7 @@ div.action:hover { color: #e1ebef; }
   padding: 3px 1%;
   width: 94%;
   overflow: auto;
-  color: gray;
+  color: #3f3f3f;
 }
 #communicator .input {
   position: absolute;
@@ -84,11 +86,11 @@ div.action:hover { color: #e1ebef; }
 }
 #communicator .item a {
   font-weight: bold;
-  color: gray;
+  color: #3f3f3f;
 }
 #communicator .event-browser {
   background-color: #c6c8ca;
-  border: 1px solid gray;
+  border: 1px solid #3f3f3f;
 }
 #communicator .event-document {
   background-color: #ff99ff;

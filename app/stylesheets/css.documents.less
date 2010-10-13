@@ -23,15 +23,17 @@
 #page .head .author {margin-top: 1em;}
 #page .head h3 a {color: black; font-size: @font-small; margin-bottom: 0;}
 
-#page .floating_actions {
+#page div.floating_actions {
     /*display: none; */
     overflow: hidden;
     float: right; padding: 3px 3px 5px 5px;
     margin-right: 2px;
     background-color: @azulclaro; .rounded; border: 1px solid @azul;
+    opacity: 0.5;
 }
-#page .floating_actions a {display: block; opacity: 0.5; margin-right: 2px;}
-#page .floating_actions a:hover {opacity: 1;}
+#page div.floating_actions:hover {opacity: 1;}
+#page .floating_actions a {display: block; opacity: 0.7; margin-right: 2px;}
+#nopage .floating_actions a:hover {opacity: 1;}
 /** DOCUMENT **/
 #page div.doc:hover {border-color: white;}
 #page div.doc:hover .floating_actions {display: block; }

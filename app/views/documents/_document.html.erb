@@ -3,8 +3,7 @@
   <div id="document_<%= document.id %>" class="head document">
     <% if can? :manage, document %>
       <div class="floating_actions">
-        <%= iminbutton_to t('.debug'), "bolt", edit_document_path(document) %>
-        <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_document_path(document) %>
+        <%= js_action_to 'Editar artículo', "pen_alt_stroke", edit_document_path(document) %>
       </div>
     <% end %>
     <h3><%= link_to_ajax @project.title, project_project_call_path(@project) %></h3>

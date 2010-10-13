@@ -23,6 +23,8 @@ a:hover { text-decoration: underline; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+.round-bottom { border-radius: 0 0 3px 3px; }
+.round-top { border-radius: 3px 3px 0 0; }
 .button {
   cursor: pointer;
   display: block;
@@ -46,20 +48,6 @@ a:hover { text-decoration: underline; }
   font-family: 'Nobile', serif;
 }
 div.action:hover { color: #e1ebef; }
-.browser.projects {
-  overflow: hidden;
-  background-color: #00aeef;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-}
-.browser.projects .project {
-  margin: 10px 0;
-  display: block;
-  background-color: white;
-  padding: 5px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-}
 #project_stages {
   width: 70%;
   overflow: hidden;
@@ -67,7 +55,7 @@ div.action:hover { color: #e1ebef; }
   padding: 5px 5%;
   background-color: #efefef;
   color: #00aeef;
-  border: 1px solid gray;
+  border: 1px solid #3f3f3f;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
@@ -82,7 +70,7 @@ div.action:hover { color: #e1ebef; }
 .project .property {
   font-family: 'Nobile', serif;
   font-size: 80%;
-  color: gray;
+  color: #3f3f3f;
 }
 .project .stage { margin-top: 5px; }
 .project .visibility { font-weight: bold; }
@@ -90,11 +78,12 @@ div.action:hover { color: #e1ebef; }
   margin: 10px 5px;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #00aeef;
+  background-color: #efefef;
+  padding-right: 5px;
 }
 .browser.projects h1 {
   margin-left: 10px;
-  color: white;
+  color: black;
   font-family: 'Nobile', serif;
 }
 .browser.projects a {
@@ -105,6 +94,21 @@ div.action:hover { color: #e1ebef; }
   color: #00aeef;
   font-size: 80%;
 }
+.browser.projects .project {
+  margin: 10px 0;
+  display: block;
+  background-color: white;
+  padding: 5px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.browser.projects .project.current {
+  background-color: #feffb0;
+  margin-top: 10;
+  margin-bottom: 20px;
+  color: black;
+}
+.browser.projects .info { font-weight: bold; }
 #page .projects {
   width: 100%;
   overflow: hidden;

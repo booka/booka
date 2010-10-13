@@ -16,11 +16,13 @@ es:
       user: "cuenta de usuario"
       project: "investigación"
       clip: "sección"
-      document: "archivo"
+      document: "artículo"
       disq: "discusión"
     attributes:
       document:
         title: "Título"
+        description: "Descripción"
+        author: "¿Quién lo ha escrito?"
       disq:
         body: "Texto"
         content_type: "¿Qué es?"

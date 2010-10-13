@@ -4,8 +4,7 @@
 <% div_for(clip, :class => 'section') do %>
   <% if can? :manager, clip %>
     <div class="floating_actions">
-      <%= iminbutton_to t('.edit'), "bolt", "#" %>
-      <%= iminbutton_to t('.edit'), "pen_alt_stroke", edit_document_clip_path(clip.parent, clip) %>
+      <%= js_action_to 'Editar sección', "pen_alt_stroke", edit_document_clip_path(clip.parent, clip) %>
     </div>
   <% end %>
   <%= clip.body_rendered  %>

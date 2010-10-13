@@ -23,6 +23,8 @@ a:hover { text-decoration: underline; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+.round-bottom { border-radius: 0 0 3px 3px; }
+.round-top { border-radius: 3px 3px 0 0; }
 .button {
   cursor: pointer;
   display: block;
@@ -76,10 +78,32 @@ div.action:hover { color: #e1ebef; }
   bottom: 0;
   width: 264px;
 }
-#browser_viewport, #comm_viewport {
+#user_controls {
+  width: 100%;
+  overflow: hidden;
+  height: 23px;
+  background-color: #474747;
+  border-radius: 0 0 3px 3px;
+}
+#user_controls a {
+  display: block;
+  float: left;
+  margin-left: 5px;
+  color: #efefef;
+}
+#user_controls a:hover {
+  color: white;
+  text-decoration: none;
+}
+#current_user {
+  float: right;
+  margin-right: 5px;
+}
+#current_user a { float: none; }
+#comm_viewport {
   position: absolute;
   left: 10px;
-  top: 80px;
+  top: 70px;
   bottom: 10px;
   right: 10px;
   -moz-border-radius: 3px;
@@ -88,24 +112,51 @@ div.action:hover { color: #e1ebef; }
 #content {
   position: absolute;
   left: 10px;
-  top: 15px;
+  top: 35px;
   right: 10px;
-  bottom: 10px;
+  bottom: 35px;
   overflow-x: hidden;
+}
+#browser_viewport {
+  position: absolute;
+  left: 10px;
+  top: 70px;
+  bottom: 10px;
+  right: 10px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 #user_navigation {
   width: 100%;
   overflow: hidden;
 }
-.round-bottom { border-radius: 0 0 3px 3px; }
-#current_user {
+#talk_controls {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 23px;
+  overflow: hidden;
+  background-color: #474747;
+  border-radius: 3px 3px 0 0;
+  color: white;
+}
+#online_users {
+  float: left;
+  margin-left: 5px;
+}
+#unreaded_messages {
+  float: right;
+  margin-right: 5px;
+}
+#NOcurrent_user {
   position: absolute;
   top: 0;
   right: 50px;
   height: 2em;
   z-index: 5000;
 }
-#current_user a {
+#NOcurrent_user a {
   display: block;
   float: right;
   padding: 3px 10px;
@@ -133,27 +184,44 @@ div.action:hover { color: #e1ebef; }
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+#site_navigation {
+  width: 100%;
+  overflow: hidden;
+  margin: 2px 0 0 6px;
+}
 #site_navigation li {
   display: block;
   float: left;
+  margin-left: 1px;
+}
+#user_navigation {
+  width: 100%;
+  overflow: hidden;
+  margin: 2px 0 0 -6px;
+  padding-right: 10px;
 }
 #user_navigation li {
   display: block;
   float: right;
+  margin-right: 1px;
 }
 a.sprite-nav, div.navigation-disabled {
   display: block;
   overflow: hidden;
   text-indent: -10000px;
-  padding: 1px;
+  border: 2px solid #c6c8ca;
   margin: 3px 0px 0 3px;
-  border: 3px solid #c6c8ca;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
+  border-radius: 3px 3px 0 0;
 }
 div.navigation-disabled { opacity: 0.5; }
-a.sprite-nav:hover { border-color: #efefef; }
-a.sprite-nav.selected { border-color: #efefef; }
+a.sprite-nav:hover {
+  background-color: #efefef;
+  border-color: #efefef;
+}
+a.sprite-nav.active {
+  background-color: #efefef;
+  border-color: #efefef;
+}
 #flash p {
   padding: 4px 0 0px 10px;
   color: #00aeef;
