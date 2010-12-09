@@ -29,6 +29,7 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources(:chapters, :as => 'ver')
+  map.resources(:raws, :as => 'raw')
 
   map.root :controller => 'site', :action => 'workspace'
   map.ccc '/ccc', :controller => 'site', :action => 'ccc'
